@@ -1,0 +1,37 @@
+@use './../mixins' as *;
+
+.header {
+  --header-bg: #505050;
+
+  padding: 50px 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: var(--header-bg);
+  color: var(--white);
+  z-index: 100;
+
+  display: none;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+  }
+}
+
+@include md {
+  .header {
+    padding: 20px 0;
+  }
+
+  .header__nav {
+    display: none;
+  }
+}

@@ -1,0 +1,18 @@
+@use './../mixins' as *;
+
+.title {
+  font-weight: 500;
+  // font-size: 64px;
+  font-size: calc(var(--index) * 2.5);
+  line-height: 110%;
+  color: var(--black);
+}
+
+.text {
+  font-family: var(--second-family);
+  font-weight: 400;
+  // font-size: 18px;
+  font-size: calc(var(--index) * 0.7);
+  line-height: 134%;
+  color: var(--black);
+}

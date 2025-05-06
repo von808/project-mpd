@@ -1,0 +1,9 @@
+@use './../mixins' as *;
+
+.accardion {
+  &-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+}

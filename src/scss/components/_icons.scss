@@ -1,0 +1,17 @@
+@use './../mixins' as *;
+
+.icon {
+  fill: transparent;
+  stroke: transparent;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  &--hero-arrow {
+    // width: 16px;
+    width: calc(var(--index) * 0.63);
+    // height: 81px;
+    height: calc(var(--index) * 3.17);
+    stroke: var(--white);
+    fill: var(--white);
+  }
+}

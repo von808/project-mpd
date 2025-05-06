@@ -1,0 +1,21 @@
+@use './../mixins' as *;
+
+.tab {
+  &-btn {
+    color: blue;
+
+    cursor: pointer;
+
+    &.tab-active {
+      color: red;
+    }
+  }
+
+  &-item {
+    display: none;
+
+    &.tab-active {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use './../mixins' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+
+  background-color: var(--page-bg);
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--black);
+}
+
+.wrapper {
+}
+
+.main {
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  // padding: 176px 0 65px;
+  padding: calc(var(--index) * 7) 0 calc(var(--index) * 3.3);
+
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}

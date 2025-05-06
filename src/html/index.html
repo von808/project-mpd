@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('blocks/head.html', {"title": "Main Page"})
+
+  <body>
+    @@include('blocks/sprite.html')
+    <div class="wrapper">
+      @@include('blocks/header.html')
+      <main class="main">
+        <picture>
+          <source type="image/webp" srcset="./../images/hero/hero-night-bg.webp" />
+          <img
+            class="sunrise__bg sunrise__night-bg show"
+            src="./../images/hero/hero-night-bg.jpg"
+            alt="hero-night-bg"
+          />
+        </picture>
+        <div class="sunrise">
+          <picture>
+            <source type="image/webp" srcset="./../images/hero/hero-day-nebo.webp" />
+            <img
+              class="sunrise__bg sunrise__day-nebo"
+              src="./../images/hero/hero-day-nebo.png"
+              alt="hero-day-nebo"
+            />
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="./../images/hero/hero-day-ozero.webp" />
+            <img
+              class="sunrise__bg sunrise__day-ozero"
+              src="./../images/hero/hero-day-ozero.png"
+              alt="hero-day-ozero"
+            />
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="./../images/hero/hero-day-trava.webp" />
+            <img
+              class="sunrise__bg sunrise__day-trava"
+              src="./../images/hero/hero-day-trava.png"
+              alt="hero-day-trava"
+            />
+          </picture>
+        </div>
+        <div class="anim__swiper swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="anim__item">
+                <section class="hero">
+                  <div class="container">
+                    <div class="hero__inner">
+                      <div class="hero__content">
+                        <div class="hero__info">
+                          <h1 class="hero__title">
+                            Lorem,<br />
+                            ipsum&nbsp;dolor.
+                          </h1>
+                          <span class="hero__subtitle"
+                            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+                            temporibus, accusantium ex sed vero, earum quas totam mollitia culpa
+                            corrupti aspernatur quam architecto dolore dolor delectus
+                            deserunt?</span
+                          >
+                        </div>
+                        <div class="hero__hint">
+                          <svg class="icon icon--hero-arrow">
+                            <use xlink:href="#hero-arrow"></use>
+                          </svg>
+                          <span>To see the sunrise</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="anim-item">
+                <section class="why">
+                  <div class="container">
+                    <div class="why__inner">
+                      <div class="why__content">
+                        <div class="why__info">
+                          <h2 class="title">Lorem, ipsum?</h2>
+                          <div class="why__info-items">
+                            <div class="why__info-item text">
+                              <span class="why__info-subtitle">Lorem, ipsum dolor?</span>
+                              <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit repellat dolore eaque, expedita dolorem doloremque sunt odit soluta quos possimus. Aperiam ratione laboriosam hic dolor magni ipsum eum et veniam.
+                              </p>
+                            </div>
+                            <div class="why__info-item text">
+                              <span class="why__info-subtitle">Lorem, ipsum dolor?</span>
+                              <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                                dolores eius doloremque ut atque! Perferendis minus deleniti
+                                nesciunt est aliquid!
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="anim-item">
+                <section class="island">
+                  <div class="island__imagebox">
+                    <picture>
+                      <source type="image/webp" srcset="./../images/island/island.webp" />
+                      <img class="island__image" src="./../images/island/island.png" alt="island" />
+                    </picture>
+                  </div>
+                  <div class="island__content">
+                    <div class="container">
+                      <div class="island__inner">
+                        <div class="island__therapy-wrapper">
+                          <div class="island__therapy">
+                            <img
+                              class="island__therapy-text"
+                              src="./../images/island/text-therapy.svg"
+                              alt="therapy"
+                            />
+                          </div>
+                        </div>
+                        <div class="island__community-wrapper">
+                          <div class="island__community">
+                            <img
+                              class="island__community-text"
+                              src="./../images/island/text-community.svg"
+                              alt="community"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    @@include('blocks/modal.html')
+    <script src="./../js/libs.js"></script>
+    <script src="./../js/main.js"></script>
+    <script src="./../js/index.js"></script>
+  </body>
+</html>
