@@ -58,7 +58,7 @@ const destFolder = isModeP ? docsFolder : buildFolder;
 const svgHtml = true; // Также нужно вкл или выкл коммент в index.html
 const imgAvif = false;
 const imgWebp = true;
-const imgMin = imgMinify ? true : false;
+const imgMin = imgMinify || isModeP ? true : false;
 const typography = false;
 
 const plumberNotify = (title) => {
