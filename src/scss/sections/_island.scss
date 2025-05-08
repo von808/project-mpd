@@ -3,11 +3,16 @@
 .island {
   padding: 0;
   position: relative;
-  &.move {
+  overflow: hidden;
+
+  &._move {
     .island__image {
       transform: rotate(-20deg);
       transition: transform 2s ease;
     }
+  }
+  &._hover {
+    pointer-events: none;
   }
   &__imagebox {
     width: auto;
@@ -38,7 +43,7 @@
   }
   &__cloud {
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     opacity: 0;
     pointer-events: none;
   }
@@ -60,6 +65,9 @@
     .island__link {
       top: 90%;
       left: 80%;
+    }
+    & > * {
+      will-change: left, top;
     }
   }
   &__therapy-text {
@@ -107,6 +115,9 @@
       top: 123%;
       left: 39%;
     }
+    & > * {
+      will-change: left, top;
+    }
   }
   &__community-text {
     width: calc(var(--index) * 5);
@@ -144,7 +155,7 @@
 
     position: absolute;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 3;
 
     border: calc(var(--index) * 0.1) solid var(--white);
     border-radius: 50%;

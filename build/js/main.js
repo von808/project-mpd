@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dayNebo = document.querySelector('.sunrise__day-nebo');
   const dayOzero = document.querySelector('.sunrise__day-ozero');
   const dayTrava = document.querySelector('.sunrise__day-trava');
+  const dayMask = document.querySelector('.sunrise__day-mask');
   const island = document.querySelector('.island');
 
   animSwiper.on('slideChangeTransitionStart', function () {
@@ -72,14 +73,20 @@ document.addEventListener('DOMContentLoaded', () => {
       dayNebo.classList.add('move');
       dayOzero.classList.add('move');
       dayTrava.classList.add('move');
-      island.classList.remove('move');
+      dayMask.classList.add('move');
+      island.classList.remove('_move');
+      setTimeout(() => {
+        island.classList.remove('_hover');
+      }, 2000);
       _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.play();
       _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.play();
     } else if (animSwiper.activeIndex !== 2) {
       dayNebo.classList.remove('move');
       dayOzero.classList.remove('move');
       dayTrava.classList.remove('move');
-      island.classList.add('move');
+      dayMask.classList.remove('move');
+      island.classList.add('_move');
+      island.classList.add('_hover');
       _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.reverse();
       _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.reverse();
     }

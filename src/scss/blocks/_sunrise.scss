@@ -40,7 +40,16 @@
     z-index: -2;
     transition: transform 2s ease;
     &.move {
-      transform: translateY(-120%);
+      transform: translateY(-115%);
+      transition: transform 2s ease;
+    }
+  }
+  &__day-mask {
+    height: 125%;
+    z-index: -1;
+    transition: transform 2s ease;
+    &.move {
+      transform: translateY(-110%);
       transition: transform 2s ease;
     }
   }

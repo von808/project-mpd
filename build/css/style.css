@@ -13,6 +13,14 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
+  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  font-display: swap;
   src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -31,14 +39,6 @@
   font-display: swap;
   src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Comfortaa;
-  font-display: swap;
-  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -803,9 +803,28 @@ a {
 }
 
 .sunrise__day-trava.move {
-  -webkit-transform: translateY(-120%);
-  -ms-transform: translateY(-120%);
-  transform: translateY(-120%);
+  -webkit-transform: translateY(-115%);
+  -ms-transform: translateY(-115%);
+  transform: translateY(-115%);
+  -webkit-transition: -webkit-transform 2s ease;
+  transition: -webkit-transform 2s ease;
+  transition: transform 2s ease;
+  transition: transform 2s ease, -webkit-transform 2s ease;
+}
+
+.sunrise__day-mask {
+  height: 125%;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 2s ease;
+  transition: -webkit-transform 2s ease;
+  transition: transform 2s ease;
+  transition: transform 2s ease, -webkit-transform 2s ease;
+}
+
+.sunrise__day-mask.move {
+  -webkit-transform: translateY(-110%);
+  -ms-transform: translateY(-110%);
+  transform: translateY(-110%);
   -webkit-transition: -webkit-transform 2s ease;
   transition: -webkit-transform 2s ease;
   transition: transform 2s ease;
@@ -889,9 +908,10 @@ a {
 .island {
   padding: 0;
   position: relative;
+  overflow: hidden;
 }
 
-.island.move .island__image {
+.island._move .island__image {
   -webkit-transform: rotate(-20deg);
   -ms-transform: rotate(-20deg);
   transform: rotate(-20deg);
@@ -899,6 +919,10 @@ a {
   transition: -webkit-transform 2s ease;
   transition: transform 2s ease;
   transition: transform 2s ease, -webkit-transform 2s ease;
+}
+
+.island._hover {
+  pointer-events: none;
 }
 
 .island__imagebox {
@@ -943,7 +967,7 @@ a {
 
 .island__cloud {
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   opacity: 0;
   pointer-events: none;
 }
@@ -968,6 +992,10 @@ a {
 .island__therapy .island__link {
   top: 90%;
   left: 80%;
+}
+
+.island__therapy > * {
+  will-change: left, top;
 }
 
 .island__therapy-text {
@@ -1024,6 +1052,10 @@ a {
   left: 39%;
 }
 
+.island__community > * {
+  will-change: left, top;
+}
+
 .island__community-text {
   width: calc(var(--index) * 5);
   height: auto;
@@ -1073,7 +1105,7 @@ a {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 3;
   border: calc(var(--index) * 0.1) solid var(--white);
   border-radius: 50%;
   backdrop-filter: blur(calc(var(--index) * 0.6));
