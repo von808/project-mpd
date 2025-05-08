@@ -3,17 +3,26 @@
 .island {
   padding: 0;
   position: relative;
+  &.move {
+    .island__image {
+      transform: rotate(-20deg);
+      transition: transform 2s ease;
+    }
+  }
   &__imagebox {
     width: auto;
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    overflow: hidden;
   }
   &__image {
     width: auto;
     height: 100%;
     object-fit: contain;
+    transform: rotate(0deg);
+    transition: transform 2s ease;
   }
   &__content {
     position: absolute;
@@ -27,6 +36,12 @@
 
     position: relative;
   }
+  &__cloud {
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+  }
   &__therapy-wrapper {
     width: calc(var(--index) * 19.5);
     height: calc(var(--index) * 28);
@@ -35,13 +50,17 @@
     right: 50%;
     top: 52%;
     transform: translate(4vw, -50%);
-
-    background-color: rgba(255, 0, 0, 0.2);
   }
   &__therapy {
     width: 100%;
     height: 100%;
     position: relative;
+
+    // background-color: rgba(255, 0, 0, 0.2);
+    .island__link {
+      top: 90%;
+      left: 80%;
+    }
   }
   &__therapy-text {
     // width: 20vw;
@@ -53,6 +72,20 @@
     top: 53%;
     left: 53%;
     transform: translate(-50%, -50%) rotate(18deg);
+  }
+  &__therapy-colud-1 {
+    width: calc(var(--index) * 17.9);
+
+    top: -20%;
+    left: 20%;
+    transform: translateX(-50%);
+  }
+  &__therapy-colud-2 {
+    width: calc(var(--index) * 13);
+
+    bottom: 10%;
+    left: 10%;
+    transform: translateX(-50%);
   }
   &__community-wrapper {
     width: calc(var(--index) * 19.5);
@@ -67,11 +100,16 @@
     width: 100%;
     height: calc(var(--index) * 14.8);
     position: relative;
+    z-index: 5;
 
-    background-color: rgba(255, 0, 0, 0.2);
+    // background-color: rgba(255, 0, 0, 0.2);
+    .island__link {
+      top: 123%;
+      left: 39%;
+    }
   }
   &__community-text {
-    width: 10vw;
+    width: calc(var(--index) * 5);
     height: auto;
     object-fit: contain;
 
@@ -79,5 +117,53 @@
     top: 50%;
     left: 48%;
     transform: translate(-50%, -50%) rotate(-19deg);
+    z-index: 1;
+  }
+  &__community-colud-1 {
+    width: calc(var(--index) * 17.7);
+
+    top: 32%;
+    left: 112%;
+    transform: translateX(-50%);
+  }
+  &__community-colud-2 {
+    width: calc(var(--index) * 8.5);
+
+    bottom: -76%;
+    left: 75%;
+    transform: translateX(-50%);
+  }
+  &__link {
+    width: calc(var(--index) * 7.9);
+    height: calc(var(--index) * 7.9);
+    padding: calc(var(--index) * 2) calc(var(--index) * 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    border: calc(var(--index) * 0.1) solid var(--white);
+    border-radius: 50%;
+    backdrop-filter: blur(calc(var(--index) * 0.6));
+    box-shadow: calc(var(--index) * 0.55) calc(var(--index) * 1.4) calc(var(--index) * 0.43) 0
+      rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.4);
+
+    pointer-events: none;
+    opacity: 0;
+
+    span {
+      width: min-content;
+      font-weight: 700;
+      // font-size: 16px;
+      font-size: calc(var(--index) * 0.63);
+      line-height: 130%;
+      text-align: center;
+      color: var(--white);
+    }
   }
 }
