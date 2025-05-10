@@ -18,6 +18,9 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
+// import './modules/tabs.js';
+// import './modules/video.js';
+
 document.addEventListener('DOMContentLoaded', () => {});
 
 /******/ })()

@@ -55,7 +55,7 @@ const isModeD = !isModeP;
 const destFolder = isModeP ? docsFolder : buildFolder;
 
 // TUMBLERS
-const svgHtml = true; // Также нужно вкл или выкл коммент в index.html
+const svgHtml = false; // Также нужно вкл или выкл коммент в index.html
 const imgAvif = false;
 const imgWebp = true;
 const imgMin = imgMinify || isModeP ? true : false;

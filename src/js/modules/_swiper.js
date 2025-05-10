@@ -1,11 +1,9 @@
 import { therapyTextFrom, communityTextFrom } from './_gsap.js';
 
 import Swiper from 'swiper';
-import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
+import { Mousewheel } from 'swiper/modules';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 document.addEventListener('DOMContentLoaded', () => {
   const animSwiper = new Swiper('.anim__swiper', {

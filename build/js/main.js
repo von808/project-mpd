@@ -8,13 +8,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-// import './modules/accardion.js';
 // import './modules/burger.js';
-// import './modules/headerFixed.js';
-// import './modules/modal.js';
 
-// import './modules/tabs.js';
-// import './modules/video.js';
 
 
 /***/ }),
@@ -27,10 +22,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
-/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52);
-/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54);
-
-
 
 
 
@@ -113,39 +104,54 @@ __webpack_require__.r(__webpack_exports__);
 
 // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+const heroTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+heroTl
+  .from(
+    '.hero__title',
+    {
+      // fontSize: '10dvw',
+      // fontSize: 200,
+      scale: 2,
+      duration: 2.5,
+      ease: 'power1.out',
+    },
+    0
+  )
+  .from(
+    '.hero__title',
+    {
+      opacity: 0,
+      duration: 1,
+    },
+    0
+  )
+  .from(
+    '.hero__info',
+    {
+      y: '100%',
+      duration: 2.5,
+      ease: 'power1.out',
+    },
+    0
+  )
+  .from(
+    '.hero__info',
+    {
+      opacity: 0,
+      duration: 1,
+    },
+    0
+  )
+  .from(
+    '.hero__hint',
+    {
+      opacity: 0,
+      duration: 2,
+      delay: 1,
+    },
+    0
+  );
 document.addEventListener('DOMContentLoaded', () => {
-  const heroTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
-  heroTl
-    .from(
-      '.hero__title',
-      {
-        // fontSize: '10dvw',
-        // fontSize: 200,
-        scale: 2,
-        duration: 2.5,
-        ease: 'power1.out',
-      },
-      0
-    )
-    .from(
-      '.hero__info',
-      {
-        y: '100%',
-        duration: 2.5,
-        ease: 'power1.out',
-      },
-      0
-    )
-    .from(
-      '.hero__hint',
-      {
-        opacity: 0,
-        duration: 2,
-        delay: 1,
-      },
-      0
-    );
-
   const therapy = document.querySelector('.island__therapy');
   const community = document.querySelector('.island__community');
 
@@ -396,7 +402,7 @@ module.exports = "data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAA
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			2: 0
+/******/ 			3: 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -453,7 +459,7 @@ module.exports = "data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAA
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [1], function() { return __webpack_require__(0); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [2], function() { return __webpack_require__(0); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
