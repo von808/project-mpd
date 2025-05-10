@@ -18,3 +18,7 @@
 .no-scroll {
 	overflow-y: hidden;
 }
+
+._hoverOff {
+  pointer-events: none;
+}

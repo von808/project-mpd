@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dayMask.classList.add('move');
       island.classList.remove('_move');
       setTimeout(() => {
-        island.classList.remove('_hover');
+        island.classList.remove('_hoverOff');
       }, 2000);
       _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.play();
       _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.play();
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
       dayTrava.classList.remove('move');
       dayMask.classList.remove('move');
       island.classList.add('_move');
-      island.classList.add('_hover');
-      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.reverse();
-      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.reverse();
+      island.classList.add('_hoverOff');
+      // communityTextFrom.reverse();
+      // therapyTextFrom.reverse();
     }
   });
 
@@ -169,8 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '.island__therapy .island__link',
       {
         opacity: 1,
-        top: '57%',
-        left: '60%',
+        top: '55%',
+        left: '65%',
       },
       0
     )
@@ -185,8 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '.island__therapy-colud-1',
       {
         opacity: 1,
-        top: '-3%',
-        left: '50%',
+        top: '-15%',
+        left: '45%',
       },
       0
     )
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.island__therapy-colud-2',
       {
         opacity: 1,
-        bottom: '-11%',
+        bottom: '-5%',
         left: '40%',
       },
       0
@@ -212,8 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '.island__community .island__link',
       {
         opacity: 1,
-        top: '73%',
-        left: '59%',
+        top: '50%',
+        left: '80%',
       },
       0
     )
@@ -228,8 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '.island__community-colud-1',
       {
         opacity: 1,
-        top: '-18%',
-        left: '72%',
+        top: '-50%',
+        left: '100%',
       },
       0
     )
@@ -237,8 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '.island__community-colud-2',
       {
         opacity: 1,
-        bottom: '-26%',
-        left: '35%',
+        bottom: '-5%',
+        left: '30%',
       },
       0
     );
@@ -258,8 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const therapyTextFrom = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__therapy-text', {
-  top: '75%',
-  left: '50%',
   rotate: '0deg',
   scale: 1.5,
   opacity: 0,
@@ -267,10 +265,8 @@ const therapyTextFrom = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__th
   ease: 'ease',
 });
 const communityTextFrom = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__community-text', {
-  top: '0%',
-  left: '50%',
-  rotate: '-90deg',
-  scale: 1.5,
+  rotate: '-50deg',
+  scale: 2,
   opacity: 0,
   duration: 2,
   ease: 'ease',

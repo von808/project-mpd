@@ -29,14 +29,6 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Regular.woff2") format("woff2"), url("../fonts/Comfortaa-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Comfortaa;
-  font-display: swap;
   src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
@@ -62,6 +54,14 @@
   font-family: Roboto;
   font-display: swap;
   src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  font-display: swap;
+  src: url("../fonts/Comfortaa-Regular.woff2") format("woff2"), url("../fonts/Comfortaa-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -262,6 +262,10 @@ a {
 
 .no-scroll {
   overflow-y: hidden;
+}
+
+._hoverOff {
+  pointer-events: none;
 }
 
 .container {
@@ -911,7 +915,7 @@ a {
   overflow: hidden;
 }
 
-.island._move .island__image {
+.island._move .island__box {
   -webkit-transform: rotate(-20deg);
   -ms-transform: rotate(-20deg);
   transform: rotate(-20deg);
@@ -921,28 +925,26 @@ a {
   transition: transform 2s ease, -webkit-transform 2s ease;
 }
 
-.island._hover {
-  pointer-events: none;
-}
-
-.island__imagebox {
-  width: auto;
-  height: 100vh;
-  margin: 0 auto;
+.island__inner {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  overflow: hidden;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.island__image {
+.island__box {
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
-  height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: 1348/960;
+  position: relative;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -952,20 +954,17 @@ a {
   transition: transform 2s ease, -webkit-transform 2s ease;
 }
 
-.island__content {
-  position: absolute;
-  top: 0;
-  left: 0;
+.island__image {
+  max-width: 100%;
+  max-height: 100vh;
   width: 100%;
   height: 100%;
-}
-
-.island__inner {
-  height: 100%;
-  position: relative;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .island__cloud {
+  max-width: unset;
   position: absolute;
   z-index: 2;
   opacity: 0;
@@ -973,14 +972,11 @@ a {
 }
 
 .island__therapy-wrapper {
-  width: calc(var(--index) * 19.5);
-  height: calc(var(--index) * 28);
+  width: 37%;
+  height: 77%;
   position: absolute;
-  right: 50%;
-  top: 52%;
-  -webkit-transform: translate(4vw, -50%);
-  -ms-transform: translate(4vw, -50%);
-  transform: translate(4vw, -50%);
+  left: 17%;
+  top: 16%;
 }
 
 .island__therapy {
@@ -1004,8 +1000,8 @@ a {
   -o-object-fit: contain;
   object-fit: contain;
   position: absolute;
-  top: 53%;
-  left: 53%;
+  top: 50%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%) rotate(18deg);
   -ms-transform: translate(-50%, -50%) rotate(18deg);
   transform: translate(-50%, -50%) rotate(18deg);
@@ -1013,7 +1009,7 @@ a {
 
 .island__therapy-colud-1 {
   width: calc(var(--index) * 17.9);
-  top: -20%;
+  top: -30%;
   left: 20%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -1022,27 +1018,24 @@ a {
 
 .island__therapy-colud-2 {
   width: calc(var(--index) * 13);
-  bottom: 10%;
-  left: 10%;
+  bottom: 20%;
+  left: 0%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
 .island__community-wrapper {
-  width: calc(var(--index) * 19.5);
-  height: calc(var(--index) * 28);
+  width: 20%;
+  height: 37%;
   position: absolute;
-  left: 50%;
-  top: 52%;
-  -webkit-transform: translate(5vw, -50%);
-  -ms-transform: translate(5vw, -50%);
-  transform: translate(5vw, -50%);
+  right: 18%;
+  top: 25%;
 }
 
 .island__community {
   width: 100%;
-  height: calc(var(--index) * 14.8);
+  height: 100%;
   position: relative;
   z-index: 5;
 }
@@ -1062,8 +1055,8 @@ a {
   -o-object-fit: contain;
   object-fit: contain;
   position: absolute;
-  top: 50%;
-  left: 48%;
+  top: 25%;
+  left: 57%;
   -webkit-transform: translate(-50%, -50%) rotate(-19deg);
   -ms-transform: translate(-50%, -50%) rotate(-19deg);
   transform: translate(-50%, -50%) rotate(-19deg);
@@ -1072,8 +1065,8 @@ a {
 
 .island__community-colud-1 {
   width: calc(var(--index) * 17.7);
-  top: 32%;
-  left: 112%;
+  top: 0%;
+  left: 200%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -1081,16 +1074,16 @@ a {
 
 .island__community-colud-2 {
   width: calc(var(--index) * 8.5);
-  bottom: -76%;
-  left: 75%;
+  bottom: -55%;
+  left: 130%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
 .island__link {
-  width: calc(var(--index) * 7.9);
-  height: calc(var(--index) * 7.9);
+  width: calc(var(--index) * 7);
+  height: calc(var(--index) * 7);
   padding: calc(var(--index) * 2) calc(var(--index) * 1);
   display: -webkit-box;
   display: -ms-flexbox;

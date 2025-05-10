@@ -6,55 +6,56 @@
   overflow: hidden;
 
   &._move {
-    .island__image {
+    .island__box {
       transform: rotate(-20deg);
       transition: transform 2s ease;
     }
   }
-  &._hover {
-    pointer-events: none;
-  }
-  &__imagebox {
-    width: auto;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-  }
-  &__image {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
-    transform: rotate(0deg);
-    transition: transform 2s ease;
-  }
-  &__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
   &__inner {
     height: 100%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__box {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    aspect-ratio: 1348/960;
     position: relative;
+
+    transform: rotate(0deg);
+    transition: transform 2s ease;
+  }
+  &__image {
+    max-width: 100%;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
   &__cloud {
+    max-width: unset;
     position: absolute;
     z-index: 2;
     opacity: 0;
     pointer-events: none;
   }
   &__therapy-wrapper {
-    width: calc(var(--index) * 19.5);
-    height: calc(var(--index) * 28);
+    // width: calc(var(--index) * 19.5);
+    // height: calc(var(--index) * 28);
 
+    // position: absolute;
+    // right: 50%;
+    // top: 52%;
+    // transform: translate(4vw, -50%);
+    width: 37%;
+    height: 77%;
     position: absolute;
-    right: 50%;
-    top: 52%;
-    transform: translate(4vw, -50%);
+    left: 17%;
+    top: 16%;
   }
   &__therapy {
     width: 100%;
@@ -77,40 +78,46 @@
     object-fit: contain;
 
     position: absolute;
-    top: 53%;
-    left: 53%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%) rotate(18deg);
   }
   &__therapy-colud-1 {
     width: calc(var(--index) * 17.9);
 
-    top: -20%;
+    top: -30%;
     left: 20%;
     transform: translateX(-50%);
   }
   &__therapy-colud-2 {
     width: calc(var(--index) * 13);
 
-    bottom: 10%;
-    left: 10%;
+    bottom: 20%;
+    left: 0%;
     transform: translateX(-50%);
   }
   &__community-wrapper {
-    width: calc(var(--index) * 19.5);
-    height: calc(var(--index) * 28);
+    // width: calc(var(--index) * 19.5);
+    // height: calc(var(--index) * 28);
 
+    // position: absolute;
+    // left: 50%;
+    // top: 52%;
+    // transform: translate(5vw, -50%);
+    width: 20%;
+    height: 37%;
     position: absolute;
-    left: 50%;
-    top: 52%;
-    transform: translate(5vw, -50%);
+    right: 18%;
+    top: 25%;
+
+    // background-color: rgba(255, 0, 0, 0.2);
   }
   &__community {
     width: 100%;
-    height: calc(var(--index) * 14.8);
+    // height: calc(var(--index) * 14.8);
+    height: 100%;
     position: relative;
     z-index: 5;
-
-    // background-color: rgba(255, 0, 0, 0.2);
     .island__link {
       top: 123%;
       left: 39%;
@@ -125,28 +132,32 @@
     object-fit: contain;
 
     position: absolute;
-    top: 50%;
-    left: 48%;
+    top: 25%;
+    left: 57%;
     transform: translate(-50%, -50%) rotate(-19deg);
     z-index: 1;
   }
   &__community-colud-1 {
     width: calc(var(--index) * 17.7);
 
-    top: 32%;
-    left: 112%;
+    top: 0%;
+    left: 200%;
+    // top: -50%;
+    // left: 100%;
     transform: translateX(-50%);
   }
   &__community-colud-2 {
     width: calc(var(--index) * 8.5);
 
-    bottom: -76%;
-    left: 75%;
+    bottom: -55%;
+    left: 130%;
+    // bottom: -5%;
+    // left: 30%;
     transform: translateX(-50%);
   }
   &__link {
-    width: calc(var(--index) * 7.9);
-    height: calc(var(--index) * 7.9);
+    width: calc(var(--index) * 7);
+    height: calc(var(--index) * 7);
     padding: calc(var(--index) * 2) calc(var(--index) * 1);
 
     display: flex;

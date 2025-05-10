@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dayMask.classList.add('move');
       island.classList.remove('_move');
       setTimeout(() => {
-        island.classList.remove('_hover');
+        island.classList.remove('_hoverOff');
       }, 2000);
       communityTextFrom.play();
       therapyTextFrom.play();
@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
       dayTrava.classList.remove('move');
       dayMask.classList.remove('move');
       island.classList.add('_move');
-      island.classList.add('_hover');
-      communityTextFrom.reverse();
-      therapyTextFrom.reverse();
+      island.classList.add('_hoverOff');
+      // communityTextFrom.reverse();
+      // therapyTextFrom.reverse();
     }
   });
 
