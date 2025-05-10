@@ -18,6 +18,7 @@
     flex-direction: column;
     // gap: 56px;
     gap: calc(var(--index) * 2.2);
+    opacity: 0;
   }
   &__title {
     font-weight: 300;

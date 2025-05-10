@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         island.classList.remove('_hoverOff');
       }, 2000);
-      communityTextFrom.play(0);
       therapyTextFrom.play(0);
+      communityTextFrom.play(0);
     } else if (animSwiper.activeIndex !== 2) {
       dayNebo.classList.remove('move');
       dayOzero.classList.remove('move');
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
       dayMask.classList.remove('move');
       island.classList.add('_move');
       island.classList.add('_hoverOff');
-      // communityTextFrom.reverse();
       // therapyTextFrom.reverse();
+      // communityTextFrom.reverse();
     }
   });
 

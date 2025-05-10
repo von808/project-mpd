@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         island.classList.remove('_hoverOff');
       }, 2000);
-      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.play(0);
       _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.play(0);
+      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.play(0);
     } else if (animSwiper.activeIndex !== 2) {
       dayNebo.classList.remove('move');
       dayOzero.classList.remove('move');
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
       dayMask.classList.remove('move');
       island.classList.add('_move');
       island.classList.add('_hoverOff');
-      // communityTextFrom.reverse();
       // therapyTextFrom.reverse();
+      // communityTextFrom.reverse();
     }
   });
 
@@ -104,54 +104,47 @@ __webpack_require__.r(__webpack_exports__);
 
 // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-const heroTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
-heroTl
-  .from(
-    '.hero__title',
-    {
-      // fontSize: '10dvw',
-      // fontSize: 200,
-      scale: 2,
-      duration: 2.5,
-      ease: 'power1.out',
-    },
-    0
-  )
-  .from(
-    '.hero__title',
-    {
-      opacity: 0,
-      duration: 1,
-    },
-    0
-  )
-  .from(
-    '.hero__info',
-    {
-      y: '100%',
-      duration: 2.5,
-      ease: 'power1.out',
-    },
-    0
-  )
-  .from(
-    '.hero__info',
-    {
-      opacity: 0,
-      duration: 1,
-    },
-    0
-  )
-  .from(
-    '.hero__hint',
-    {
-      opacity: 0,
-      duration: 2,
-      delay: 1,
-    },
-    0
-  );
 document.addEventListener('DOMContentLoaded', () => {
+  const heroTl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
+  heroTl
+    .from(
+      '.hero__title',
+      {
+        // fontSize: '10dvw',
+        // fontSize: 200,
+        scale: 2,
+        duration: 2.5,
+        ease: 'power1.out',
+      },
+      0
+    )
+    .from(
+      '.hero__info',
+      {
+        y: '100%',
+        duration: 2.5,
+        ease: 'power1.out',
+      },
+      0
+    )
+    .to(
+      '.hero__info',
+      {
+        opacity: 1,
+        duration: 1.5,
+      },
+      0
+    )
+    .from(
+      '.hero__hint',
+      {
+        opacity: 0,
+        duration: 2,
+        delay: 1,
+      },
+      0
+    );
+
   const therapy = document.querySelector('.island__therapy');
   const community = document.querySelector('.island__community');
 
@@ -264,7 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const therapyTextFrom = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__therapy-text', {
-  rotate: '0deg',
+  // rotate: '0deg',
+  transform: 'translate(-50%, -50%) rotate(0deg)',
   scale: 1.5,
   opacity: 0,
   duration: 2,
