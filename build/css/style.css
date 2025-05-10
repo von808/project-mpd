@@ -13,8 +13,8 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -29,8 +29,16 @@
 @font-face {
   font-family: Roboto;
   font-display: swap;
-  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -45,15 +53,7 @@
 @font-face {
   font-family: Roboto;
   font-display: swap;
-  src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Comfortaa;
-  font-display: swap;
-  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
@@ -67,10 +67,10 @@
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -756,6 +756,7 @@ a {
   -ms-flex-align: center;
   align-items: center;
   gap: calc(var(--index) * 0.6);
+  opacity: 0;
   font-weight: 400;
   font-size: calc(var(--index) * 0.7);
   line-height: 130%;
@@ -840,6 +841,9 @@ a {
   width: 100%;
   height: 100%;
   position: relative;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 
 .island__therapy .island__link {
@@ -848,7 +852,7 @@ a {
 }
 
 .island__therapy > * {
-  will-change: left, top;
+  will-change: top, right, bottom, left;
 }
 
 .island__therapy-text {
@@ -895,6 +899,9 @@ a {
   height: 100%;
   position: relative;
   z-index: 5;
+  -webkit-transform-origin: 50% 25%;
+  -ms-transform-origin: 50% 25%;
+  transform-origin: 50% 25%;
 }
 
 .island__community .island__link {
@@ -903,7 +910,7 @@ a {
 }
 
 .island__community > * {
-  will-change: left, top;
+  will-change: top, right, bottom, left;
 }
 
 .island__community-text {

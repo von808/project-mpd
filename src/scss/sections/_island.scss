@@ -51,6 +51,9 @@
     // right: 50%;
     // top: 52%;
     // transform: translate(4vw, -50%);
+
+    // background-color: rgba(255, 0, 0, 0.2);
+
     width: 37%;
     height: 77%;
     position: absolute;
@@ -62,13 +65,13 @@
     height: 100%;
     position: relative;
 
-    // background-color: rgba(255, 0, 0, 0.2);
+    transform-origin: 50% 50%;
     .island__link {
       top: 90%;
       left: 80%;
     }
     & > * {
-      will-change: left, top;
+      will-change: top, right, bottom, left;
     }
   }
   &__therapy-text {
@@ -104,13 +107,14 @@
     // left: 50%;
     // top: 52%;
     // transform: translate(5vw, -50%);
+
+    // background-color: rgba(255, 0, 0, 0.2);
+
     width: 20%;
     height: 37%;
     position: absolute;
     right: 18%;
     top: 25%;
-
-    // background-color: rgba(255, 0, 0, 0.2);
   }
   &__community {
     width: 100%;
@@ -118,12 +122,13 @@
     height: 100%;
     position: relative;
     z-index: 5;
+    transform-origin: 50% 25%;
     .island__link {
       top: 123%;
       left: 39%;
     }
     & > * {
-      will-change: left, top;
+      will-change: top, right, bottom, left;
     }
   }
   &__community-text {

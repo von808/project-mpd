@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         island.classList.remove('_hoverOff');
       }, 2000);
-      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.play(0);
-      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.play(0);
+      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyFromAnim.play(0);
+      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityFromAnim.play(0);
     } else if (animSwiper.activeIndex !== 2) {
       dayNebo.classList.remove('move');
       dayOzero.classList.remove('move');
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
       dayMask.classList.remove('move');
       island.classList.add('_move');
       island.classList.add('_hoverOff');
-      // therapyTextFrom.reverse();
-      // communityTextFrom.reverse();
+      // therapyFromAnim.reverse();
+      // communityFromAnim.reverse();
     }
   });
 
@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   communityTextFrom: function() { return /* binding */ communityTextFrom; },
-/* harmony export */   therapyTextFrom: function() { return /* binding */ therapyTextFrom; }
+/* harmony export */   communityFromAnim: function() { return /* binding */ communityFromAnim; },
+/* harmony export */   therapyFromAnim: function() { return /* binding */ therapyFromAnim; }
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 
@@ -135,10 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       0
     )
-    .from(
+    .to(
       '.hero__hint',
       {
-        opacity: 0,
+        opacity: 1,
         duration: 2,
         delay: 1,
       },
@@ -256,16 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const therapyTextFrom = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__therapy-text', {
-  // rotate: '0deg',
-  transform: 'translate(-50%, -50%) rotate(0deg)',
+const therapyFromAnim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__therapy', {
+  rotate: '-45deg',
   scale: 1.5,
   opacity: 0,
   duration: 2,
   ease: 'ease',
 });
-const communityTextFrom = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__community-text', {
-  rotate: '-50deg',
+const communityFromAnim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__community', {
+  rotate: '-45deg',
   scale: 2,
   opacity: 0,
   duration: 2,

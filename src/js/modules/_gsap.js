@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       0
     )
-    .from(
+    .to(
       '.hero__hint',
       {
-        opacity: 0,
+        opacity: 1,
         duration: 2,
         delay: 1,
       },
@@ -156,20 +156,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const therapyTextFrom = gsap.from('.island__therapy-text', {
-  // rotate: '0deg',
-  transform: 'translate(-50%, -50%) rotate(0deg)',
+const therapyFromAnim = gsap.from('.island__therapy', {
+  rotate: '-45deg',
   scale: 1.5,
   opacity: 0,
   duration: 2,
   ease: 'ease',
 });
-const communityTextFrom = gsap.from('.island__community-text', {
-  rotate: '-50deg',
+const communityFromAnim = gsap.from('.island__community', {
+  rotate: '-45deg',
   scale: 2,
   opacity: 0,
   duration: 2,
   ease: 'ease',
 });
 
-export { therapyTextFrom, communityTextFrom };
+export { therapyFromAnim, communityFromAnim };

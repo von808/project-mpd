@@ -1,4 +1,4 @@
-import { therapyTextFrom, communityTextFrom } from './_gsap.js';
+import { therapyFromAnim, communityFromAnim } from './_gsap.js';
 
 import Swiper from 'swiper';
 import { Mousewheel } from 'swiper/modules';
@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         island.classList.remove('_hoverOff');
       }, 2000);
-      therapyTextFrom.play(0);
-      communityTextFrom.play(0);
+      therapyFromAnim.play(0);
+      communityFromAnim.play(0);
     } else if (animSwiper.activeIndex !== 2) {
       dayNebo.classList.remove('move');
       dayOzero.classList.remove('move');
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
       dayMask.classList.remove('move');
       island.classList.add('_move');
       island.classList.add('_hoverOff');
-      // therapyTextFrom.reverse();
-      // communityTextFrom.reverse();
+      // therapyFromAnim.reverse();
+      // communityFromAnim.reverse();
     }
   });
 
