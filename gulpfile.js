@@ -483,7 +483,8 @@ gulp.task(
     'clean',
     'fonts',
     gulp.series('cleanSvg', 'svg'),
-    gulp.parallel('html', 'styles', 'js', 'images', 'files')
+    gulp.series('html', 'styles', 'files', 'js', 'images'),
+    // gulp.parallel('html', 'styles', 'js', 'images', 'files')
   )
 );
 

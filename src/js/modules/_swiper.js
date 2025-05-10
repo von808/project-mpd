@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         island.classList.remove('_hoverOff');
       }, 2000);
-      communityTextFrom.play();
-      therapyTextFrom.play();
+      communityTextFrom.play(0);
+      therapyTextFrom.play(0);
     } else if (animSwiper.activeIndex !== 2) {
       dayNebo.classList.remove('move');
       dayOzero.classList.remove('move');

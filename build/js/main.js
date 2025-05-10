@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         island.classList.remove('_hoverOff');
       }, 2000);
-      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.play();
-      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.play();
+      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.communityTextFrom.play(0);
+      _gsap_js__WEBPACK_IMPORTED_MODULE_0__.therapyTextFrom.play(0);
     } else if (animSwiper.activeIndex !== 2) {
       dayNebo.classList.remove('move');
       dayOzero.classList.remove('move');
