@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mousewheel: true,
     vertical: true,
     direction: 'vertical',
-    // initialSlide: 2,
+    initialSlide: 3,
   });
 
   const night = document.querySelector('.sunrise__night-bg');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       why.classList.add('_active');
     } else if (animSwiper.activeIndex !== 1) {
     }
-    if (animSwiper.activeIndex === 2) {
+    if (animSwiper.activeIndex >= 2) {
       dayNebo.classList.add('move');
       dayOzero.classList.add('move');
       dayTrava.classList.add('move');

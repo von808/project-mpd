@@ -4,6 +4,9 @@
   padding: calc(var(--index) * 8) 0 calc(var(--index) * 3);
   &__inner {
     padding-left: calc(var(--index) * 4.7);
+    @include md {
+      padding-left: 0;
+    }
   }
   &__content {
   }
