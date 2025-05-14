@@ -14,11 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
     active = active + 1 > countItem - 1 ? 0 : active + 1;
     rotate = rotate - rotateAdd;
     show();
+    nextImg();
   }
   function prevSlider() {
-    active = active - 1 < 0 ? countItem - 1 : active - 1;
-    rotate = rotate + rotateAdd;
-    show();
+    console.log('coming soon!');
+    // active = active - 1 < 0 ? countItem - 1 : active - 1;
+    // rotate = rotate + rotateAdd;
+    // show();
+    // prevImg();
   }
   function show() {
     islandSliderItemsWrapper.style.setProperty('--rotate', rotate + 'deg');
@@ -38,11 +41,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     islandSliderItemsWrapper.style.setProperty('--imageItems', countItem);
   }
-  function imgRotations() {
+  function nextImg() {
     let itemActive = document.querySelector('.island-slider__item.active');
-    console.log(itemActive);
+    let classNames = [...document.querySelectorAll('.island-slider__item')];
+    let index = classNames.indexOf(itemActive);
+    if (itemActive.previousElementSibling) {
+      itemActive.previousElementSibling.querySelector('.island-slider__item-box').style.setProperty('--imgRotate', '-58deg');
+    }
+    if (index > 0) {
+      let firstItem = classNames.splice(0, index);
+      classNames.push(...firstItem);
+      classNames.forEach((el) => {
+        setTimeout(() => {
+          islandSliderItemsWrapper.append(el);
+        }, 500);
+      });
+    }
   }
-  imgRotations();
+  function prevImg() {
+    let itemActive = document.querySelector('.island-slider__item.active');
+    let classNames = [...document.querySelectorAll('.island-slider__item')];
+    let index = classNames.indexOf(itemActive);
+    if (index === classNames.length - 1) {
+      let lastItem = classNames.splice(index, 1);
+      classNames.unshift(...lastItem);
+      classNames.forEach((el) => {
+        setTimeout(() => {
+          islandSliderItemsWrapper.append(el);
+        }, 500);
+      });
+    }
+  }
   show();
   islandSliderNext.onclick = nextSlider;
   islandSliderPrev.onclick = prevSlider;

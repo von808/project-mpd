@@ -69,10 +69,6 @@
     --imageItems: 1;
     --rotate: 0deg;
 
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%) rotate(var(--rotate));
     transform: rotate(var(--rotate));
     width: 100%;
     height: 100%;
@@ -82,7 +78,13 @@
     // outline-offset: -30px;
   }
   &__item {
-    --imgRotate: 0deg;
+    // --asd1: -120deg;
+    // --asd2: 33deg;
+    --asd1: -120deg;
+    --asd2: 33deg;
+    $asd1: var(--asd1);
+    $asd2: var(--asd2);
+
     position: absolute;
     width: 100%;
     height: 100%;
@@ -97,14 +99,72 @@
         border-color: #53a348;
         scale: 3;
         transition: all 0.5s ease-in-out;
-        transform: translateY(-40%);
+        transform: translateY(-40%) rotate(-90deg);
       }
-      img {
-        rotate: -90deg;
+      & + .island-slider__item {
+        .island-slider__item-box {
+          transform: rotate($asd1);
+        }
+        & + .island-slider__item {
+          .island-slider__item-box {
+            // transform: rotate(-155deg);
+            transform: rotate(calc(($asd1 - ($asd2 * 0)) - $asd2));
+          }
+          & + .island-slider__item {
+            .island-slider__item-box {
+              // transform: rotate(-190deg);
+              transform: rotate(calc(($asd1 - ($asd2 * 1)) - $asd2));
+            }
+            & + .island-slider__item {
+              .island-slider__item-box {
+                // transform: rotate(-220deg);
+                // transform: rotate(calc(-190deg - $asd2));
+                transform: rotate(calc(($asd1 - ($asd2 * 2)) - $asd2));
+              }
+              & + .island-slider__item {
+                .island-slider__item-box {
+                  // transform: rotate(-255deg);
+                  transform: rotate(calc(($asd1 - ($asd2 * 3)) - $asd2));
+                }
+                & + .island-slider__item {
+                  .island-slider__item-box {
+                    // transform: rotate(-285deg);
+                    transform: rotate(calc(($asd1 - ($asd2 * 4)) - $asd2));
+                  }
+                  & + .island-slider__item {
+                    .island-slider__item-box {
+                      // transform: rotate(-320deg);
+                      transform: rotate(calc(($asd1 - ($asd2 * 5)) - $asd2));
+                    }
+                    & + .island-slider__item {
+                      .island-slider__item-box {
+                        // transform: rotate(-350deg);
+                        transform: rotate(calc(($asd1 - ($asd2 * 6)) - $asd2));
+                      }
+                      & + .island-slider__item {
+                        .island-slider__item-box {
+                          // transform: rotate(-385deg);
+                          transform: rotate(calc(($asd1 - ($asd2 * 7)) - $asd2));
+                        }
+                        & + .island-slider__item {
+                          .island-slider__item-box {
+                            // transform: rotate(-420deg);
+                            transform: rotate(calc(($asd1 - ($asd2 * 8)) - $asd2));
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
   &__item-box {
+    --imgRotate: 0deg;
     // width: 64px;
     // height: 64px;
     width: 15%;
@@ -120,6 +180,7 @@
     border: calc(var(--index) * 0.08) solid #fff;
     transition: all 0.5s ease-in-out;
     flex-shrink: 0;
+    transform: rotate(var(--imgRotate));
   }
   &__item-box img {
     // width: 40px;
@@ -127,7 +188,6 @@
     width: 75%;
     height: auto;
     aspect-ratio: 1/1;
-    transition: all 0.5s ease-in-out;
   }
   &__btns {
     width: fit-content;

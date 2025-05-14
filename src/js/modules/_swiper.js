@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mousewheel: true,
     vertical: true,
     direction: 'vertical',
-    initialSlide: 2,
+    // initialSlide: 2,
   });
 
   const night = document.querySelector('.sunrise__night-bg');
