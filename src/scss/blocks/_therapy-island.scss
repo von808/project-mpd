@@ -1,0 +1,344 @@
+@use './../mixins' as *;
+@use 'sass:math';
+
+.island._therapy-inner {
+  .island-slider {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 2s ease 1s;
+  }
+}
+
+.island-slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+
+  &::before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__items-wrapper {
+    // width: 500px;
+    // height: 500px;
+    width: 30%;
+    height: auto;
+    aspect-ratio: 1/1;
+    // margin-top: 55px;
+    margin-top: 6%;
+
+    position: relative;
+    top: 40%;
+    left: 22%;
+    // transform: translateY(-50%) rotate(90deg);
+    transform: translate(-75%, -25%) scale(1.25) rotate(90deg);
+    z-index: 5;
+    will-change: transform;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 150%;
+    }
+  }
+  &__items {
+    --imageItems: 1;
+    --rotate: 0deg;
+
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%) rotate(var(--rotate));
+    transform: rotate(var(--rotate));
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+    // outline: 1px dashed #fff5;
+    // outline-offset: -30px;
+  }
+  &__item {
+    --imgRotate: 0deg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    rotate: calc((360deg / var(--imageItems)) * var(--i));
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    &.active {
+      .island-slider__item-box {
+        border-color: #53a348;
+        scale: 3;
+        transition: all 0.5s ease-in-out;
+        transform: translateY(-40%);
+      }
+      img {
+        rotate: -90deg;
+      }
+    }
+  }
+  &__item-box {
+    // width: 64px;
+    // height: 64px;
+    width: 15%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    // border: 2px solid transparent;
+    border: calc(var(--index) * 0.08) solid #fff;
+    transition: all 0.5s ease-in-out;
+    flex-shrink: 0;
+  }
+  &__item-box img {
+    // width: 40px;
+    // height: 40px;
+    width: 75%;
+    height: auto;
+    aspect-ratio: 1/1;
+    transition: all 0.5s ease-in-out;
+  }
+  &__btns {
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--index) * 0.3);
+
+    position: relative;
+    z-index: 16;
+  }
+  &-prev,
+  &-next {
+    width: calc(var(--index) * 1.6);
+    height: calc(var(--index) * 1.6);
+
+    // font-size: 40px;
+    font-size: calc(var(--index) * 1.6);
+    font-weight: bold;
+    opacity: 0.3;
+    opacity: 1;
+  }
+  &-next {
+    // left: unset;
+    // right: 250px;
+  }
+  &-next:hover,
+  &-prev:hover {
+    opacity: 1;
+  }
+}
+
+.island-info {
+  width: 100%;
+  height: 100%;
+  // padding: calc(var(--index) * 7) 0 calc(var(--index) * 2.6);
+  // padding-top: 11%;
+  // padding-top: 11vh;
+  // padding-bottom: 4%;
+  padding: 1% 0;
+  position: relative;
+
+  color: var(--black);
+  &::before {
+    content: '';
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(
+      270deg,
+      #eae7dd 0%,
+      rgba(234, 231, 221, 0.95) 49.5%,
+      rgba(234, 231, 221, 0.8) 79.5%,
+      rgba(234, 231, 221, 0) 100%
+    );
+    // transform: rotate(-90deg);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+  &--wrapper {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+  }
+  &__content {
+    width: 41%;
+    height: 100%;
+    margin-left: auto;
+
+    gap: calc(var(--index) * 1.1);
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    @media (max-height: 600px) {
+      width: 45%;
+    }
+    @include lg {
+      width: 50%;
+    }
+  }
+  &__therapy {
+    width: 100%;
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--index) * 0.95);
+  }
+  &__therapy-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    // gap: 8px;
+    gap: calc(var(--index) * 0.3);
+    font-weight: 500;
+    // font-size: 64px;
+    font-size: calc(var(--index) * 2.5);
+    line-height: 110%;
+    color: var(--black);
+    span {
+      font-weight: 500;
+      // font-size: 16px;
+      font-size: calc(var(--index) * 0.65);
+      line-height: 130%;
+    }
+  }
+  &__therapy-descr {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    // font-size: 18px;
+    font-size: calc(var(--index) * 0.7);
+    line-height: 134%;
+  }
+  &__items {
+    width: 100%;
+    height: auto;
+    // padding: 40px;
+    padding: calc(var(--index) * 1.6);
+    margin-bottom: auto;
+
+    // backdrop-filter: blur(50px);
+    backdrop-filter: blur(calc(var(--index) * 2));
+    // box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3em calc(var(--index) * 0.8) 0 rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--warm-light);
+    // border-radius: 30px;
+    border-radius: calc(var(--index) * 1.2);
+    &:has(._depression.active) {
+      background: rgba(144, 218, 255, 0.3);
+    }
+    &:has(._trevozh.active) {
+      background: rgba(129, 129, 129, 0.3);
+    }
+    &:has(._poterya.active) {
+      background: rgba(234, 58, 58, 0.3);
+    }
+    &:has(._socializacia.active) {
+      background: rgba(244, 150, 61, 0.3);
+    }
+  }
+  &__item {
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+    margin-top: calc(var(--index) * -1.6);
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    // gap: 40px;
+    gap: calc(var(--index) * 1.6);
+
+    &.active {
+      display: flex;
+      .island-info__item-title,
+      .island-info__item-descr,
+      .btn {
+        opacity: 0;
+        animation: showContent 0.3s ease-in-out 1 forwards;
+      }
+    }
+  }
+  &__item-text {
+    display: flex;
+    flex-direction: column;
+    // gap: 24px;
+    gap: calc(var(--index) * 0.95);
+  }
+  &__item-title {
+    font-weight: 500;
+    // font-size: 32px;
+    font-size: calc(var(--index) * 1.25);
+    line-height: 130%;
+  }
+  &__item-head {
+    // padding-right: 100px;
+    padding-right: calc(var(--index) * 3.7);
+    pointer-events: none;
+  }
+  &__item-descr {
+    width: 100%;
+    height: 100%;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    // font-size: 16px;
+    font-size: calc(var(--index) * 0.6);
+    line-height: 130%;
+  }
+
+  @keyframes showContent {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

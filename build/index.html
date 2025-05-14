@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MPD</title>
-  <link rel="stylesheet" href="./css/style.css?_v=df6ad6d65d3929387189e864bf6af5ca">
+  <link rel="stylesheet" href="./css/style.css?_v=46d054e87b1ce8fe7fd0f0ee45d1355b">
 </head>
 
   <body>
@@ -41,11 +41,7 @@
       <main class="main">
         <picture>
           <source type="image/webp" srcset="./images/hero/hero-night-bg.webp" />
-          <img
-            class="sunrise__bg sunrise__night-bg show"
-            src="./images/hero/hero-night-bg.jpg"
-            alt="hero-night-bg"
-          />
+          <img class="sunrise__bg sunrise__night-bg show" src="./images/hero/hero-night-bg.jpg" alt="hero-night-bg" />
         </picture>
         <div class="sunrise">
           <picture>
@@ -54,6 +50,7 @@
               class="sunrise__bg sunrise__day-nebo"
               src="./images/hero/hero-day-nebo.png"
               alt="hero-day-nebo"
+              loading="lazy"
             />
           </picture>
           <picture>
@@ -62,6 +59,7 @@
               class="sunrise__bg sunrise__day-ozero"
               src="./images/hero/hero-day-ozero.png"
               alt="hero-day-ozero"
+              loading="lazy"
             />
           </picture>
           <picture>
@@ -70,6 +68,7 @@
               class="sunrise__bg sunrise__day-trava"
               src="./images/hero/hero-day-trava.png"
               alt="hero-day-trava"
+              loading="lazy"
             />
           </picture>
           <picture>
@@ -78,6 +77,7 @@
               class="sunrise__bg sunrise__day-mask"
               src="./images/hero/hero-day-mask.png"
               alt="hero-day-mask"
+              loading="lazy"
             />
           </picture>
         </div>
@@ -94,9 +94,9 @@
                           ipsum&nbsp;dolor.
                         </h1>
                         <span class="hero__subtitle"
-                          >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
-                          temporibus, accusantium ex sed vero, earum quas totam mollitia culpa
-                          corrupti aspernatur quam architecto dolore dolor delectus deserunt?</span
+                          >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam temporibus, accusantium ex sed vero,
+                          earum quas totam mollitia culpa corrupti aspernatur quam architecto dolore dolor delectus
+                          deserunt?</span
                         >
                       </div>
                       <div class="hero__hint">
@@ -121,18 +121,16 @@
                           <div class="why__info-item text">
                             <span class="why__info-subtitle">Lorem, ipsum dolor?</span>
                             <p>
-                              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                              Reprehenderit repellat dolore eaque, expedita dolorem doloremque sunt
-                              odit soluta quos possimus. Aperiam ratione laboriosam hic dolor magni
-                              ipsum eum et veniam.
+                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit repellat dolore eaque,
+                              expedita dolorem doloremque sunt odit soluta quos possimus. Aperiam ratione laboriosam hic dolor
+                              magni ipsum eum et veniam.
                             </p>
                           </div>
                           <div class="why__info-item text">
                             <span class="why__info-subtitle">Lorem, ipsum dolor?</span>
                             <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-                              dolores eius doloremque ut atque! Perferendis minus deleniti nesciunt
-                              est aliquid!
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolores eius doloremque ut
+                              atque! Perferendis minus deleniti nesciunt est aliquid!
                             </p>
                           </div>
                         </div>
@@ -143,56 +141,239 @@
               </section>
             </div>
             <div class="swiper-slide">
-              <section class="island">
+              <section class="island _therapy-inner">
                 <div class="container">
                   <div class="island__inner">
                     <div class="island__box">
                       <picture>
                         <source type="image/webp" srcset="./images/island/island.webp" />
-                        <img
-                          class="island__image"
-                          src="./images/island/island.png"
-                          alt="island"
-                        />
+                        <img class="island__image" src="./images/island/island.png" alt="island" loading="lazy" />
                       </picture>
                       <div class="island__therapy-wrapper">
                         <div class="island__therapy">
-                          <img
-                            class="island__therapy-text"
-                            src="./images/island/text-therapy.svg"
-                            alt="therapy"
-                          />
+                          <img class="island__therapy-text" src="./images/island/text-therapy.svg" alt="therapy" />
                           <img
                             class="island__cloud island__therapy-colud-1"
                             src="./images/island/cloud-therapy-1.png"
                             alt="cloud-1"
+                            loading="lazy"
                           />
                           <img
                             class="island__cloud island__therapy-colud-2"
                             src="./images/island/cloud-therapy-2.png"
                             alt="cloud-2"
+                            loading="lazy"
                           />
-                          <a class="island__link" href="#!"><span>Исследовать остров</span></a>
+                          <button class="island__link" type="button"><span>Исследовать остров</span></button>
                         </div>
                       </div>
                       <div class="island__community-wrapper">
                         <div class="island__community">
-                          <img
-                            class="island__community-text"
-                            src="./images/island/text-community.svg"
-                            alt="community"
-                          />
+                          <img class="island__community-text" src="./images/island/text-community.svg" alt="community" />
                           <img
                             class="island__cloud island__community-colud-1"
                             src="./images/island/cloud-community-1.png"
                             alt="cloud-1"
+                            loading="lazy"
                           />
                           <img
                             class="island__cloud island__community-colud-2"
                             src="./images/island/cloud-community-2.png"
                             alt="cloud-2"
+                            loading="lazy"
                           />
                           <a class="island__link" href="#!"><span>Исследовать остров</span></a>
+                        </div>
+                      </div>
+                      <div class="island-slider">
+                        <div class="island-slider__items-wrapper">
+                          <div class="island-slider__items">
+                            <div class="island-slider__item active" style="--i: 1">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/ship.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 2">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/rabbit.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 3">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/heart.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 4">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/giraffe.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 5">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/ship.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 6">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/rabbit.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 7">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/heart.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 8">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/giraffe.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 9">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/ship.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 10">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/rabbit.svg" />
+                              </div>
+                            </div>
+                            <div class="island-slider__item" style="--i: 11">
+                              <div class="island-slider__item-box">
+                                <img src="./images/island/origami/heart.svg" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="island-info--wrapper">
+                          <div class="island-info">
+                            <div class="container">
+                              <div class="island-info__content">
+                                <div class="island-info__therapy">
+                                  <h2 class="island-info__therapy-title"><span>ост.</span>Терапия</h2>
+                                  <div class="island-info__therapy-descr">
+                                    <p>
+                                      На этом волшебном острове мы собрали ваши переживания и превратили их в удивительные
+                                      оригами. Каждое оригами — это отражение ваших эмоций, которое поможет вам глубже понять
+                                      себя. Исследуя эти уникальные творения, вы сможете не только осознать свои чувства,
+                                      но и найти пути к их разрешению.
+                                    </p>
+                                    <p>
+                                      Каждое оригами станет вашим проводником к внутреннему миру, а подходящий специалист поможет
+                                      вам раскрыть все тайны, скрытые за этими бумажными шедеврами.
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div class="island-info__items">
+                                  <div class="island-slider__btns">
+                                    <button class="island-slider-prev"><</button>
+                                    <button class="island-slider-next" id="next">></button>
+                                  </div>
+                                  <div class="island-info__item _depression active">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Депрессия</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _trevozh ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Тревожность</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _poterya ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Потеря</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _socializacia ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Проблемы с социализацией</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _depression ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Депрессия</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _trevozh ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Тревожность</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _poterya ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Потеря</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _socializacia ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Проблемы с социализацией</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _depression ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Депрессия</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _trevozh ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Тревожность</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+<div class="island-info__item _poterya ">
+  <div class="island-info__item-text">
+    <div class="island-info__item-head">
+      <h3 class="island-info__item-title">Потеря</h3>
+    </div>
+    <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
+  </div>
+  <a class="btn" href="#!">Подобрать специалиста</a>
+</div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -200,118 +381,12 @@
                 </div>
               </section>
             </div>
-            <div class="swiper-slide">
-              <div class="slider-new">
-                <div class="container">
-                  <div class="slider-new__inner">
-                    <div class="slider-new__images-wrapper">
-                      <div class="slider-new__images">
-                        <div class="item active" style="--i: 1">
-                          <div class="slider-new__image-box"><img src="./images/island/origami/1.png" /></div>
-                        </div>
-                        <div class="item" style="--i: 2">
-                          <div class="slider-new__image-box"><img src="./images/island/origami/2.png" /></div>
-                        </div>
-                        <div class="item" style="--i: 3">
-                          <div class="slider-new__image-box"><img src="./images/island/origami/1.png" /></div>
-                        </div>
-                        <div class="item" style="--i: 4">
-                          <div class="slider-new__image-box"><img src="./images/island/origami/2.png" /></div>
-                        </div>
-                        <div class="item" style="--i: 5">
-                          <div class="slider-new__image-box"><img src="./images/island/origami/1.png" /></div>
-                        </div>
-                        <div class="item" style="--i: 6">
-                          <div class="slider-new__image-box"><img src="./images/island/origami/2.png" /></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content">
-                      <div class="item active">
-                        <h1>PRODUCT NAME 1</h1>
-                        <div class="des">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita
-                          tenetur consectetur. Ipsum, quibusdam recusandae impedit molestiae libero
-                          nobis nemo possimus perspiciatis. Debitis aliquam cum nemo aspernatur
-                          expedita ea? Et officia asperiores est aliquam? Doloribus, tenetur non?
-                          Minima vero aperiam corporis magni. Officiis, blanditiis. Iusto sint
-                          distinctio eaque non culpa.
-                        </div>
-                        <button>See more</button>
-                      </div>
-                      <div class="item">
-                        <h1>PRODUCT NAME 2</h1>
-                        <div class="des">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita
-                          tenetur consectetur. Ipsum, quibusdam recusandae impedit molestiae libero
-                          nobis nemo possimus perspiciatis. Debitis aliquam cum nemo aspernatur
-                          expedita ea? Et officia asperiores est aliquam? Doloribus, tenetur non?
-                          Minima vero aperiam corporis magni. Officiis, blanditiis. Iusto sint
-                          distinctio eaque non culpa.
-                        </div>
-                        <button>See more</button>
-                      </div>
-                      <div class="item">
-                        <h1>PRODUCT NAME 3</h1>
-                        <div class="des">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita
-                          tenetur consectetur. Ipsum, quibusdam recusandae impedit molestiae libero
-                          nobis nemo possimus perspiciatis. Debitis aliquam cum nemo aspernatur
-                          expedita ea? Et officia asperiores est aliquam? Doloribus, tenetur non?
-                          Minima vero aperiam corporis magni. Officiis, blanditiis. Iusto sint
-                          distinctio eaque non culpa.
-                        </div>
-                        <button>See more</button>
-                      </div>
-                      <div class="item">
-                        <h1>PRODUCT NAME 4</h1>
-                        <div class="des">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita
-                          tenetur consectetur. Ipsum, quibusdam recusandae impedit molestiae libero
-                          nobis nemo possimus perspiciatis. Debitis aliquam cum nemo aspernatur
-                          expedita ea? Et officia asperiores est aliquam? Doloribus, tenetur non?
-                          Minima vero aperiam corporis magni. Officiis, blanditiis. Iusto sint
-                          distinctio eaque non culpa.
-                        </div>
-                        <button>See more</button>
-                      </div>
-                      <div class="item">
-                        <h1>PRODUCT NAME 5</h1>
-                        <div class="des">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita
-                          tenetur consectetur. Ipsum, quibusdam recusandae impedit molestiae libero
-                          nobis nemo possimus perspiciatis. Debitis aliquam cum nemo aspernatur
-                          expedita ea? Et officia asperiores est aliquam? Doloribus, tenetur non?
-                          Minima vero aperiam corporis magni. Officiis, blanditiis. Iusto sint
-                          distinctio eaque non culpa.
-                        </div>
-                        <button>See more</button>
-                      </div>
-                      <div class="item">
-                        <h1>PRODUCT NAME 6</h1>
-                        <div class="des">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit expedita
-                          tenetur consectetur. Ipsum, quibusdam recusandae impedit molestiae libero
-                          nobis nemo possimus perspiciatis. Debitis aliquam cum nemo aspernatur
-                          expedita ea? Et officia asperiores est aliquam? Doloribus, tenetur non?
-                          Minima vero aperiam corporis magni. Officiis, blanditiis. Iusto sint
-                          distinctio eaque non culpa.
-                        </div>
-                        <button>See more</button>
-                      </div>
-                    </div>
-                    <button id="prev"><</button>
-                    <button id="next">></button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </main>
     </div>
-    <script src="./js/libs.js?_v=df6ad6d65d3929387189e864bf6af5ca"></script>
-    <script src="./js/main.js?_v=df6ad6d65d3929387189e864bf6af5ca"></script>
-    <script src="./js/index.js?_v=df6ad6d65d3929387189e864bf6af5ca"></script>
+    <script src="./js/libs.js?_v=46d054e87b1ce8fe7fd0f0ee45d1355b"></script>
+    <script src="./js/main.js?_v=46d054e87b1ce8fe7fd0f0ee45d1355b"></script>
+    <script src="./js/index.js?_v=46d054e87b1ce8fe7fd0f0ee45d1355b"></script>
   </body>
 </html>

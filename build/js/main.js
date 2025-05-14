@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mousewheel: true,
     vertical: true,
     direction: 'vertical',
-    initialSlide: 3,
+    initialSlide: 2,
   });
 
   const night = document.querySelector('.sunrise__night-bg');
@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       island.classList.add('_hoverOff');
       // therapyFromAnim.reverse();
       // communityFromAnim.reverse();
+      island.classList.remove('_therapy-inner');
     }
   });
 

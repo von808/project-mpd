@@ -7,17 +7,15 @@
 
 __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
-  let prev = document.getElementById('prev');
-  let next = document.getElementById('next');
-  let image = document.querySelector('.slider-new__images');
-  // let imageItem = document.querySelector('.slider-new__images img');
-  let items = document.querySelectorAll('.slider-new__images .item');
-  let contents = document.querySelectorAll('.content .item');
+  let islandSliderNext = document.querySelector('.island-slider-next');
+  let islandSliderPrev = document.querySelector('.island-slider-prev');
+  let islandSliderItemsWrapper = document.querySelector('.island-slider__items');
+  let islandSliderItems = document.querySelectorAll('.island-slider__item');
+  let contents = document.querySelectorAll('.island-info__item');
 
   let active = 0;
-  let countItem = items.length;
+  let countItem = islandSliderItems.length;
   let rotate = -360 / countItem;
-  // let rotate = 30;
   let rotateAdd = 360 / countItem;
 
   function nextSlider() {
@@ -31,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     show();
   }
   function show() {
-    image.style.setProperty('--rotate', rotate + 'deg');
+    islandSliderItemsWrapper.style.setProperty('--rotate', rotate + 'deg');
     contents.forEach((content, key) => {
       if (key == active) {
         content.classList.add('active');
@@ -39,21 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('active');
       }
     });
-    items.forEach((content, key) => {
+    islandSliderItems.forEach((content, key) => {
       if (key == active) {
         content.classList.add('active');
       } else {
         content.classList.remove('active');
       }
     });
-    image.style.setProperty('--imageItems', countItem);
-
-    let asdActive = image.querySelector('.item.active');
-    console.log(asdActive);
+    islandSliderItemsWrapper.style.setProperty('--imageItems', countItem);
   }
+  function imgRotations() {
+    let itemActive = document.querySelector('.island-slider__item.active');
+    console.log(itemActive);
+  }
+  imgRotations();
   show();
-  next.onclick = nextSlider;
-  prev.onclick = prevSlider;
+  islandSliderNext.onclick = nextSlider;
+  islandSliderPrev.onclick = prevSlider;
   // const autoNext = setInterval(nextSlider, 3000);
 });
 
@@ -106,7 +106,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_circle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53);
 
 
-document.addEventListener('DOMContentLoaded', () => {});
+document.addEventListener('DOMContentLoaded', () => {
+  const island = document.querySelector('.island');
+  const islandSlider = document.querySelector('.island-slider');
+  const islTheraphyLink = island.querySelector('.island__therapy .island__link');
+
+  islTheraphyLink.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    island.classList.add('_therapy-inner');
+  });
+
+  islandSlider.addEventListener('click', (e) => {
+    e.stopPropagation;
+    if (!e.target.closest('.island-slider__items-wrapper') && !e.target.closest('.island-info__content')) {
+      island.classList.remove('_therapy-inner');
+    }
+  });
+});
 
 }();
 /******/ })()
