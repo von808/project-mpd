@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     active = active - 1 < 0 ? countItem - 1 : active - 1;
     rotate = rotate + rotateAdd;
     show();
-    // prevImg();
+    prevImg();
   }
   function show() {
     islandSliderItemsWrapper.style.setProperty('--rotate', rotate + 'deg');
