@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     nextImg();
   }
   function prevSlider() {
-    console.log('coming soon!');
-    // active = active - 1 < 0 ? countItem - 1 : active - 1;
-    // rotate = rotate + rotateAdd;
-    // show();
+    // console.log('coming soon!');
+    active = active - 1 < 0 ? countItem - 1 : active - 1;
+    rotate = rotate + rotateAdd;
+    show();
     // prevImg();
   }
   function show() {
