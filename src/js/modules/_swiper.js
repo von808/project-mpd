@@ -1,11 +1,8 @@
-import { therapyFromAnim, communityFromAnim } from './_gsap.js';
-
 import Swiper from 'swiper';
 import { Mousewheel } from 'swiper/modules';
-
 import 'swiper/css';
 
-document.addEventListener('DOMContentLoaded', () => {
+const indexSwipers = (therapyFromAnim, communityFromAnim) => {
   const animSwiper = new Swiper('.anim__swiper', {
     modules: [Mousewheel],
     slidesPerView: 1,
@@ -17,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // initialSlide: 2,
   });
 
+  const header = document.querySelector('.header');
   const night = document.querySelector('.sunrise__night-bg');
   const why = document.querySelector('.why');
   const dayNebo = document.querySelector('.sunrise__day-nebo');
@@ -29,8 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (animSwiper.activeIndex === 0) {
       night.classList.add('show');
       why.classList.remove('_active');
+      header.classList.add('header--white');
     } else if (animSwiper.activeIndex !== 0) {
       night.classList.remove('show');
+      header.classList.remove('header--white');
     }
     if (animSwiper.activeIndex === 1) {
       why.classList.add('_active');
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
       dayMask.classList.remove('move');
       island.classList.add('_move');
       island.classList.add('_hoverOff');
-      // therapyFromAnim.reverse();
-      // communityFromAnim.reverse();
       island.classList.remove('_therapy-inner');
     }
   });
 
   animSwiper.on('slideChangeTransitionEnd', function () {});
-});
+};
+
+export { indexSwipers };

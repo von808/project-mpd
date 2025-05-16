@@ -5,7 +5,7 @@
   <body>
     <!-- @@include('blocks/sprite.html') -->
     <div class="wrapper">
-      @@include('blocks/header.html')
+      @@include('./blocks/header.html', {"headerWhite": "true"})
       <main class="main">
         <picture>
           <source type="image/webp" srcset="./../images/hero/hero-night-bg.webp" />
@@ -109,7 +109,13 @@
               </section>
             </div>
             <div class="swiper-slide">
-              <section class="island _therapy-inner">
+              <section class="island">
+                <img
+                  class="island__therapy-colud--transition"
+                  src="./../images/island/cloud-therapy-1.png"
+                  alt="cloud-1"
+                  loading="lazy"
+                />
                 <div class="container">
                   <div class="island__inner">
                     <div class="island__box">

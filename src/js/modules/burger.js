@@ -8,10 +8,10 @@ burgerBtn.addEventListener('click', () => {
   document.body.classList.toggle('no-scroll');
 });
 
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
-    burgerMenu.classList.remove('burger-menu--open');
-    burgerIcon.classList.remove('burger-icon--active');
-    document.body.classList.remove('no-scroll');
-  }
-});
+// window.addEventListener('resize', () => {
+//   if (window.innerWidth > 768) {
+//     burgerMenu.classList.remove('burger-menu--open');
+//     burgerIcon.classList.remove('burger-icon--active');
+//     document.body.classList.remove('no-scroll');
+//   }
+// });

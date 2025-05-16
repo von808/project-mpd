@@ -4,30 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MPD</title>
-  <link rel="stylesheet" href="./css/style.css?_v=81cccf3dcb96dc7b545e6a1626e61fbd">
+  <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css?_v=456f1da35135e7ebd0e883a6e5040e85">
 </head>
 
   <body>
     
     <div class="wrapper">
-      <header class="header" id="header">
+      <header class="header header--white" id="header">
   <div class="container">
     <div class="header__inner">
       <a href="./" class="logo">
-        Header
+        <img class="logo--white" src="./images/logos/logo-white.png" alt="logo" />
+        <img class="logo--dark" src="./images/logos/logo-dark.png" alt="logo" />
       </a>
 
-      <nav class="nav header__nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#!" class="nav__link active">ASD</a></li>
-          <li class="nav__item"><a href="#!" class="nav__link">ASD</a></li>
-          <li class="nav__item"><a href="#!" class="nav__link">ASD</a></li>
-        </ul>
-      </nav>
-      
-      <button class="burger-btn">
-        <div class="burger-icon"></div>
-      </button>
+      <div class="header__items">
+        <button class="burger-btn">
+          <div class="burger-icon"></div>
+          <span>Меню</span>
+        </button>
+
+        <a class="auth-link" href="#!">Вход / Регистрация</a>
+      </div>
     </div>
   </div>
 </header>
@@ -38,6 +37,7 @@
     <li class="burger-menu__item"><a href="#!" class="burger-menu__link">ASD</a></li>
   </ul>
 </div>
+
       <main class="main">
         <picture>
           <source type="image/webp" srcset="./images/hero/hero-night-bg.webp" />
@@ -141,7 +141,13 @@
               </section>
             </div>
             <div class="swiper-slide">
-              <section class="island _therapy-inner">
+              <section class="island">
+                <img
+                  class="island__therapy-colud--transition"
+                  src="./images/island/cloud-therapy-1.png"
+                  alt="cloud-1"
+                  loading="lazy"
+                />
                 <div class="container">
                   <div class="island__inner">
                     <div class="island__box">
@@ -277,7 +283,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _trevozh ">
   <div class="island-info__item-text">
@@ -286,7 +292,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _poterya ">
   <div class="island-info__item-text">
@@ -295,7 +301,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _socializacia ">
   <div class="island-info__item-text">
@@ -304,7 +310,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _depression ">
   <div class="island-info__item-text">
@@ -313,7 +319,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _trevozh ">
   <div class="island-info__item-text">
@@ -322,7 +328,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _poterya ">
   <div class="island-info__item-text">
@@ -331,7 +337,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _socializacia ">
   <div class="island-info__item-text">
@@ -340,7 +346,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _depression ">
   <div class="island-info__item-text">
@@ -349,7 +355,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _trevozh ">
   <div class="island-info__item-text">
@@ -358,7 +364,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 <div class="island-info__item _poterya ">
   <div class="island-info__item-text">
@@ -367,7 +373,7 @@
     </div>
     <div class="island-info__item-descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis, saepe optio dolorem natus quibusdam incidunt porro harum consectetur aspernatur libero, ut nihil similique deserunt eaque voluptatum quae odit illo. Autem adipisci repellendus voluptate voluptas totam et nemo fugiat, at quidem tempora iste dolor, nobis praesentium dignissimos tempore corporis facere!</div>
   </div>
-  <a class="btn" href="#!">Подобрать специалиста</a>
+  <button class="btn island-info__item-btn" data-path="./depression.html">Подобрать специалиста</button>
 </div>
 
                                 </div>
@@ -385,8 +391,8 @@
         </div>
       </main>
     </div>
-    <script src="./js/libs.js?_v=81cccf3dcb96dc7b545e6a1626e61fbd"></script>
-    <script src="./js/main.js?_v=81cccf3dcb96dc7b545e6a1626e61fbd"></script>
-    <script src="./js/index.js?_v=81cccf3dcb96dc7b545e6a1626e61fbd"></script>
+    <script src="./js/libs.js?_v=456f1da35135e7ebd0e883a6e5040e85"></script>
+    <script src="./js/main.js?_v=456f1da35135e7ebd0e883a6e5040e85"></script>
+    <script src="./js/index.js?_v=456f1da35135e7ebd0e883a6e5040e85"></script>
   </body>
 </html>

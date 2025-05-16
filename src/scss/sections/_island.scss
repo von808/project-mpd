@@ -24,6 +24,27 @@
       transition: all 1s ease;
     }
   }
+  &._therapy-page {
+    opacity: 0;
+    transition: opacity 2s 2s ease;
+    .island__image {
+      transform: translate(12%, -27%) rotate(-51deg) scale(2.1);
+      transition: transform 2s ease;
+    }
+    .island__therapy-wrapper,
+    .island__community-wrapper {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 1s ease;
+    }
+    .island__therapy-colud--transition {
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 2s ease;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
   &__inner {
     height: 100%;
 
@@ -55,6 +76,22 @@
     position: absolute;
     z-index: 2;
     opacity: 0;
+    pointer-events: none;
+  }
+  &__therapy-colud--transition {
+    max-width: unset;
+    width: calc(var(--index) * 231.8);
+    height: auto;
+    aspect-ratio: 5934.52/4871.16;
+
+    position: fixed;
+    top: 110%;
+    left: 69%;
+    transform: translate(-60%, -60%) scale(0.8);
+    z-index: 10;
+    transition: all 2s ease;
+    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
   }
   &__therapy-wrapper {
@@ -176,8 +213,7 @@
     border: calc(var(--index) * 0.1) solid var(--white);
     border-radius: 50%;
     backdrop-filter: blur(calc(var(--index) * 0.6));
-    box-shadow: calc(var(--index) * 0.55) calc(var(--index) * 1.4) calc(var(--index) * 0.43) 0
-      rgba(0, 0, 0, 0.4);
+    box-shadow: calc(var(--index) * 0.55) calc(var(--index) * 1.4) calc(var(--index) * 0.43) 0 rgba(0, 0, 0, 0.4);
     background: rgba(255, 255, 255, 0.4);
 
     pointer-events: none;
