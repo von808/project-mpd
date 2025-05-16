@@ -2,13 +2,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2:
+/***/ 1:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_slider_circle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-/* harmony import */ var _modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _modules_slider_circle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 
 
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const island = document.querySelector('.island');
   const islandSlider = document.querySelector('.island-slider');
   const islTheraphyLink = island.querySelector('.island__therapy .island__link');
-  const islTheraphyInfoLink = island.querySelector('.island-info__item-btn');
+  const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
 
   (0,_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.indexGsap)();
   (0,_modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__.indexSwipers)(_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.therapyFromAnim, _modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.communityFromAnim);
@@ -36,23 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  islTheraphyInfoLink.addEventListener('click', (e) => {
-    e.preventDefault;
-    island.classList.remove('_therapy-inner');
-    island.classList.add('_therapy-page');
-    setTimeout(() => {
-      window.location.href = islTheraphyInfoLink.dataset.path;
-    }, 4000);
-    setTimeout(() => {
-      island.classList.remove('_therapy-page');
-    }, 4500);
+  islTheraphyInfoLinks.forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault;
+      island.classList.remove('_therapy-inner');
+      island.classList.add('_therapy-page');
+      setTimeout(() => {
+        window.location.href = el.dataset.path;
+      }, 4000);
+      setTimeout(() => {
+        island.classList.remove('_therapy-page');
+      }, 4500);
+    });
   });
 });
 
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -63,26 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
   let islandSliderItems = document.querySelectorAll('.island-slider__item');
   let contents = document.querySelectorAll('.island-info__item');
 
+  let rotateBox = 0;
+  let rotateItem = 0;
   let active = 0;
   let countItem = islandSliderItems.length;
-  let rotate = -360 / countItem;
   let rotateAdd = 360 / countItem;
+  islandSliderItemsWrapper.style.setProperty('--itemsLength', countItem);
+
+  for (let i = 0; i < islandSliderItems.length; i++) {
+    islandSliderItems[i].style.setProperty('--i', i);
+  }
 
   function nextSlider() {
     active = active + 1 > countItem - 1 ? 0 : active + 1;
-    rotate = rotate - rotateAdd;
+    rotateBox = rotateBox - rotateAdd;
+    rotateItem = rotateItem + rotateAdd;
     show();
-    nextImg();
   }
   function prevSlider() {
-    // console.log('coming soon!');
     active = active - 1 < 0 ? countItem - 1 : active - 1;
-    rotate = rotate + rotateAdd;
+    rotateBox = rotateBox + rotateAdd;
+    rotateItem = rotateItem - rotateAdd;
     show();
-    prevImg();
   }
   function show() {
-    islandSliderItemsWrapper.style.setProperty('--rotate', rotate + 'deg');
+    islandSliderItemsWrapper.style.setProperty('--rotateBox', rotateBox + 'deg');
+    islandSliderItemsWrapper.style.setProperty('--rotateItem', rotateItem + 'deg');
     contents.forEach((content, key) => {
       if (key == active) {
         content.classList.add('active');
@@ -97,38 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('active');
       }
     });
-    islandSliderItemsWrapper.style.setProperty('--imageItems', countItem);
-  }
-  function nextImg() {
-    let itemActive = document.querySelector('.island-slider__item.active');
-    let classNames = [...document.querySelectorAll('.island-slider__item')];
-    let index = classNames.indexOf(itemActive);
-    if (itemActive.previousElementSibling) {
-      itemActive.previousElementSibling.querySelector('.island-slider__item-box').style.setProperty('--imgRotate', '-58deg');
-    }
-    if (index > 0) {
-      let firstItem = classNames.splice(0, index);
-      classNames.push(...firstItem);
-      classNames.forEach((el) => {
-        setTimeout(() => {
-          islandSliderItemsWrapper.append(el);
-        }, 500);
-      });
-    }
-  }
-  function prevImg() {
-    let itemActive = document.querySelector('.island-slider__item.active');
-    let classNames = [...document.querySelectorAll('.island-slider__item')];
-    let index = classNames.indexOf(itemActive);
-    if (index === classNames.length - 1) {
-      let lastItem = classNames.splice(index, 1);
-      classNames.unshift(...lastItem);
-      classNames.forEach((el) => {
-        setTimeout(() => {
-          islandSliderItemsWrapper.append(el);
-        }, 500);
-      });
-    }
   }
   show();
   islandSliderNext.onclick = nextSlider;
@@ -139,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -148,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   indexGsap: function() { return /* binding */ indexGsap; },
 /* harmony export */   therapyFromAnim: function() { return /* binding */ therapyFromAnim; }
 /* harmony export */ });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 // import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 // import { ScrollSmoother } from 'gsap/ScrollSmoother.js';
@@ -342,16 +318,16 @@ const communityFromAnim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from('.island__
 
 /***/ }),
 
-/***/ 8:
+/***/ 7:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   indexSwipers: function() { return /* binding */ indexSwipers; }
 /* harmony export */ });
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(43);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
 
 
 
@@ -420,7 +396,7 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
 
 /***/ }),
 
-/***/ 54:
+/***/ 53:
 /***/ (function(module) {
 
 module.exports = "data:application/font-woff;charset=utf-8;base64, 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";
@@ -596,7 +572,7 @@ module.exports = "data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAA
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [2], function() { return __webpack_require__(2); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [2], function() { return __webpack_require__(1); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

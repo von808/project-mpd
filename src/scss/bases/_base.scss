@@ -31,8 +31,6 @@ body {
 section {
   width: 100%;
   height: 100vh;
-  // padding: 176px 0 65px;
-  padding: calc(var(--index) * 7) 0 calc(var(--index) * 3.3);
 
   overflow-x: hidden;
 }

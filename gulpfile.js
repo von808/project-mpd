@@ -457,7 +457,7 @@ gulp.task('server', function () {
 gulp.task('watch', function () {
   gulp.watch(`${srcFolder}scss/**/*.scss`, gulp.parallel('styles'));
   gulp
-    .watch([`${srcFolder}html/**/*.html`, `${srcFolder}html/**/*.json`], gulp.parallel('html'))
+    .watch([`${srcFolder}html/**/*.html`, `${srcFolder}files/**/*.json`], gulp.parallel('html'))
     .on('change', browserSync.reload);
   gulp.watch(`${srcFolder}images/**/*.*`, gulp.parallel('images', 'svg'));
   gulp.watch(`${srcFolder}js/**/*.js`, gulp.parallel('js'));

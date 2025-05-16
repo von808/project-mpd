@@ -5,26 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
   let islandSliderItems = document.querySelectorAll('.island-slider__item');
   let contents = document.querySelectorAll('.island-info__item');
 
+  let rotateBox = 0;
+  let rotateItem = 0;
   let active = 0;
   let countItem = islandSliderItems.length;
-  let rotate = -360 / countItem;
   let rotateAdd = 360 / countItem;
+  islandSliderItemsWrapper.style.setProperty('--itemsLength', countItem);
+
+  for (let i = 0; i < islandSliderItems.length; i++) {
+    islandSliderItems[i].style.setProperty('--i', i);
+  }
 
   function nextSlider() {
     active = active + 1 > countItem - 1 ? 0 : active + 1;
-    rotate = rotate - rotateAdd;
+    rotateBox = rotateBox - rotateAdd;
+    rotateItem = rotateItem + rotateAdd;
     show();
-    nextImg();
   }
   function prevSlider() {
-    // console.log('coming soon!');
     active = active - 1 < 0 ? countItem - 1 : active - 1;
-    rotate = rotate + rotateAdd;
+    rotateBox = rotateBox + rotateAdd;
+    rotateItem = rotateItem - rotateAdd;
     show();
-    prevImg();
   }
   function show() {
-    islandSliderItemsWrapper.style.setProperty('--rotate', rotate + 'deg');
+    islandSliderItemsWrapper.style.setProperty('--rotateBox', rotateBox + 'deg');
+    islandSliderItemsWrapper.style.setProperty('--rotateItem', rotateItem + 'deg');
     contents.forEach((content, key) => {
       if (key == active) {
         content.classList.add('active');
@@ -39,38 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.remove('active');
       }
     });
-    islandSliderItemsWrapper.style.setProperty('--imageItems', countItem);
-  }
-  function nextImg() {
-    let itemActive = document.querySelector('.island-slider__item.active');
-    let classNames = [...document.querySelectorAll('.island-slider__item')];
-    let index = classNames.indexOf(itemActive);
-    if (itemActive.previousElementSibling) {
-      itemActive.previousElementSibling.querySelector('.island-slider__item-box').style.setProperty('--imgRotate', '-58deg');
-    }
-    if (index > 0) {
-      let firstItem = classNames.splice(0, index);
-      classNames.push(...firstItem);
-      classNames.forEach((el) => {
-        setTimeout(() => {
-          islandSliderItemsWrapper.append(el);
-        }, 500);
-      });
-    }
-  }
-  function prevImg() {
-    let itemActive = document.querySelector('.island-slider__item.active');
-    let classNames = [...document.querySelectorAll('.island-slider__item')];
-    let index = classNames.indexOf(itemActive);
-    if (index === classNames.length - 1) {
-      let lastItem = classNames.splice(index, 1);
-      classNames.unshift(...lastItem);
-      classNames.forEach((el) => {
-        setTimeout(() => {
-          islandSliderItemsWrapper.append(el);
-        }, 500);
-      });
-    }
   }
   show();
   islandSliderNext.onclick = nextSlider;

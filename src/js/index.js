@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const island = document.querySelector('.island');
   const islandSlider = document.querySelector('.island-slider');
   const islTheraphyLink = island.querySelector('.island__therapy .island__link');
-  const islTheraphyInfoLink = island.querySelector('.island-info__item-btn');
+  const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
 
   indexGsap();
   indexSwipers(therapyFromAnim, communityFromAnim);
@@ -25,15 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  islTheraphyInfoLink.addEventListener('click', (e) => {
-    e.preventDefault;
-    island.classList.remove('_therapy-inner');
-    island.classList.add('_therapy-page');
-    setTimeout(() => {
-      window.location.href = islTheraphyInfoLink.dataset.path;
-    }, 4000);
-    setTimeout(() => {
-      island.classList.remove('_therapy-page');
-    }, 4500);
+  islTheraphyInfoLinks.forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault;
+      island.classList.remove('_therapy-inner');
+      island.classList.add('_therapy-page');
+      setTimeout(() => {
+        window.location.href = el.dataset.path;
+      }, 4000);
+      setTimeout(() => {
+        island.classList.remove('_therapy-page');
+      }, 4500);
+    });
   });
 });

@@ -5,14 +5,6 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Comfortaa;
-  font-display: swap;
   src: url("../fonts/Comfortaa-Bold.woff2") format("woff2"), url("../fonts/Comfortaa-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -21,8 +13,16 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  font-display: swap;
+  src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -53,16 +53,8 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Roboto;
-  font-display: swap;
-  src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -71,6 +63,14 @@
   font-display: swap;
   src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -241,7 +241,6 @@ body {
 section {
   width: 100%;
   height: 100vh;
-  padding: calc(var(--index) * 7) 0 calc(var(--index) * 3.3);
   overflow-x: hidden;
 }
 
@@ -548,7 +547,7 @@ a {
 
 .header {
   --header-bg: #505050;
-  padding: calc(var(--index) * 1.6) 0;
+  padding-top: calc(var(--index) * 1.6);
   position: static;
   top: 0;
   left: 0;
@@ -820,9 +819,9 @@ a {
   position: relative;
   top: 40%;
   left: 22%;
-  -webkit-transform: translate(-75%, -25%) scale(1.25) rotate(90deg);
-  -ms-transform: translate(-75%, -25%) scale(1.25) rotate(90deg);
-  transform: translate(-75%, -25%) scale(1.25) rotate(90deg);
+  -webkit-transform: translate(-75%, -25%) scale(1.25);
+  -ms-transform: translate(-75%, -25%) scale(1.25);
+  transform: translate(-75%, -25%) scale(1.25);
   z-index: 5;
   will-change: transform;
 }
@@ -840,14 +839,15 @@ a {
 }
 
 .island-slider__items {
-  --imageItems: 1;
-  --rotate: 0deg;
-  -webkit-transform: rotate(var(--rotate));
-  -ms-transform: rotate(var(--rotate));
-  transform: rotate(var(--rotate));
+  --itemsLength: 0;
+  --rotateBox: 0deg;
+  --rotateItem: 0deg;
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  -webkit-transform: rotate(var(--rotateBox));
+  -ms-transform: rotate(var(--rotateBox));
+  transform: rotate(var(--rotateBox));
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
@@ -855,13 +855,10 @@ a {
 }
 
 .island-slider__item {
-  --asd1: -120deg;
-  --asd2: 33deg;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  rotate: calc(360deg / var(--imageItems) * var(--i));
+  --i: 0;
+  width: 15%;
+  height: auto;
+  aspect-ratio: 1/1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -871,83 +868,30 @@ a {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+  offset-path: circle(44% at 50% 50%);
+  offset-rotate: 1turn;
+  offset-distance: calc(100% / var(--itemsLength) * var(--i));
+  -webkit-transform: rotate(var(--rotateItem));
+  -ms-transform: rotate(var(--rotateItem));
+  transform: rotate(var(--rotateItem));
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 .island-slider__item.active .island-slider__item-box {
   border-color: #53a348;
-  scale: 3;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  -webkit-transform: translateY(-40%) rotate(-90deg);
-  -ms-transform: translateY(-40%) rotate(-90deg);
-  transform: translateY(-40%) rotate(-90deg);
-}
-
-.island-slider__item.active + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(var(--asd1));
-  -ms-transform: rotate(var(--asd1));
-  transform: rotate(var(--asd1));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 0 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 0 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 0 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 1 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 1 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 1 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 2 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 2 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 2 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 3 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 3 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 3 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 4 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 4 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 4 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 5 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 5 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 5 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 6 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 6 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 6 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 7 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 7 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 7 - var(--asd2)));
-}
-
-.island-slider__item.active + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item + .island-slider__item .island-slider__item-box {
-  -webkit-transform: rotate(calc(var(--asd1) - var(--asd2) * 8 - var(--asd2)));
-  -ms-transform: rotate(calc(var(--asd1) - var(--asd2) * 8 - var(--asd2)));
-  transform: rotate(calc(var(--asd1) - var(--asd2) * 8 - var(--asd2)));
+  -webkit-transform: translateX(100%) scale(2.5);
+  -ms-transform: translateX(100%) scale(2.5);
+  transform: translateX(100%) scale(2.5);
 }
 
 .island-slider__item-box {
-  --imgRotate: 0deg;
-  width: 15%;
-  height: auto;
-  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -960,13 +904,10 @@ a {
   align-items: center;
   background-color: #fff;
   border: calc(var(--index) * 0.08) solid #fff;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-transform: rotate(var(--imgRotate));
-  -ms-transform: rotate(var(--imgRotate));
-  transform: rotate(var(--imgRotate));
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .island-slider__item-box img {
@@ -1219,6 +1160,10 @@ a {
 
 /* Sections */
 
+.hero {
+  padding: calc(var(--index) * 7) 0 calc(var(--index) * 3.3);
+}
+
 .hero__inner {
   width: 100%;
   height: 100%;
@@ -1313,10 +1258,10 @@ a {
   -webkit-transform: translate(-20%, 10%) scale(1.25);
   -ms-transform: translate(-20%, 10%) scale(1.25);
   transform: translate(-20%, 10%) scale(1.25);
-  -webkit-transition: -webkit-transform 2s ease;
-  transition: -webkit-transform 2s ease;
-  transition: transform 2s ease;
-  transition: transform 2s ease, -webkit-transform 2s ease;
+  -webkit-transition: -webkit-transform 2s 0.5s ease;
+  transition: -webkit-transform 2s 0.5s ease;
+  transition: transform 2s 0.5s ease;
+  transition: transform 2s 0.5s ease, -webkit-transform 2s 0.5s ease;
 }
 
 .island._therapy-inner .island__therapy-wrapper,
@@ -1399,10 +1344,10 @@ a {
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
-  -webkit-transition: -webkit-transform 2s ease;
-  transition: -webkit-transform 2s ease;
-  transition: transform 2s ease;
-  transition: transform 2s ease, -webkit-transform 2s ease;
+  -webkit-transition: -webkit-transform 1.5s 0.5s ease;
+  transition: -webkit-transform 1.5s 0.5s ease;
+  transition: transform 1.5s 0.5s ease;
+  transition: transform 1.5s 0.5s ease, -webkit-transform 1.5s 0.5s ease;
 }
 
 .island__cloud {
@@ -1438,8 +1383,8 @@ a {
   position: absolute;
   left: 17%;
   top: 16%;
-  -webkit-transition: all 1s 1s ease;
-  transition: all 1s 1s ease;
+  -webkit-transition: all 1s 2s ease;
+  transition: all 1s 2s ease;
 }
 
 .island__therapy {
@@ -1497,8 +1442,8 @@ a {
   position: absolute;
   right: 18%;
   top: 25%;
-  -webkit-transition: all 1s 1s ease;
-  transition: all 1s 1s ease;
+  -webkit-transition: all 1s 2s ease;
+  transition: all 1s 2s ease;
 }
 
 .island__community {

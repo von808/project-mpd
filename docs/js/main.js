@@ -1,1 +1,0 @@
-!function(){"use strict";const e=document.querySelector(".burger-btn"),t=document.querySelector(".burger-menu"),c=document.querySelector(".burger-icon");e.addEventListener("click",(()=>{t.classList.toggle("burger-menu--open"),c.classList.toggle("burger-icon--active"),document.body.classList.toggle("no-scroll")}))}();

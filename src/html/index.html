@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  @@include('blocks/head.html', {"title": "MPD"})
+<html lang="ru">
+  @@include('blocks/head.html', {"title": "Можно по Другому"})
 
   <body>
     <!-- @@include('blocks/sprite.html') -->
@@ -57,21 +57,17 @@
                   <div class="hero__inner">
                     <div class="hero__content">
                       <div class="hero__info">
-                        <h1 class="hero__title">
-                          Lorem,<br />
-                          ipsum&nbsp;dolor.
-                        </h1>
+                        <h1 class="hero__title">Можно <br />по‑Другому</h1>
                         <span class="hero__subtitle"
-                          >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam temporibus, accusantium ex sed vero,
-                          earum quas totam mollitia culpa corrupti aspernatur quam architecto dolore dolor delectus
-                          deserunt?</span
+                          >Онлайн-комьюнити ментального здоровья — единый агрегатор по подбору специалиста в области ментального
+                          здоровья: психиатр, психотерапевт, психолог, супервизор</span
                         >
                       </div>
                       <div class="hero__hint">
                         <svg class="icon icon--hero-arrow">
                           <use xlink:href="./images/sprite.svg#hero-arrow"></use>
                         </svg>
-                        <span>To see the sunrise</span>
+                        <span>Встретить рассвет</span>
                       </div>
                     </div>
                   </div>
@@ -84,22 +80,18 @@
                   <div class="why__inner">
                     <div class="why__content">
                       <div class="why__info">
-                        <h2 class="title">Lorem, ipsum?</h2>
+                        <h2 class="title">Зачем всё это?</h2>
                         <div class="why__info-items">
                           <div class="why__info-item text">
-                            <span class="why__info-subtitle">Lorem, ipsum dolor?</span>
+                            <span class="why__info-subtitle">ЧТО ЭТО «ВСЁ»?</span>
                             <p>
-                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit repellat dolore eaque,
-                              expedita dolorem doloremque sunt odit soluta quos possimus. Aperiam ratione laboriosam hic dolor
-                              magni ipsum eum et veniam.
+                              Пространство для обретения себя и понимания собственного «Я». Сосредоточение людей готовых помочь
+                              в этом. Квинтэссенция знаний в области ментального здоровья. Путь к внутренней свободе
                             </p>
                           </div>
                           <div class="why__info-item text">
-                            <span class="why__info-subtitle">Lorem, ipsum dolor?</span>
-                            <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolores eius doloremque ut
-                              atque! Perferendis minus deleniti nesciunt est aliquid!
-                            </p>
+                            <span class="why__info-subtitle">РЕАЛЬНО «ЗАЧЕМ»?</span>
+                            <p>Жить свою собственную, а не придуманную кем‑то другим за нас жизнь…</p>
                           </div>
                         </div>
                       </div>
@@ -162,61 +154,7 @@
                       <div class="island-slider">
                         <div class="island-slider__items-wrapper">
                           <div class="island-slider__items">
-                            <div class="island-slider__item active" style="--i: 1">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/ship.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 2">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/rabbit.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 3">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/heart.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 4">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/giraffe.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 5">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/ship.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 6">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/rabbit.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 7">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/heart.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 8">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/giraffe.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 9">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/ship.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 10">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/rabbit.svg" />
-                              </div>
-                            </div>
-                            <div class="island-slider__item" style="--i: 11">
-                              <div class="island-slider__item-box">
-                                <img src="./../images/island/origami/heart.svg" />
-                              </div>
-                            </div>
+                            @@loop('elements/island-slider-item.html', './../files/data/island-slider-items.json')
                           </div>
                         </div>
                         <div class="island-info--wrapper">
@@ -244,7 +182,7 @@
                                     <button class="island-slider-prev"><</button>
                                     <button class="island-slider-next" id="next">></button>
                                   </div>
-                                  @@loop('elements/island-info-item.html', './../files/data/island-info-item.json')
+                                  @@loop('elements/island-info-item.html', './../files/data/island-slider-items.json')
                                 </div>
                               </div>
                             </div>
