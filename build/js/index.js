@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const islandSlider = document.querySelector('.island-slider');
   const islTheraphyLink = island.querySelector('.island__therapy .island__link');
   const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
+  const islCommunity = island.querySelector('.island-community');
+  const islCommunityLink = island.querySelector('.island__community .island__link');
 
   (0,_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.indexGsap)();
   (0,_modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__.indexSwipers)(_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.therapyFromAnim, _modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.communityFromAnim);
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  islTheraphyInfoLinks.forEach(el => {
+  islTheraphyInfoLinks.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault;
       island.classList.remove('_therapy-inner');
@@ -48,6 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
         island.classList.remove('_therapy-page');
       }, 4500);
     });
+  });
+
+  islCommunityLink.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    island.classList.add('_community-inner');
+  });
+
+  islCommunity.addEventListener('click', (e) => {
+    e.stopPropagation;
+    if (!e.target.closest('.island-community__info')) {
+      island.classList.remove('_community-inner');
+    }
   });
 });
 

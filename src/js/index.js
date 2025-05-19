@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const islandSlider = document.querySelector('.island-slider');
   const islTheraphyLink = island.querySelector('.island__therapy .island__link');
   const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
+  const islCommunity = island.querySelector('.island-community');
+  const islCommunityLink = island.querySelector('.island__community .island__link');
 
   indexGsap();
   indexSwipers(therapyFromAnim, communityFromAnim);
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  islTheraphyInfoLinks.forEach(el => {
+  islTheraphyInfoLinks.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault;
       island.classList.remove('_therapy-inner');
@@ -37,5 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
         island.classList.remove('_therapy-page');
       }, 4500);
     });
+  });
+
+  islCommunityLink.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    island.classList.add('_community-inner');
+  });
+
+  islCommunity.addEventListener('click', (e) => {
+    e.stopPropagation;
+    if (!e.target.closest('.island-community__info')) {
+      island.classList.remove('_community-inner');
+    }
   });
 });

@@ -1,16 +1,6 @@
 @use './../mixins' as *;
 @use 'sass:math';
 
-.island {
-  &._therapy-inner {
-    .island-slider {
-      opacity: 1;
-      pointer-events: all;
-      transition: opacity 2s ease 1s;
-    }
-  }
-}
-
 .island-slider {
   position: fixed;
   top: 0;
