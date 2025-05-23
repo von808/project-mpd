@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Депрессия</title>
   <link rel="icon" href="./images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/style.css?_v=3f17d88f18a7e4f7bb4402bb6e3ab1f8">
+  <link rel="stylesheet" href="./css/style.css?_v=26877adec4b478954005ec1391e5cd20">
 </head>
 
   <body>
     
     <div class="wrapper">
       <header class="header " id="header">
-  <div class="container">
+  <div class="container-vw">
     <div class="header__inner">
       <a href="./" class="logo">
         <img class="logo--white" src="./images/logos/logo-white.png" alt="logo" />
@@ -33,15 +33,136 @@
 
 
       <main class="main">
-        <section class="depression" style="padding-top: 48px;">
+        <section class="breadcrumbs">
+          <h2 class="visually-hidden"></h2>
           <div class="container">
-            <div class="depression__inner" style="font-size: 80px; line-height: 100%">Depression</div>
+            <div class="breadcrumbs__inner">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#!">Главная страница</a></li>
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#!">отс. Терапия</a></li>
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#!">Депрессия</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="problem-info">
+          <div class="container">
+            <div class="problem-info__inner">
+              <h1 class="problem-info__title">Депрессия</h1>
+              <div class="problem-info__descr">
+                <p>
+                  Если вы чувствуете себя подавленным или теряете интерес к тому, что раньше приносило радость, знайте, что это
+                  нормально и вы не одни. На этой странице вы найдете лучших специалистах, которые помогут вам справиться с этими
+                  трудностями и вернуть радость в жизнь.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="specialist">
+          <div class="container">
+            <div class="specialist__inner">
+              <div class="specialist__types" js-tab>
+                <div class="specialist__types-tab-btns">
+                  <button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-1" js-tab-active>Психолог</button><button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-2" >Психиатр</button><button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-3" >Психотерапевт</button><button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-4" >Супервизор</button>
+                </div>
+               <div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-1"  js-tab-active>
+  <div class="specialist__types-info">
+    <h2 class="specialist__types-title">Психолог</h2>
+    <div class="specialist__types-descr">
+      <p>
+        Это специалист, который помогает людям справляться с эмоциональными, личными и социальными трудностями. Он проводит
+        диагностику, консультирование и психотерапию, работая с такими проблемами, как стресс, тревожность, конфликты, низкая
+        самооценка и кризисы.
+      </p>
+      <p>
+        Психолог также занимается профилактикой, проводит тренинги и помогает в личностном росте. Важно, что он не назначает
+        лекарства (это делает психиатр), а использует беседы, тесты и терапевтические методы для улучшения качества жизни
+        клиентов.
+      </p>
+    </div>
+  </div>
+  <div class="specialist__types-btns">
+    <a class="btn" href="#!">Направления психологии</a>
+    <a class="btn btn--green" href="#!">Терапевтические группы</a>
+  </div>
+</div>
+<div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-2"  >
+  <div class="specialist__types-info">
+    <h2 class="specialist__types-title">Психиатр</h2>
+    <div class="specialist__types-descr">
+      <p>
+        Это специалист, который помогает людям справляться с эмоциональными, личными и социальными трудностями. Он проводит
+        диагностику, консультирование и психотерапию, работая с такими проблемами, как стресс, тревожность, конфликты, низкая
+        самооценка и кризисы.
+      </p>
+      <p>
+        Психолог также занимается профилактикой, проводит тренинги и помогает в личностном росте. Важно, что он не назначает
+        лекарства (это делает психиатр), а использует беседы, тесты и терапевтические методы для улучшения качества жизни
+        клиентов.
+      </p>
+    </div>
+  </div>
+  <div class="specialist__types-btns">
+    <a class="btn" href="#!">Направления психиатрии</a>
+    <a class="btn btn--green" href="#!">Терапевтические группы</a>
+  </div>
+</div>
+<div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-3"  >
+  <div class="specialist__types-info">
+    <h2 class="specialist__types-title">Психотерапевт</h2>
+    <div class="specialist__types-descr">
+      <p>
+        Это специалист, который помогает людям справляться с эмоциональными, личными и социальными трудностями. Он проводит
+        диагностику, консультирование и психотерапию, работая с такими проблемами, как стресс, тревожность, конфликты, низкая
+        самооценка и кризисы.
+      </p>
+      <p>
+        Психолог также занимается профилактикой, проводит тренинги и помогает в личностном росте. Важно, что он не назначает
+        лекарства (это делает психиатр), а использует беседы, тесты и терапевтические методы для улучшения качества жизни
+        клиентов.
+      </p>
+    </div>
+  </div>
+  <div class="specialist__types-btns">
+    <a class="btn" href="#!">Направления психотерапевта</a>
+    <a class="btn btn--green" href="#!">Терапевтические группы</a>
+  </div>
+</div>
+<div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-4"  >
+  <div class="specialist__types-info">
+    <h2 class="specialist__types-title">Супервизор</h2>
+    <div class="specialist__types-descr">
+      <p>
+        Это специалист, который помогает людям справляться с эмоциональными, личными и социальными трудностями. Он проводит
+        диагностику, консультирование и психотерапию, работая с такими проблемами, как стресс, тревожность, конфликты, низкая
+        самооценка и кризисы.
+      </p>
+      <p>
+        Психолог также занимается профилактикой, проводит тренинги и помогает в личностном росте. Важно, что он не назначает
+        лекарства (это делает психиатр), а использует беседы, тесты и терапевтические методы для улучшения качества жизни
+        клиентов.
+      </p>
+    </div>
+  </div>
+  <div class="specialist__types-btns">
+    <a class="btn" href="#!">Направления супервизора</a>
+    <a class="btn btn--green" href="#!">Терапевтические группы</a>
+  </div>
+</div>
+
+              </div>
+              <div class="specialist__content">
+                <h2 class="specialist__content-title"></h2>
+                
+              </div>
+            </div>
           </div>
         </section>
       </main>
     </div>
-    <script src="./js/libs.js?_v=3f17d88f18a7e4f7bb4402bb6e3ab1f8"></script>
-    <script src="./js/main.js?_v=3f17d88f18a7e4f7bb4402bb6e3ab1f8"></script>
-    <script src="./js/depression.js?_v=3f17d88f18a7e4f7bb4402bb6e3ab1f8"></script>
+    <script src="./js/libs.js?_v=26877adec4b478954005ec1391e5cd20"></script>
+    <script src="./js/main.js?_v=26877adec4b478954005ec1391e5cd20"></script>
+    <script src="./js/depression.js?_v=26877adec4b478954005ec1391e5cd20"></script>
   </body>
 </html>

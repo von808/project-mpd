@@ -1,6 +1,7 @@
 @use './../mixins' as *;
 
 .island {
+  height: 100vh;
   padding: 0;
   position: relative;
   overflow: hidden;

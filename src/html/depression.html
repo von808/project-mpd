@@ -7,9 +7,46 @@
     <div class="wrapper">
       @@include('./blocks/header.html', {"headerWhite": "false"})
       <main class="main">
-        <section class="depression" style="padding-top: 48px;">
+        <section class="breadcrumbs">
+          <h2 class="visually-hidden"></h2>
           <div class="container">
-            <div class="depression__inner" style="font-size: 80px; line-height: 100%">Depression</div>
+            <div class="breadcrumbs__inner">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#!">Главная страница</a></li>
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#!">отс. Терапия</a></li>
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#!">Депрессия</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="problem-info">
+          <div class="container">
+            <div class="problem-info__inner">
+              <h1 class="problem-info__title">Депрессия</h1>
+              <div class="problem-info__descr">
+                <p>
+                  Если вы чувствуете себя подавленным или теряете интерес к тому, что раньше приносило радость, знайте, что это
+                  нормально и вы не одни. На этой странице вы найдете лучших специалистах, которые помогут вам справиться с этими
+                  трудностями и вернуть радость в жизнь.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="specialist">
+          <div class="container">
+            <div class="specialist__inner">
+              <div class="specialist__types" js-tab>
+                <div class="specialist__types-tab-btns">
+                  @@loop('elements/specialist-tab-btn.html', './../files/data/specialist-tab.json')
+                </div>
+               @@loop('elements/specialist-tab-item.html', './../files/data/specialist-tab.json')
+              </div>
+              <div class="specialist__content">
+                <h2 class="specialist__content-title"></h2>
+                
+              </div>
+            </div>
           </div>
         </section>
       </main>

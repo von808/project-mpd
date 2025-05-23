@@ -1,0 +1,45 @@
+@use './../mixins' as *;
+
+.breadcrumbs {
+  padding-top: 32px;
+  @include sm {
+    display: none;
+  }
+  &__inner {
+  }
+  &__list {
+    display: flex;
+    gap: 8px;
+  }
+  &__item {
+    &:not(:last-child) .breadcrumbs__link::after {
+      content: '<';
+      display: inline-block;
+      font-size: 18px;
+    }
+  }
+  &__item {
+    &:last-child {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+
+    position: relative;
+
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--black);
+
+    transition: opacity 0.1s linear;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

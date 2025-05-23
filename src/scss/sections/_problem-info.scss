@@ -1,0 +1,39 @@
+@use './../mixins' as *;
+
+.problem-info {
+  padding-top: rem(48);
+  margin-bottom: fluid(80, 48);
+
+  @include lg {
+    padding-top: rem(90);
+  }
+  @include md {
+    padding-top: rem(130);
+  }
+  @include sm {
+    padding-top: rem(165);
+  }
+
+  &__inner {
+    max-width: rem(833);
+    display: flex;
+    flex-direction: column;
+    gap: fluid(32, 24);
+  }
+  &__title {
+    font-weight: 500;
+    font-size: fluid(48, 32);
+    line-height: 130%;
+    color: var(--black);
+  }
+  &__descr {
+    font-family: var(--second-family);
+    font-weight: 300;
+    font-size: fluid(22, 16);
+    line-height: 130%;
+    color: var(--black);
+    @include sm {
+      font-weight: 400;
+    }
+  }
+}

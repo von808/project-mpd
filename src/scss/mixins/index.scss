@@ -8,7 +8,7 @@
   }
 }
 
-@mixin fluid($max: 48, $min: 16) {
+@function fluid($max: 48, $min: 16) {
   $maxViewportWidth: 1600;
   $minViewportWidth: 375;
 
@@ -20,7 +20,7 @@
   $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
   $yAxisIntersection: -$minWidth * $slope + $minSize;
 
-  font-size: clamp(
+  @return clamp(
     #{$minSize * 1rem},
     #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
     #{$maxSize * 1rem}
