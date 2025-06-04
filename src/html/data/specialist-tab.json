@@ -3,28 +3,28 @@
     "btnActive": "true",
     "itemActive": "true",
     "title": "Психолог",
-    "path": "js-tab-item-1",
+    "path": "data-js-tab-types-item-1",
     "link1": "Направления психологии"
   },
   {
     "btnActive": "false",
     "itemActive": "false",
     "title": "Психиатр",
-    "path": "js-tab-item-2",
+    "path": "data-js-tab-types-item-2",
     "link1": "Направления психиатрии"
   },
   {
     "btnActive": "false",
     "itemActive": "false",
     "title": "Психотерапевт",
-    "path": "js-tab-item-3",
+    "path": "data-js-tab-types-item-3",
     "link1": "Направления психотерапевта"
   },
   {
     "btnActive": "false",
     "itemActive": "false",
     "title": "Супервизор",
-    "path": "js-tab-item-4",
+    "path": "data-js-tab-types-item-4",
     "link1": "Направления супервизора"
   }
 ]

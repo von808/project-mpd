@@ -13,18 +13,42 @@ function tabClick(item, btns, items) {
   item.addEventListener('click', function (e) {
     e.preventDefault();
     let currentBtn = item;
-    let tabId = currentBtn.getAttribute('js-tab-data');
-    let currentTabs = document.querySelectorAll(`[js-tab-data="${tabId}"]`);
+    let tabId = currentBtn.getAttribute('data-js-tab-path');
+    let currentTabs = document.querySelectorAll(`[data-js-tab-path="${tabId}"]`);
 
-    if (!currentBtn.hasAttribute('js-tab-active')) {
-      btns.forEach((item) => item.removeAttribute('js-tab-active'));
-      currentBtn.setAttribute('js-tab-active', '');
-      items.forEach((item) => item.removeAttribute('js-tab-active'));
-
-      currentTabs.forEach((item) => item.setAttribute('js-tab-active', ''));
+    if (!currentBtn.hasAttribute('data-js-tab-active')) {
+      btns.forEach((item) => item.removeAttribute('data-js-tab-active'));
+      currentBtn.setAttribute('data-js-tab-active', '');
+      items.forEach((item) => item.removeAttribute('data-js-tab-active'));
+      currentTabs.forEach((item) => item.setAttribute('data-js-tab-active', ''));
     }
   });
 }
+
+/***/ }),
+
+/***/ 56:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('[data-js-video-box]')) {
+    const videoBoxes = document.querySelectorAll('[data-js-video-box]');
+    videoBoxes.forEach((videoBox) => {
+      const video = videoBox.querySelector('[data-js-video]');
+      video.addEventListener('click', (e) => {
+        e.preventDefault();
+        // console.log(video.closest('[data-js-video-box]'));
+        // video.closest('[data-js-video-box]').classList.toggle('_play');
+        video.paused
+          ? video.closest('[data-js-video-box]').classList.add('_play')
+          : video.closest('[data-js-video-box]').classList.remove('_play');
+        video.paused ? video.play() : video.pause();
+      });
+    });
+  }
+});
+
 
 /***/ })
 
@@ -89,17 +113,18 @@ var __webpack_exports__ = {};
 !function() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tabs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(55);
+/* harmony import */ var _modules_video_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
 
 
-// import './modules/video.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector('[js-tab]')) {
-    const tabs = document.querySelectorAll('[js-tab]');
+  if (document.querySelector('[data-js-tab]')) {
+    const tabs = document.querySelectorAll('[data-js-tab]');
 
     tabs.forEach((tab) => {
-      const tabBtns = tab.querySelectorAll('[js-tab-btn]');
-      const tabItems = tab.querySelectorAll('[js-tab-item]');
+      const tabBtns = tab.querySelectorAll('[data-js-tab-btn]');
+      const tabItems = tab.querySelectorAll('[data-js-tab-item]');
       tabBtns.forEach((btn) => {
         (0,_modules_tabs_js__WEBPACK_IMPORTED_MODULE_0__.tabClick)(btn, tabBtns, tabItems);
       });

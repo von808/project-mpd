@@ -1,21 +1,49 @@
-<div class="specialist__types-items" js-tab-item js-tab-data="@@path"  @@if(itemActive === 'true'){js-tab-active}>
-  <div class="specialist__types-info">
-    <h2 class="specialist__types-title">@@title</h2>
-    <div class="specialist__types-descr">
-      <p>
-        Это специалист, который помогает людям справляться с эмоциональными, личными и социальными трудностями. Он проводит
-        диагностику, консультирование и психотерапию, работая с такими проблемами, как стресс, тревожность, конфликты, низкая
-        самооценка и кризисы.
-      </p>
-      <p>
-        Психолог также занимается профилактикой, проводит тренинги и помогает в личностном росте. Важно, что он не назначает
-        лекарства (это делает психиатр), а использует беседы, тесты и терапевтические методы для улучшения качества жизни
-        клиентов.
-      </p>
+<h3 class="specialist__name" data-js-tab-item data-js-tab-path="js-tab-item-@@tabId" @@if(tabActive === 'true'){data-js-tab-active}>@@name</h3>
+<div class="specialist__video-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-@@tabId" @@if(tabActive === 'true'){data-js-tab-active}>
+  <div class="specialist__video" data-js-video-box>
+    <video data-js-video src="./@@videoSrc" poster="./@@videoPoster"></video>
+    <div class="video__play" data-js-video-play>
+      <svg class="icon icon--tringle">
+        <use xlink:href="./images/sprite.svg#tringle"></use>
+      </svg>
     </div>
   </div>
-  <div class="specialist__types-btns">
-    <a class="btn" href="#!">@@link1</a>
-    <a class="btn btn--green" href="#!">Терапевтические группы</a>
+</div>
+<div class="specialist__info-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-@@tabId" @@if(tabActive === 'true'){data-js-tab-active}>
+  <div class="specialist__info">
+    <div class="specialist__info-exp">
+      <svg class="icon icon--seal-check">
+        <use xlink:href="./images/sprite.svg#seal-check"></use>
+      </svg>
+      <span>@@exp</span>
+    </div>
+    <div class="specialist__specs">
+      <div class="specialist__specs-item"><img src="./../images/island/origami/ship.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./../images/island/origami/rabbit.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./../images/island/origami/heart.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./../images/island/origami/giraffe.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./../images/island/origami/ship.svg" alt="" /></div>
+    </div>
+    <div class="specialist__appointment">
+      <div><span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span></div>
+      <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+    </div>
+    <div class="specialist__info-btns">
+      <a class="btn btn--green" href="#!">Записаться</a>
+      <a class="btn btn--border" href="#!"
+        >Подробнее
+        <svg class="icon icon--arrow-r">
+          <use xlink:href="./images/sprite.svg#arrow-r"></use>
+        </svg>
+      </a>
+    </div>
   </div>
+</div>
+<div class="specialist__descr" data-js-tab-item data-js-tab-path="js-tab-item-@@tabId" @@if(tabActive === 'true'){data-js-tab-active}>
+  <h4 class="specialist__descr-title">О специалисте</h4>
+  <p>
+    Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений и эмоционального
+    здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи с окружающими. Я верю, что каждый может
+    найти свой путь к счастью и внутреннему спокойствию.
+  </p>
 </div>

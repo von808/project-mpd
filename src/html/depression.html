@@ -36,13 +36,13 @@
         <section class="specialist">
           <div class="container">
             <div class="specialist__inner">
-              <div class="specialist__types" js-tab>
+              <div class="specialist__types" data-js-tab>
                 <div class="specialist__types-tab-btns">
-                  @@loop('elements/specialist-tab-btn.html', './../files/data/specialist-tab.json')
+                  @@loop('./elements/specialist-types-tab-btn.html', './data/specialist-tab.json')
                 </div>
-                @@loop('elements/specialist-tab-item.html', './../files/data/specialist-tab.json')
+                @@loop('./elements/specialist-types-tab-item.html', './data/specialist-tab.json')
               </div>
-              <div class="specialist__content">
+              <div class="specialist__content" data-js-tab>
                 <div class="specialist__content-box">
                   <h2 class="specialist__title">Выбор специалиста</h2>
                   <div class="specialist__menu">
@@ -60,77 +60,16 @@
                     </button>
                   </div>
                   <div class="specialist__tab-btns">
-                    <button class="specialist__tab-btn" data-js-tab-active>
-                      <img src="./../images/specialists/specialist-1.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./../images/specialists/specialist-2.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./../images/specialists/specialist-1.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./../images/specialists/specialist-2.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./../images/specialists/specialist-1.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./../images/specialists/specialist-2.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
+                    @@loop('./elements/specialist-tab-btn.html', './data/specialist-tab-item.json')
                   </div>
-                  <h3 class="specialist__name">Иванова Мария Ивановна</h3>
-                  <div class="specialist__video-wrapper">
-                    <div class="specialist__video">
-                      <video src="" poster="./../images/specialists/specialist-1.jpg"></video>
-                    </div>
-                  </div>
-                  <div class="specialist__info-wrapper">
-                    <div class="specialist__info">
-                      <div class="specialist__info-exp">
-                        <svg class="icon icon--seal-check">
-                          <use xlink:href="./images/sprite.svg#seal-check"></use>
-                        </svg>
-                        <span>Опыт 10 лет</span>
-                      </div>
-                      <div class="specialist__specs">
-                        <div class="specialist__specs-item"><img src="./../images/island/origami/ship.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./../images/island/origami/rabbit.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./../images/island/origami/heart.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./../images/island/origami/giraffe.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./../images/island/origami/ship.svg" alt="" /></div>
-                      </div>
-                      <div class="specialist__appointment">
-                        <div>
-                          <span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span>
-                        </div>
-                        <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
-                      </div>
-                      <div class="specialist__info-btns">
-                        <a class="btn btn--green" href="#!">Записаться</a>
-                        <a class="btn btn--border" href="#!"
-                          >Подробнее
-                          <svg class="icon icon--arrow-r">
-                            <use xlink:href="./images/sprite.svg#arrow-r"></use>
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="specialist__descr">
-                    <h4 class="specialist__descr-title">О специалисте</h4>
-                    <p>
-                      Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений
-                      и эмоционального здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи
-                      с окружающими. Я верю, что каждый может найти свой путь к счастью и внутреннему спокойствию.
-                    </p>
-                  </div>
+                  @@loop('./elements/specialist-tab-item.html', './data/specialist-tab-item.json')
                 </div>
               </div>
             </div>
           </div>
         </section>
       </main>
+      @@include('./blocks/footer.html')
     </div>
     <script src="./../js/libs.js"></script>
     <script src="./../js/main.js"></script>

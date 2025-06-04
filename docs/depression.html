@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Депрессия</title>
   <link rel="icon" href="./images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/style.css?_v=46c0147daa64bc6211cc6c57aa1a931a">
+  <link rel="stylesheet" href="./css/style.css?_v=d0311c8e0d5dafc2444020f933cf0c19">
 </head>
 
   <body>
@@ -62,11 +62,11 @@
         <section class="specialist">
           <div class="container">
             <div class="specialist__inner">
-              <div class="specialist__types" js-tab>
+              <div class="specialist__types" data-js-tab>
                 <div class="specialist__types-tab-btns">
-                  <button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-1" js-tab-active>Психолог</button><button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-2" >Психиатр</button><button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-3" >Психотерапевт</button><button class="specialist__types-btn" js-tab-btn js-tab-data="js-tab-item-4" >Супервизор</button>
+                  <button class="specialist__types-btn" data-js-tab-btn data-js-tab-path="data-js-tab-types-item-1" data-js-tab-active>Психолог</button><button class="specialist__types-btn" data-js-tab-btn data-js-tab-path="data-js-tab-types-item-2" >Психиатр</button><button class="specialist__types-btn" data-js-tab-btn data-js-tab-path="data-js-tab-types-item-3" >Психотерапевт</button><button class="specialist__types-btn" data-js-tab-btn data-js-tab-path="data-js-tab-types-item-4" >Супервизор</button>
                 </div>
-                <div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-1"  js-tab-active>
+                <div class="specialist__types-items" data-js-tab-item data-js-tab-path="data-js-tab-types-item-1"  data-js-tab-active>
   <div class="specialist__types-info">
     <h2 class="specialist__types-title">Психолог</h2>
     <div class="specialist__types-descr">
@@ -87,7 +87,7 @@
     <a class="btn btn--green" href="#!">Терапевтические группы</a>
   </div>
 </div>
-<div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-2"  >
+<div class="specialist__types-items" data-js-tab-item data-js-tab-path="data-js-tab-types-item-2"  >
   <div class="specialist__types-info">
     <h2 class="specialist__types-title">Психиатр</h2>
     <div class="specialist__types-descr">
@@ -108,7 +108,7 @@
     <a class="btn btn--green" href="#!">Терапевтические группы</a>
   </div>
 </div>
-<div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-3"  >
+<div class="specialist__types-items" data-js-tab-item data-js-tab-path="data-js-tab-types-item-3"  >
   <div class="specialist__types-info">
     <h2 class="specialist__types-title">Психотерапевт</h2>
     <div class="specialist__types-descr">
@@ -129,7 +129,7 @@
     <a class="btn btn--green" href="#!">Терапевтические группы</a>
   </div>
 </div>
-<div class="specialist__types-items" js-tab-item js-tab-data="js-tab-item-4"  >
+<div class="specialist__types-items" data-js-tab-item data-js-tab-path="data-js-tab-types-item-4"  >
   <div class="specialist__types-info">
     <h2 class="specialist__types-title">Супервизор</h2>
     <div class="specialist__types-descr">
@@ -152,7 +152,7 @@
 </div>
 
               </div>
-              <div class="specialist__content">
+              <div class="specialist__content" data-js-tab>
                 <div class="specialist__content-box">
                   <h2 class="specialist__title">Выбор специалиста</h2>
                   <div class="specialist__menu">
@@ -170,80 +170,337 @@
                     </button>
                   </div>
                   <div class="specialist__tab-btns">
-                    <button class="specialist__tab-btn" data-js-tab-active>
-                      <img src="./images/specialists/specialist-1.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./images/specialists/specialist-2.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./images/specialists/specialist-1.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./images/specialists/specialist-2.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./images/specialists/specialist-1.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
-                    <button class="specialist__tab-btn">
-                      <img src="./images/specialists/specialist-2.jpg" alt="Специалист Иванова Мария Ивановна" />
-                    </button>
+                    <button class="specialist__tab-btn" data-js-tab-btn data-js-tab-path="js-tab-item-1" data-js-tab-active>
+  <img src="./images/specialists/specialist-1.jpg" alt="Иванова Мария Ивановна 1" />
+</button>
+<button class="specialist__tab-btn" data-js-tab-btn data-js-tab-path="js-tab-item-2" >
+  <img src="./images/specialists/specialist-2.jpg" alt="Иванова Мария Ивановна 2" />
+</button>
+<button class="specialist__tab-btn" data-js-tab-btn data-js-tab-path="js-tab-item-3" >
+  <img src="./images/specialists/specialist-1.jpg" alt="Иванова Мария Ивановна 3" />
+</button>
+<button class="specialist__tab-btn" data-js-tab-btn data-js-tab-path="js-tab-item-4" >
+  <img src="./images/specialists/specialist-2.jpg" alt="Иванова Мария Ивановна 4" />
+</button>
+<button class="specialist__tab-btn" data-js-tab-btn data-js-tab-path="js-tab-item-5" >
+  <img src="./images/specialists/specialist-1.jpg" alt="Иванова Мария Ивановна 5" />
+</button>
+<button class="specialist__tab-btn" data-js-tab-btn data-js-tab-path="js-tab-item-6" >
+  <img src="./images/specialists/specialist-2.jpg" alt="Иванова Мария Ивановна 6" />
+</button>
+
                   </div>
-                  <h3 class="specialist__name">Иванова Мария Ивановна</h3>
-                  <div class="specialist__video-wrapper">
-                    <div class="specialist__video">
-                      <video src="" poster="./../images/specialists/specialist-1.jpg"></video>
-                    </div>
-                  </div>
-                  <div class="specialist__info-wrapper">
-                    <div class="specialist__info">
-                      <div class="specialist__info-exp">
-                        <svg class="icon icon--seal-check">
-                          <use xlink:href="./images/sprite.svg#seal-check"></use>
-                        </svg>
-                        <span>Опыт 10 лет</span>
-                      </div>
-                      <div class="specialist__specs">
-                        <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./images/island/origami/rabbit.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./images/island/origami/heart.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./images/island/origami/giraffe.svg" alt="" /></div>
-                        <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
-                      </div>
-                      <div class="specialist__appointment">
-                        <div>
-                          <span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span>
-                        </div>
-                        <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
-                      </div>
-                      <div class="specialist__info-btns">
-                        <a class="btn btn--green" href="#!">Записаться</a>
-                        <a class="btn btn--border" href="#!"
-                          >Подробнее
-                          <svg class="icon icon--arrow-r">
-                            <use xlink:href="./images/sprite.svg#arrow-r"></use>
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="specialist__descr">
-                    <h4 class="specialist__descr-title">О специалисте</h4>
-                    <p>
-                      Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений
-                      и эмоционального здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи
-                      с окружающими. Я верю, что каждый может найти свой путь к счастью и внутреннему спокойствию.
-                    </p>
-                  </div>
+                  <h3 class="specialist__name" data-js-tab-item data-js-tab-path="js-tab-item-1" data-js-tab-active>Иванова Мария Ивановна 1</h3>
+<div class="specialist__video-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-1" data-js-tab-active>
+  <div class="specialist__video" data-js-video-box>
+    <video data-js-video src="./images/media/specialist/plug-video.mp4" poster="./images/specialists/specialist-1.jpg"></video>
+    <div class="video__play" data-js-video-play>
+      <svg class="icon icon--tringle">
+        <use xlink:href="./images/sprite.svg#tringle"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="specialist__info-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-1" data-js-tab-active>
+  <div class="specialist__info">
+    <div class="specialist__info-exp">
+      <svg class="icon icon--seal-check">
+        <use xlink:href="./images/sprite.svg#seal-check"></use>
+      </svg>
+      <span>Опыт 10 лет</span>
+    </div>
+    <div class="specialist__specs">
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/rabbit.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/heart.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/giraffe.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+    </div>
+    <div class="specialist__appointment">
+      <div><span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span></div>
+      <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+    </div>
+    <div class="specialist__info-btns">
+      <a class="btn btn--green" href="#!">Записаться</a>
+      <a class="btn btn--border" href="#!"
+        >Подробнее
+        <svg class="icon icon--arrow-r">
+          <use xlink:href="./images/sprite.svg#arrow-r"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="specialist__descr" data-js-tab-item data-js-tab-path="js-tab-item-1" data-js-tab-active>
+  <h4 class="specialist__descr-title">О специалисте</h4>
+  <p>
+    Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений и эмоционального
+    здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи с окружающими. Я верю, что каждый может
+    найти свой путь к счастью и внутреннему спокойствию.
+  </p>
+</div>
+<h3 class="specialist__name" data-js-tab-item data-js-tab-path="js-tab-item-2" >Иванова Мария Ивановна 2</h3>
+<div class="specialist__video-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-2" >
+  <div class="specialist__video" data-js-video-box>
+    <video data-js-video src="./images/media/specialist/plug-video.mp4" poster="./images/specialists/specialist-2.jpg"></video>
+    <div class="video__play" data-js-video-play>
+      <svg class="icon icon--tringle">
+        <use xlink:href="./images/sprite.svg#tringle"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="specialist__info-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-2" >
+  <div class="specialist__info">
+    <div class="specialist__info-exp">
+      <svg class="icon icon--seal-check">
+        <use xlink:href="./images/sprite.svg#seal-check"></use>
+      </svg>
+      <span>Опыт 10 лет</span>
+    </div>
+    <div class="specialist__specs">
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/rabbit.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/heart.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/giraffe.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+    </div>
+    <div class="specialist__appointment">
+      <div><span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span></div>
+      <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+    </div>
+    <div class="specialist__info-btns">
+      <a class="btn btn--green" href="#!">Записаться</a>
+      <a class="btn btn--border" href="#!"
+        >Подробнее
+        <svg class="icon icon--arrow-r">
+          <use xlink:href="./images/sprite.svg#arrow-r"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="specialist__descr" data-js-tab-item data-js-tab-path="js-tab-item-2" >
+  <h4 class="specialist__descr-title">О специалисте</h4>
+  <p>
+    Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений и эмоционального
+    здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи с окружающими. Я верю, что каждый может
+    найти свой путь к счастью и внутреннему спокойствию.
+  </p>
+</div>
+<h3 class="specialist__name" data-js-tab-item data-js-tab-path="js-tab-item-3" >Иванова Мария Ивановна 3</h3>
+<div class="specialist__video-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-3" >
+  <div class="specialist__video" data-js-video-box>
+    <video data-js-video src="./images/media/specialist/plug-video.mp4" poster="./images/specialists/specialist-1.jpg"></video>
+    <div class="video__play" data-js-video-play>
+      <svg class="icon icon--tringle">
+        <use xlink:href="./images/sprite.svg#tringle"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="specialist__info-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-3" >
+  <div class="specialist__info">
+    <div class="specialist__info-exp">
+      <svg class="icon icon--seal-check">
+        <use xlink:href="./images/sprite.svg#seal-check"></use>
+      </svg>
+      <span>Опыт 10 лет</span>
+    </div>
+    <div class="specialist__specs">
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/rabbit.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/heart.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/giraffe.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+    </div>
+    <div class="specialist__appointment">
+      <div><span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span></div>
+      <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+    </div>
+    <div class="specialist__info-btns">
+      <a class="btn btn--green" href="#!">Записаться</a>
+      <a class="btn btn--border" href="#!"
+        >Подробнее
+        <svg class="icon icon--arrow-r">
+          <use xlink:href="./images/sprite.svg#arrow-r"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="specialist__descr" data-js-tab-item data-js-tab-path="js-tab-item-3" >
+  <h4 class="specialist__descr-title">О специалисте</h4>
+  <p>
+    Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений и эмоционального
+    здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи с окружающими. Я верю, что каждый может
+    найти свой путь к счастью и внутреннему спокойствию.
+  </p>
+</div>
+<h3 class="specialist__name" data-js-tab-item data-js-tab-path="js-tab-item-4" >Иванова Мария Ивановна 4</h3>
+<div class="specialist__video-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-4" >
+  <div class="specialist__video" data-js-video-box>
+    <video data-js-video src="./images/media/specialist/plug-video.mp4" poster="./images/specialists/specialist-2.jpg"></video>
+    <div class="video__play" data-js-video-play>
+      <svg class="icon icon--tringle">
+        <use xlink:href="./images/sprite.svg#tringle"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="specialist__info-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-4" >
+  <div class="specialist__info">
+    <div class="specialist__info-exp">
+      <svg class="icon icon--seal-check">
+        <use xlink:href="./images/sprite.svg#seal-check"></use>
+      </svg>
+      <span>Опыт 10 лет</span>
+    </div>
+    <div class="specialist__specs">
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/rabbit.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/heart.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/giraffe.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+    </div>
+    <div class="specialist__appointment">
+      <div><span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span></div>
+      <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+    </div>
+    <div class="specialist__info-btns">
+      <a class="btn btn--green" href="#!">Записаться</a>
+      <a class="btn btn--border" href="#!"
+        >Подробнее
+        <svg class="icon icon--arrow-r">
+          <use xlink:href="./images/sprite.svg#arrow-r"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="specialist__descr" data-js-tab-item data-js-tab-path="js-tab-item-4" >
+  <h4 class="specialist__descr-title">О специалисте</h4>
+  <p>
+    Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений и эмоционального
+    здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи с окружающими. Я верю, что каждый может
+    найти свой путь к счастью и внутреннему спокойствию.
+  </p>
+</div>
+<h3 class="specialist__name" data-js-tab-item data-js-tab-path="js-tab-item-5" >Иванова Мария Ивановна 5</h3>
+<div class="specialist__video-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-5" >
+  <div class="specialist__video" data-js-video-box>
+    <video data-js-video src="./images/media/specialist/plug-video.mp4" poster="./images/specialists/specialist-1.jpg"></video>
+    <div class="video__play" data-js-video-play>
+      <svg class="icon icon--tringle">
+        <use xlink:href="./images/sprite.svg#tringle"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="specialist__info-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-5" >
+  <div class="specialist__info">
+    <div class="specialist__info-exp">
+      <svg class="icon icon--seal-check">
+        <use xlink:href="./images/sprite.svg#seal-check"></use>
+      </svg>
+      <span>Опыт 10 лет</span>
+    </div>
+    <div class="specialist__specs">
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/rabbit.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/heart.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/giraffe.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+    </div>
+    <div class="specialist__appointment">
+      <div><span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span></div>
+      <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+    </div>
+    <div class="specialist__info-btns">
+      <a class="btn btn--green" href="#!">Записаться</a>
+      <a class="btn btn--border" href="#!"
+        >Подробнее
+        <svg class="icon icon--arrow-r">
+          <use xlink:href="./images/sprite.svg#arrow-r"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="specialist__descr" data-js-tab-item data-js-tab-path="js-tab-item-5" >
+  <h4 class="specialist__descr-title">О специалисте</h4>
+  <p>
+    Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений и эмоционального
+    здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи с окружающими. Я верю, что каждый может
+    найти свой путь к счастью и внутреннему спокойствию.
+  </p>
+</div>
+<h3 class="specialist__name" data-js-tab-item data-js-tab-path="js-tab-item-6" >Иванова Мария Ивановна 6</h3>
+<div class="specialist__video-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-6" >
+  <div class="specialist__video" data-js-video-box>
+    <video data-js-video src="./images/media/specialist/plug-video.mp4" poster="./images/specialists/specialist-2.jpg"></video>
+    <div class="video__play" data-js-video-play>
+      <svg class="icon icon--tringle">
+        <use xlink:href="./images/sprite.svg#tringle"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="specialist__info-wrapper" data-js-tab-item data-js-tab-path="js-tab-item-6" >
+  <div class="specialist__info">
+    <div class="specialist__info-exp">
+      <svg class="icon icon--seal-check">
+        <use xlink:href="./images/sprite.svg#seal-check"></use>
+      </svg>
+      <span>Опыт 10 лет</span>
+    </div>
+    <div class="specialist__specs">
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/rabbit.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/heart.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/giraffe.svg" alt="" /></div>
+      <div class="specialist__specs-item"><img src="./images/island/origami/ship.svg" alt="" /></div>
+    </div>
+    <div class="specialist__appointment">
+      <div><span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span></div>
+      <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+    </div>
+    <div class="specialist__info-btns">
+      <a class="btn btn--green" href="#!">Записаться</a>
+      <a class="btn btn--border" href="#!"
+        >Подробнее
+        <svg class="icon icon--arrow-r">
+          <use xlink:href="./images/sprite.svg#arrow-r"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="specialist__descr" data-js-tab-item data-js-tab-path="js-tab-item-6" >
+  <h4 class="specialist__descr-title">О специалисте</h4>
+  <p>
+    Привет! Я психолог с опытом работы более 10 лет, специализируюсь на вопросах межличностных отношений и эмоционального
+    здоровья. Моя цель — помочь людям понять свои чувства и наладить гармоничные связи с окружающими. Я верю, что каждый может
+    найти свой путь к счастью и внутреннему спокойствию.
+  </p>
+</div>
+
                 </div>
               </div>
             </div>
           </div>
         </section>
       </main>
+      <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <h2>Footer</h2>
     </div>
-    <script src="./js/libs.js?_v=46c0147daa64bc6211cc6c57aa1a931a"></script>
-    <script src="./js/main.js?_v=46c0147daa64bc6211cc6c57aa1a931a"></script>
-    <script src="./js/depression.js?_v=46c0147daa64bc6211cc6c57aa1a931a"></script>
+  </div>
+</footer>
+    </div>
+    <script src="./js/libs.js?_v=d0311c8e0d5dafc2444020f933cf0c19"></script>
+    <script src="./js/main.js?_v=d0311c8e0d5dafc2444020f933cf0c19"></script>
+    <script src="./js/depression.js?_v=d0311c8e0d5dafc2444020f933cf0c19"></script>
   </body>
 </html>

@@ -13,8 +13,8 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -29,15 +29,7 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Roboto;
-  font-display: swap;
-  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
@@ -53,8 +45,8 @@
 @font-face {
   font-family: Roboto;
   font-display: swap;
-  src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -67,10 +59,18 @@
 }
 
 @font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -368,6 +368,13 @@ a {
   stroke: var(--black);
 }
 
+.icon--tringle {
+  width: 19px;
+  height: 22px;
+  margin-left: 6px;
+  fill: var(--black);
+}
+
 .title {
   font-weight: 500;
   font-size: calc(var(--index) * 2.5);
@@ -523,58 +530,37 @@ a {
   height: 100vh !important;
 }
 
-.tab-btn {
-  color: blue;
-  cursor: pointer;
-}
-
-.tab-btn.tab-active {
-  color: red;
-}
-
-.tab-item {
-  display: none;
-}
-
-.tab-item.tab-active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.video__inner {
-  padding: 40px 0 65px;
-}
-
-.video__item {
-  width: 100%;
-  height: 645px;
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: #000;
+[data-js-video-box] {
   position: relative;
 }
 
-.video__item.video-run .video__media {
+[data-js-video-box]._play [data-js-video] {
   opacity: 1;
 }
 
-.video__item.video-run .video__play {
+[data-js-video-box]._play [data-js-video-play] {
   opacity: 0;
 }
 
-.video__media {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  opacity: 0.5;
+[data-js-video] {
+  opacity: 1;
   cursor: pointer;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
-.video__play {
+[data-js-video-play] {
+  width: 48px;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -582,14 +568,10 @@ a {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   pointer-events: none;
+  background-color: var(--white);
+  border-radius: 50%;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
-}
-
-.video__play .icon {
-  width: 48px;
-  height: 48px;
-  fill: #fff;
 }
 
 /* Blocks */
@@ -637,6 +619,15 @@ a {
 
 .breadcrumbs__link:hover {
   opacity: 0.6;
+}
+
+.footer {
+  padding: 50px 0;
+  background-color: #505050;
+  color: #fff;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
 }
 
 .header {
@@ -1742,6 +1733,7 @@ a {
 }
 
 .specialist {
+  margin-bottom: clamp(2.5rem, 2.3086734694rem + 0.8163265306vw, 3.125rem);
   overflow: visible;
 }
 
@@ -1806,7 +1798,7 @@ a {
   color: var(--black);
 }
 
-.specialist__types-btn[js-tab-active] {
+.specialist__types-btn[data-js-tab-active] {
   border-color: var(--black);
   background: var(--green);
 }
@@ -1823,7 +1815,7 @@ a {
   display: none;
 }
 
-.specialist__types-items[js-tab-active] {
+.specialist__types-items[data-js-tab-active] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1880,12 +1872,11 @@ a {
 
 .specialist__content {
   width: 100%;
-  margin-bottom: clamp(2.5rem, 2.3086734694rem + 0.8163265306vw, 3.125rem);
   position: relative;
 }
 
 .specialist__content-box {
-  padding: clamp(1.5rem, 1.5rem + 0vw, 1.5rem) clamp(1.5rem, 1.3469387755rem + 0.6530612245vw, 2rem) clamp(1.5rem, 1.193877551rem + 1.306122449vw, 2.5rem) clamp(1.5rem, 1.3469387755rem + 0.6530612245vw, 2rem);
+  padding: 24px 32px 40px 32px;
   margin-left: 330px;
   display: grid;
   grid-template-columns: minmax(100px, 317px) minmax(100px, 446px);
@@ -1938,11 +1929,13 @@ a {
   font-weight: 400;
   font-size: 16px;
   color: var(--black);
+  white-space: nowrap;
 }
 
 .specialist__tab-btns {
   grid-area: tab-btns;
   width: 100%;
+  width: calc(100% + 32px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1993,6 +1986,11 @@ a {
   font-size: 20px;
   line-height: 130%;
   color: var(--black);
+  display: none;
+}
+
+.specialist__name[data-js-tab-active] {
+  display: block;
 }
 
 .specialist__video-wrapper {
@@ -2003,6 +2001,11 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
+}
+
+.specialist__video-wrapper[data-js-tab-active] {
+  display: block;
 }
 
 .specialist__video {
@@ -2029,6 +2032,11 @@ a {
   width: 100%;
   height: 100%;
   position: relative;
+  display: none;
+}
+
+.specialist__info-wrapper[data-js-tab-active] {
+  display: block;
 }
 
 .specialist__info {
@@ -2062,7 +2070,7 @@ a {
   -ms-flex-align: center;
   align-items: center;
   gap: 8px;
-  background: rgba(83, 163, 72, 0.2);
+  background-color: rgba(83, 163, 72, 0.2);
   border-radius: 8px;
   font-family: var(--second-family);
   font-weight: 400;
@@ -2170,6 +2178,7 @@ a {
 .specialist__descr {
   grid-area: descr;
   padding: 16px 24px;
+  display: none;
   border: 1px solid rgba(83, 163, 72, 0.2);
   border-radius: 30px;
   font-family: var(--second-family);
@@ -2177,6 +2186,10 @@ a {
   font-size: 16px;
   line-height: 130%;
   color: var(--black);
+}
+
+.specialist__descr[data-js-tab-active] {
+  display: block;
 }
 
 .specialist__descr-title {
@@ -2276,10 +2289,6 @@ a {
 /* Не пишите CSS код ниже. Только в подключаемых файлах */
 
 @media (max-width: 991px) {
-  .video__item {
-    height: 500px;
-  }
-
   .island-info__content {
     width: 50%;
   }
@@ -2301,7 +2310,12 @@ a {
   }
 
   .specialist__content-box {
+    padding: 24px;
     grid-template-areas: "title title" "menu menu" "tab-btns tab-btns" "name name" "info info" "descr descr";
+  }
+
+  .specialist__tab-btns {
+    width: calc(100% + 24px);
   }
 
   .specialist__video video {
@@ -2314,8 +2328,8 @@ a {
 }
 
 @media (max-width: 768px) {
-  .video__item {
-    height: 400px;
+  .footer {
+    padding: 20px 0;
   }
 
   .hero__inner {
@@ -2357,7 +2371,7 @@ a {
     background: transparent;
   }
 
-  .specialist__types-btn[js-tab-active] {
+  .specialist__types-btn[data-js-tab-active] {
     border-color: transparent;
     background: transparent;
     -webkit-box-ordinal-group: 0;
@@ -2414,10 +2428,6 @@ a {
 }
 
 @media (max-width: 576px) {
-  .video__item {
-    height: 220px;
-  }
-
   .breadcrumbs {
     display: none;
   }
@@ -2438,6 +2448,39 @@ a {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+
+  .specialist__menu-btn {
+    padding: 10px 20px;
+  }
+
+  .specialist__descr {
+    margin: 0;
+  }
+
+  .specialist .specialist__title,
+  .specialist .specialist__tab-btns,
+  .specialist .specialist__menu,
+  .specialist .specialist__info {
+    margin-bottom: 24px;
+  }
+
+  .specialist .specialist__name,
+  .specialist .specialist__video-wrapper {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .specialist__info-btns .btn {
+    width: 100%;
+    padding: 10px 16px;
+  }
+
+  .specialist__info-btns .btn:nth-child(2) {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 }
 

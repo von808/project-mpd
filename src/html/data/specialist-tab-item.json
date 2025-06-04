@@ -1,0 +1,50 @@
+[
+  {
+    "tabId":"1",
+    "tabActive": "true",
+    "name": "Иванова Мария Ивановна 1",
+    "videoSrc": "images/media/specialist/plug-video.mp4",
+    "videoPoster": "images/specialists/specialist-1.jpg",
+    "exp": "Опыт 10 лет"
+  },
+  {
+    "tabId": "2",
+    "tabActive": "false",
+    "name": "Иванова Мария Ивановна 2",
+    "videoSrc": "images/media/specialist/plug-video.mp4",
+    "videoPoster": "images/specialists/specialist-2.jpg",
+    "exp": "Опыт 10 лет"
+  },
+  {
+    "tabId": "3",
+    "tabActive": "false",
+    "name": "Иванова Мария Ивановна 3",
+    "videoSrc": "images/media/specialist/plug-video.mp4",
+    "videoPoster": "images/specialists/specialist-1.jpg",
+    "exp": "Опыт 10 лет"
+  },
+  {
+    "tabId": "4",
+    "tabActive": "false",
+    "name": "Иванова Мария Ивановна 4",
+    "videoSrc": "images/media/specialist/plug-video.mp4",
+    "videoPoster": "images/specialists/specialist-2.jpg",
+    "exp": "Опыт 10 лет"
+  },
+  {
+    "tabId": "5",
+    "tabActive": "false",
+    "name": "Иванова Мария Ивановна 5",
+    "videoSrc": "images/media/specialist/plug-video.mp4",
+    "videoPoster": "images/specialists/specialist-1.jpg",
+    "exp": "Опыт 10 лет"
+  },
+  {
+    "tabId": "6",
+    "tabActive": "false",
+    "name": "Иванова Мария Ивановна 6",
+    "videoSrc": "images/media/specialist/plug-video.mp4",
+    "videoPoster": "images/specialists/specialist-2.jpg",
+    "exp": "Опыт 10 лет"
+  }
+]
