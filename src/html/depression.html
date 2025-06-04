@@ -46,11 +46,21 @@
                 <div class="specialist__content-box">
                   <h2 class="specialist__title">Выбор специалиста</h2>
                   <div class="specialist__menu">
-                    <button class="specialist__menu-btn">Фильтр</button>
-                    <button class="specialist__menu-btn">Помощь в подборе</button>
+                    <button class="specialist__menu-btn">
+                      <svg class="icon icon--filter">
+                        <use xlink:href="./images/sprite.svg#filter"></use>
+                      </svg>
+                      <span>Фильтр</span>
+                    </button>
+                    <button class="specialist__menu-btn">
+                      <svg class="icon icon--bubble-qa">
+                        <use xlink:href="./images/sprite.svg#bubble-qa"></use>
+                      </svg>
+                      <span>Помощь в подборе</span>
+                    </button>
                   </div>
                   <div class="specialist__tab-btns">
-                    <button class="specialist__tab-btn">
+                    <button class="specialist__tab-btn" data-js-tab-active>
                       <img src="./../images/specialists/specialist-1.jpg" alt="Специалист Иванова Мария Ивановна" />
                     </button>
                     <button class="specialist__tab-btn">
@@ -70,11 +80,42 @@
                     </button>
                   </div>
                   <h3 class="specialist__name">Иванова Мария Ивановна</h3>
-                  <div class="specialist__video">
-                    <video src="" poster="./../images/specialists/specialist-1.jpg"></video>
+                  <div class="specialist__video-wrapper">
+                    <div class="specialist__video">
+                      <video src="" poster="./../images/specialists/specialist-1.jpg"></video>
+                    </div>
                   </div>
-                  <div class="specialist__info">
-                    <div class="specialist__info-exp">Опыт 10 лет</div>
+                  <div class="specialist__info-wrapper">
+                    <div class="specialist__info">
+                      <div class="specialist__info-exp">
+                        <svg class="icon icon--seal-check">
+                          <use xlink:href="./images/sprite.svg#seal-check"></use>
+                        </svg>
+                        <span>Опыт 10 лет</span>
+                      </div>
+                      <div class="specialist__specs">
+                        <div class="specialist__specs-item"><img src="./../images/island/origami/ship.svg" alt="" /></div>
+                        <div class="specialist__specs-item"><img src="./../images/island/origami/rabbit.svg" alt="" /></div>
+                        <div class="specialist__specs-item"><img src="./../images/island/origami/heart.svg" alt="" /></div>
+                        <div class="specialist__specs-item"><img src="./../images/island/origami/giraffe.svg" alt="" /></div>
+                        <div class="specialist__specs-item"><img src="./../images/island/origami/ship.svg" alt="" /></div>
+                      </div>
+                      <div class="specialist__appointment">
+                        <div>
+                          <span>Индивидуальная сессия</span><span>•</span><span>50 мин.</span><span>•</span><span>3 500₽</span>
+                        </div>
+                        <div><span>Ближайшая запись</span><span class="color--green-2">завтра с 18:00</span></div>
+                      </div>
+                      <div class="specialist__info-btns">
+                        <a class="btn btn--green" href="#!">Записаться</a>
+                        <a class="btn btn--border" href="#!"
+                          >Подробнее
+                          <svg class="icon icon--arrow-r">
+                            <use xlink:href="./images/sprite.svg#arrow-r"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                   <div class="specialist__descr">
                     <h4 class="specialist__descr-title">О специалисте</h4>

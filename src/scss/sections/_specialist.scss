@@ -1,10 +1,12 @@
 @use './../mixins' as *;
 
 .specialist {
+  overflow: visible;
   &__types {
     width: 100%;
     height: auto;
     padding: fluid(40, 24);
+    margin-bottom: fluid(50, 40);
 
     position: relative;
 
@@ -143,22 +145,52 @@
   }
   &__content {
     width: 100%;
+    margin-bottom: fluid(50, 40);
 
     position: relative;
   }
   &__content-box {
-    padding: 24px 32px 40px 32px;
+    padding: fluid(24, 24) fluid(32, 24) fluid(40, 24) fluid(32, 24);
     margin-left: calc(314px + 16px);
 
     display: grid;
-    grid-template-columns: minmax(auto, 317px) minmax(auto, 446px);
-    gap: 0 40px;
-
+    grid-template-columns: minmax(100px, 317px) minmax(100px, 446px);
+    gap: 0 fluid(24, 24);
+    grid-template-areas:
+      'title title'
+      'menu menu'
+      'tab-btns tab-btns'
+      'name descr'
+      'info descr';
     background: var(--white);
     border-radius: 30px;
+    @include lg {
+      grid-template-areas:
+        'title title'
+        'menu menu'
+        'tab-btns tab-btns'
+        'name name'
+        'info info'
+        'descr descr';
+    }
+    @include md {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'title title'
+        'menu menu'
+        'tab-btns tab-btns'
+        'name name'
+        'video info'
+        'descr descr';
+      margin-left: 0;
+    }
+    @include sm {
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__title {
-    grid-column: 1/-1;
+    grid-area: title;
 
     color: var(--black);
     font-weight: 500;
@@ -166,21 +198,61 @@
     line-height: 130%;
   }
   &__menu {
-    grid-column: 1/-1;
+    grid-area: menu;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
   }
   &__menu-btn {
+    width: auto;
+    height: 40px;
+    padding: 16px 24px;
+
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid var(--black);
+    border-radius: 64px;
+
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black);
   }
   &__tab-btns {
-    grid-column: 1/-1;
+    grid-area: tab-btns;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &__tab-btn {
-    width: 107px;
-    height: 107px;
+    width: fluid(107, 80);
+    height: fluid(107, 80);
 
-    border: 1px solid transparent;
+    flex-shrink: 0;
+
+    border: 3px solid transparent;
     border-radius: 50%;
 
     overflow: hidden;
+    scroll-snap-align: start;
+    &[data-js-tab-active] {
+      border-color: var(--green-2);
+    }
     img {
       width: 100%;
       height: auto;
@@ -190,39 +262,164 @@
     }
   }
   &__name {
-    grid-column: 1/2;
+    grid-area: name;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    color: var(--black);
   }
-  &__video {
-    width: 314px;
+  &__video-wrapper {
+    grid-area: video;
+
+    max-width: 314px;
+    width: 100%;
     height: 100%;
 
     position: absolute;
     top: 0;
     left: 0;
+    @include md {
+      position: static;
+    }
+  }
+  &__video {
+    width: 100%;
+    height: 100%;
 
-    border-radius: 30px;
-    overflow: hidden;
+    display: block;
+    position: relative;
+
     video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      display: block;
+
+      position: sticky;
+      top: 15px;
+
+      border-radius: 30px;
+      overflow: hidden;
+      @include lg {
+        max-height: 556px;
+      }
+      @include md {
+        max-height: unset;
+        height: auto;
+        aspect-ratio: 314/556;
+        position: static;
+      }
     }
   }
-  &__info {
-    grid-column: 1/2;
+  &__info-wrapper {
+    grid-area: info;
 
+    width: 100%;
     height: 100%;
+
+    position: relative;
+  }
+  &__info {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    @include md {
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: flex-start;
+
+      position: sticky;
+      // top: unset;
+      top: 50%;
+    }
   }
   &__info-exp {
-    width: 129px;
+    width: auto;
     height: 40px;
     padding: 11px 12px;
+
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+
     background: rgba(83, 163, 72, 0.2);
     border-radius: 8px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--black);
+  }
+  &__specs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__specs-item {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+
+    background: var(--white);
+    border: 1px solid rgba(83, 163, 72, 0.2);
+    border-radius: 44px;
+    &:not(:first-child) {
+      margin-left: -10px;
+    }
+  }
+  &__appointment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: var(--black);
+
+    white-space: nowrap;
+    div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      &:first-child {
+        gap: 0 8px;
+      }
+    }
+  }
+  &__info-btns {
+    margin-top: 8px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    .btn {
+      min-height: unset;
+      height: 40px;
+      padding: 10px 14px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
   }
   &__descr {
-    grid-column: 2/-1;
-    grid-row: 4/6;
+    grid-area: descr;
 
     padding: 16px 24px;
     border: 1px solid rgba(83, 163, 72, 0.2);
@@ -233,6 +430,12 @@
     font-size: 16px;
     line-height: 130%;
     color: var(--black);
+    @include lg {
+      margin-top: 24px;
+    }
+    @include md {
+      margin-top: 16px;
+    }
   }
   &__descr-title {
     margin-bottom: 12px;

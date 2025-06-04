@@ -14,4 +14,24 @@
     stroke: var(--white);
     fill: var(--white);
   }
+  &--filter {
+    width: 24px;
+    height: 24px;
+    stroke: var(--black);
+  }
+  &--bubble-qa {
+    width: 24px;
+    height: 24px;
+    stroke: var(--black);
+  }
+  &--seal-check {
+    width: 16px;
+    height: 16px;
+    fill: var(--green-2);
+  }
+  &--arrow-r {
+    width: 18px;
+    height: 8px;
+    stroke: var(--black);
+  }
 }
