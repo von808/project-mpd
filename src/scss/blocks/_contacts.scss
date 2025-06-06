@@ -1,0 +1,47 @@
+@use './../mixins' as *;
+.contacts {
+  max-width: 331px;
+  width: 100%;
+  margin-left: auto;
+
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--black);
+  text-align: right;
+  @include sm {
+    max-width: 100%;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+  }
+  &__item {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    white-space: nowrap;
+    &:last-child {
+      margin-top: fluid(37, 0);
+    }
+    span {
+      opacity: 0.5;
+    }
+    a {
+      font-weight: 700;
+      color: var(--green-2);
+    }
+  }
+}

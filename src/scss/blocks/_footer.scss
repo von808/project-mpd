@@ -1,17 +1,88 @@
 @use './../mixins' as *;
 
 .footer {
-  padding: 50px 0;
-  background-color: #505050;
-  color: #fff;
+  padding: 48px 0;
+  background-color: #fffaeb;
 
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 100%;
-}
-
-@include md {
-  .footer {
-    padding: 20px 0;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--black);
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px 16px;
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include sm {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  &__nav {
+    @include sm {
+      width: 100%;
+    }
+    .nav {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 16px;
+        @include sm {
+          gap: 0;
+        }
+      }
+      &__item {
+        width: 100%;
+        @include sm {
+          padding: 12px 0;
+          border-bottom: 1px solid var(--green-2);
+        }
+      }
+      &__link {
+        width: 100%;
+        display: inline-block;
+        @include sm {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .logo {
+    max-width: fluid(227, 140);
+    width: 100%;
+    height: auto;
+    @include md {
+      order: -1;
+      grid-column: span 2;
+      margin: 0 auto;
+    }
+  }
+  .privacy {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--black);
+    @include sm {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+    }
   }
 }
