@@ -1,8 +1,9 @@
 import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
+import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 // import { ScrollSmoother } from 'gsap/ScrollSmoother.js';
 
 // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 const indexGsap = () => {
   function heroAnims() {
@@ -22,7 +23,8 @@ const indexGsap = () => {
         {
           // fontSize: '10dvw',
           // fontSize: 200,
-          scale: 2,
+          // scale: 2,
+          scale: 1.75,
           duration: 2.5,
           ease: 'power1.out',
         },
@@ -185,5 +187,16 @@ const communityFromAnim = gsap.from('.island__community', {
   duration: 2,
   ease: 'ease',
 });
+const depressionGsap = () => {
+  gsap.to('.depression', {
+    scrollTrigger: {
+      trigger: '.wrapper',
+      start: 'top top',
+      end: '+=785',
+      scrub: true,
+    },
+    scale: 2,
+  });
+};
 
-export { indexGsap, therapyFromAnim, communityFromAnim };
+export { indexGsap, therapyFromAnim, communityFromAnim, depressionGsap };

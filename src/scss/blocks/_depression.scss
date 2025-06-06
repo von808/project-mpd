@@ -1,0 +1,25 @@
+@use './../mixins' as *;
+
+.depression {
+  height: fluid(516, 245);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  @include md {
+    position: absolute;
+    transform: scale(1) !important;
+  }
+  &__bg-img {
+    width: 100%;
+    height: auto;
+    @include md {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: 90% center;
+    }
+  }
+}

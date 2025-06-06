@@ -16,6 +16,16 @@ body {
   color: var(--black);
 
   // overflow: hidden;
+  &:has(.depression) {
+    background-color: #cae0eb;
+    background-image: url('./../../images/depression/bg.png');
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: repeat;
+    @include md {
+      background-position: right top;
+    }
+  }
 }
 
 .wrapper {

@@ -1,8 +1,10 @@
 import './modules/_tabs.js';
 import { tabClick } from './modules/_tabs.js';
+import { depressionGsap } from './modules/_gsap.js';
 import './modules/_video.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  depressionGsap();
   if (document.querySelector('[data-js-tab]')) {
     const tabs = document.querySelectorAll('[data-js-tab]');
 

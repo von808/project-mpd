@@ -7,6 +7,9 @@
     <div class="wrapper">
       @@include('./blocks/header.html', {"headerWhite": "false"})
       <main class="main">
+        <div class="depression">
+          <img class="depression__bg-img" src="./../images/depression/bg-ship.png" alt="ship" />
+        </div>
         <section class="breadcrumbs">
           <h2 class="visually-hidden"></h2>
           <div class="container">
@@ -64,6 +67,19 @@
                   </div>
                   @@loop('./elements/specialist-tab-item.html', './data/specialist-tab-item.json')
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="articles">
+          <div class="container">
+            <div class="articles__inner">
+              <h2 class="articles__title">Полезные статьи от специалистов</h2>
+              <div class="articles__content">
+                <div class="articles__items">
+                  @@loop('./elements/articles-item.html', './data/articles-item.json')
+                </div>
+                <a class="btn btn--border" href="#!">Показать ещё</a>
               </div>
             </div>
           </div>

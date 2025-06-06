@@ -13,7 +13,8 @@
     padding-top: rem(130);
   }
   @include sm {
-    padding-top: rem(165);
+    // padding-top: rem(165);
+    padding-top: rem(175);
   }
 
   &__inner {
