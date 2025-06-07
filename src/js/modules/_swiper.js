@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
-import { Mousewheel } from 'swiper/modules';
+import { Mousewheel, Pagination } from 'swiper/modules';
+
 import 'swiper/css';
 
 const indexSwipers = (therapyFromAnim, communityFromAnim) => {
@@ -11,7 +12,13 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
     mousewheel: true,
     vertical: true,
     direction: 'vertical',
-    // initialSlide: 2,
+    initialSlide: 2,
+  });
+
+  const islandMobSwiper = new Swiper('.island-mobile__swiper-info', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 15,
   });
 
   const header = document.querySelector('.header');

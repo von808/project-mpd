@@ -6,7 +6,7 @@ import { indexSwipers } from './modules/_swiper.js';
 document.addEventListener('DOMContentLoaded', () => {
   const island = document.querySelector('.island');
   const islandSlider = document.querySelector('.island-slider');
-  const islTheraphyLink = island.querySelector('.island__therapy .island__link');
+  const islTheraphyLinks = island.querySelectorAll('.island__therapy.island__link, .island__therapy-text');
   const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
   const islCommunity = island.querySelector('.island-community');
   const islCommunityLink = island.querySelector('.island__community .island__link');
@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   indexGsap();
   indexSwipers(therapyFromAnim, communityFromAnim);
 
-  islTheraphyLink.addEventListener('click', (e) => {
-    e.stopPropagation;
-    e.preventDefault;
-    island.classList.add('_therapy-inner');
+  islTheraphyLinks.forEach((islTheraphyLink) => {
+    islTheraphyLink.addEventListener('click', (e) => {
+      e.stopPropagation;
+      e.preventDefault;
+      island.classList.add('_therapy-inner');
+    });
   });
 
   islandSlider.addEventListener('click', (e) => {

@@ -101,7 +101,7 @@
               </section>
             </div>
             <div class="swiper-slide">
-              <section class="island">
+              <section class="island _therapy-inner">
                 <img
                   class="island__therapy-colud--transition"
                   src="./../images/island/cloud-therapy-1.png"
@@ -182,7 +182,7 @@
                                     <button class="island-slider-prev"><</button>
                                     <button class="island-slider-next" id="next">></button>
                                   </div>
-                                  @@loop('elements/island-info-item.html', './../files/data/island-slider-items.json')
+                                  @@loop('./elements/island-info-item.html', './data/island-slider-items.json')
                                 </div>
                               </div>
                             </div>
@@ -211,6 +211,27 @@
                                 </div>
                               </div>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="island__box-mobile">
+                      <picture>
+                        <source type="image/webp" srcset="./../images/island/island-m.webp" />
+                        <img class="island__image" src="./../images/island/island-m.png" alt="island" loading="lazy" />
+                      </picture>
+                      <img class="island__therapy-text" src="./../images/island/text-therapy-m.svg" alt="therapy" />
+                      <img class="island__community-text" src="./../images/island/text-community-m.svg" alt="community" />
+                      <div class="island__therapy">
+                        <div>asd1</div>
+                        <!-- <div class="island-mobile__swiper-circles">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">asd</div>
+                          </div>
+                        </div> -->
+                        <div class="island-mobile__swiper-info">
+                          <div class="swiper-wrapper">
+                            @@loop('./elements/island-m-info-item.html', './data/island-slider-items.json')
                           </div>
                         </div>
                       </div>

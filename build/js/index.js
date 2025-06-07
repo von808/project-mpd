@@ -17,7 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   const island = document.querySelector('.island');
   const islandSlider = document.querySelector('.island-slider');
-  const islTheraphyLink = island.querySelector('.island__therapy .island__link');
+  const islTheraphyLinks = island.querySelectorAll('.island__therapy.island__link, .island__therapy-text');
   const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
   const islCommunity = island.querySelector('.island-community');
   const islCommunityLink = island.querySelector('.island__community .island__link');
@@ -25,10 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.indexGsap)();
   (0,_modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__.indexSwipers)(_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.therapyFromAnim, _modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.communityFromAnim);
 
-  islTheraphyLink.addEventListener('click', (e) => {
-    e.stopPropagation;
-    e.preventDefault;
-    island.classList.add('_therapy-inner');
+  islTheraphyLinks.forEach((islTheraphyLink) => {
+    islTheraphyLink.addEventListener('click', (e) => {
+      e.stopPropagation;
+      e.preventDefault;
+      island.classList.add('_therapy-inner');
+    });
   });
 
   islandSlider.addEventListener('click', (e) => {
@@ -362,6 +364,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const indexSwipers = (therapyFromAnim, communityFromAnim) => {
   const animSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.anim__swiper', {
     modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Mousewheel],
@@ -371,7 +374,13 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
     mousewheel: true,
     vertical: true,
     direction: 'vertical',
-    // initialSlide: 2,
+    initialSlide: 2,
+  });
+
+  const islandMobSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.island-mobile__swiper-info', {
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination],
+    slidesPerView: 1,
+    spaceBetween: 15,
   });
 
   const header = document.querySelector('.header');

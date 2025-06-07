@@ -29,6 +29,24 @@
       pointer-events: none;
       transition: all 1s ease;
     }
+    .island__box-mobile {
+      .island__image {
+        transform: translate(-50%, -24%) scale(0.9);
+        transition: transform 1s ease;
+      }
+      .island__therapy-text,
+      .island__community-text {
+        opacity: 0;
+        pointer-events: none;
+        transition: top 1s ease, opacity 2s ease;
+      }
+      .island__therapy-text {
+        top: 18%;
+      }
+      .island__community-text {
+        top: 53%;
+      }
+    }
   }
   &._community-inner {
     .island-community--wrapper {
@@ -86,6 +104,9 @@
 
     transform: rotate(0deg);
     transition: transform 2s ease;
+    @include sm {
+      display: none;
+    }
   }
   &__image {
     max-width: 100%;
@@ -301,5 +322,122 @@
     .btn {
       min-width: 327.5px;
     }
+  }
+}
+
+.island__box-mobile {
+  width: 100%;
+  height: 100%;
+  padding: 24px 0;
+
+  display: none;
+
+  position: relative;
+  @include sm {
+    display: flex;
+  }
+  .island__image {
+    max-width: unset;
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .island__therapy {
+    // pointer-events: none;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 451px;
+    grid-template-rows: 0.8fr 1.2fr;
+    align-content: end;
+    gap: 24px;
+  }
+  .island__therapy-text {
+    width: 305px;
+    height: 107px;
+
+    top: 38%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .island__community-text {
+    width: 134px;
+    height: 22px;
+    top: 73%;
+    left: 75%;
+  }
+  .island-mobile__swiper-circles {
+    grid-row: 1/2;
+
+    width: 100%;
+    height: auto;
+  }
+  .island-mobile__swiper-info {
+    grid-row: 2/3;
+
+    width: calc(100vw - 30px);
+
+    overflow: visible;
+    .swiper-wrapper {
+      height: 100% !important;
+    }
+    .swiper-slide {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .island-info__item {
+    width: calc(100vw - 30px);
+    height: 100%;
+    padding: 24px;
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+
+    border: 1px solid var(--warm-light);
+    border-radius: 30px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.15);
+
+    &._depression {
+      background: rgba(144, 218, 255, 0.3);
+    }
+    &._trevozh {
+      background: rgba(129, 129, 129, 0.3);
+    }
+    &._poterya {
+      background: rgba(234, 58, 58, 0.3);
+    }
+    &._socializacia {
+      background: rgba(244, 150, 61, 0.3);
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+  .island-info__item-text {
+    max-height: 301px;
+
+    gap: 16px;
+  }
+  .island-info__item-head {
+    padding: 0;
+  }
+  .island-info__item-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 110%;
+  }
+  .island-info__item-descr {
+    overflow-y: auto;
+
+    font-size: 16px;
+    line-height: 122%;
   }
 }

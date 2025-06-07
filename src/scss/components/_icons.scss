@@ -13,6 +13,10 @@
     height: calc(var(--index) * 3.17);
     stroke: var(--white);
     fill: var(--white);
+    @include sm {
+      width: 16px;
+      height: 66px;
+    }
   }
   &--filter {
     width: 24px;
@@ -34,7 +38,7 @@
     height: 8px;
     stroke: var(--black);
   }
-  &--tringle{
+  &--tringle {
     width: 19px;
     height: 22px;
     margin-left: 6px;

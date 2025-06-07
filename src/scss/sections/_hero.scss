@@ -3,6 +3,9 @@
 .hero {
   height: 100vh;
   padding: calc(var(--index) * 7) 0 calc(var(--index) * 3.3); //156px 0 65px
+  @include sm {
+    padding: 144px 0 48px;
+  }
 
   &__inner {
     width: 100%;
@@ -25,6 +28,9 @@
     // gap: 56px;
     gap: calc(var(--index) * 2.2);
     opacity: 0;
+    @include sm {
+      gap: 32px;
+    }
   }
   &__title {
     font-weight: 300;
@@ -34,6 +40,10 @@
     text-transform: uppercase;
     color: var(--white);
     transform-origin: left bottom;
+    @include sm {
+      font-size: 46px;
+      transform: scale(1) !important;
+    }
   }
   &__subtitle {
     // max-width: 432px;
@@ -45,6 +55,10 @@
     font-size: calc(var(--index) * 0.7);
     line-height: 134%;
     color: var(--white);
+    @include sm {
+      max-width: 100%;
+      font-size: 16px;
+    }
   }
   &__hint {
     display: flex;
@@ -59,6 +73,11 @@
     font-size: calc(var(--index) * 0.7);
     line-height: 130%;
     color: var(--white);
+    @include sm {
+      justify-content: center;
+      gap: 16px;
+      font-size: 16px;
+    }
     span {
       display: inline-block;
     }

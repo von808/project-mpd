@@ -35,6 +35,14 @@
   font-weight: 400;
   // font-size: 16px;
   font-size: calc(var(--index) * 0.64);
+  @include sm {
+    --width: 100px;
+    --height: 40px;
+    --spacing: 6px;
+
+    align-items: flex-end;
+    font-size: 16px;
+  }
 }
 
 .burger-icon {
@@ -59,6 +67,10 @@
     border-radius: var(--radius);
     background-color: var(--color);
     transition: transform var(--time) ease-in, top var(--time) linear var(--time), background-color 2s ease;
+    @include sm {
+      left: unset;
+      right: 0;
+    }
   }
 
   &::after {

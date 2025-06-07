@@ -13,16 +13,16 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -53,6 +53,14 @@
 @font-face {
   font-family: Roboto;
   font-display: swap;
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
   src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -63,14 +71,6 @@
   font-display: swap;
   src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Roboto;
-  font-display: swap;
-  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -856,6 +856,7 @@ a {
 .logo {
   width: auto;
   height: calc(var(--index) * 3.44);
+  min-height: 56px;
   aspect-ratio: 1/1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1646,6 +1647,32 @@ a {
   transition: all 1s ease;
 }
 
+.island._therapy-inner .island__box-mobile .island__image {
+  -webkit-transform: translate(-50%, -24%) scale(0.9);
+  -ms-transform: translate(-50%, -24%) scale(0.9);
+  transform: translate(-50%, -24%) scale(0.9);
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.island._therapy-inner .island__box-mobile .island__therapy-text,
+.island._therapy-inner .island__box-mobile .island__community-text {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: top 1s ease, opacity 2s ease;
+  transition: top 1s ease, opacity 2s ease;
+}
+
+.island._therapy-inner .island__box-mobile .island__therapy-text {
+  top: 18%;
+}
+
+.island._therapy-inner .island__box-mobile .island__community-text {
+  top: 53%;
+}
+
 .island._community-inner .island-community--wrapper {
   opacity: 1;
   pointer-events: all;
@@ -1983,6 +2010,134 @@ a {
   min-width: 327.5px;
 }
 
+.island__box-mobile {
+  width: 100%;
+  height: 100%;
+  padding: 24px 0;
+  display: none;
+  position: relative;
+}
+
+.island__box-mobile .island__image {
+  max-width: unset;
+  width: auto;
+  height: 100vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.island__box-mobile .island__therapy {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.8fr 1.2fr;
+  -ms-flex-line-pack: end;
+  align-content: end;
+  gap: 24px;
+}
+
+.island__box-mobile .island__therapy-text {
+  width: 305px;
+  height: 107px;
+  top: 38%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  -ms-transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.island__box-mobile .island__community-text {
+  width: 134px;
+  height: 22px;
+  top: 73%;
+  left: 75%;
+}
+
+.island__box-mobile .island-mobile__swiper-circles {
+  grid-row: 1/2;
+  width: 100%;
+  height: auto;
+}
+
+.island__box-mobile .island-mobile__swiper-info {
+  grid-row: 2/3;
+  width: calc(100vw - 30px);
+  overflow: visible;
+}
+
+.island__box-mobile .island-mobile__swiper-info .swiper-wrapper {
+  height: 100% !important;
+}
+
+.island__box-mobile .island-mobile__swiper-info .swiper-slide {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.island__box-mobile .island-info__item {
+  width: calc(100vw - 30px);
+  height: 100%;
+  padding: 24px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid var(--warm-light);
+  border-radius: 30px;
+  backdrop-filter: blur(50px);
+  -webkit-box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.island__box-mobile .island-info__item._depression {
+  background: rgba(144, 218, 255, 0.3);
+}
+
+.island__box-mobile .island-info__item._trevozh {
+  background: rgba(129, 129, 129, 0.3);
+}
+
+.island__box-mobile .island-info__item._poterya {
+  background: rgba(234, 58, 58, 0.3);
+}
+
+.island__box-mobile .island-info__item._socializacia {
+  background: rgba(244, 150, 61, 0.3);
+}
+
+.island__box-mobile .island-info__item .btn {
+  width: 100%;
+}
+
+.island__box-mobile .island-info__item-text {
+  max-height: 301px;
+  gap: 16px;
+}
+
+.island__box-mobile .island-info__item-head {
+  padding: 0;
+}
+
+.island__box-mobile .island-info__item-title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 110%;
+}
+
+.island__box-mobile .island-info__item-descr {
+  overflow-y: auto;
+  font-size: 16px;
+  line-height: 122%;
+}
+
 .problem-info {
   padding-top: 3rem;
   margin-bottom: clamp(3rem, 2.387755102rem + 2.612244898vw, 5rem);
@@ -2100,10 +2255,10 @@ a {
   display: none;
 }
 
-.specialist__types-items[data-js-tab-active] {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.specialist__types [data-js-tab-active] {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 .specialist__types-info {
@@ -2740,6 +2895,31 @@ a {
 }
 
 @media (max-width: 576px) {
+  .container-vw {
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding);
+  }
+
+  .icon--hero-arrow {
+    width: 16px;
+    height: 66px;
+  }
+
+  .burger-btn {
+    --width: 100px;
+    --height: 40px;
+    --spacing: 6px;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    font-size: 16px;
+  }
+
+  .burger-icon::after {
+    left: unset;
+    right: 0;
+  }
+
   .breadcrumbs {
     display: none;
   }
@@ -2788,6 +2968,63 @@ a {
     text-align: center;
   }
 
+  .header__inner {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+
+  .header__items {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .header .auth-link {
+    display: none;
+  }
+
+  .hero {
+    padding: 144px 0 48px;
+  }
+
+  .hero__info {
+    gap: 32px;
+  }
+
+  .hero__title {
+    font-size: 46px;
+    -webkit-transform: scale(1) !important;
+    -ms-transform: scale(1) !important;
+    transform: scale(1) !important;
+  }
+
+  .hero__subtitle {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .hero__hint {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 16px;
+  }
+
+  .island__box {
+    display: none;
+  }
+
+  .island__box-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .problem-info {
     padding-top: 10.9375rem;
   }
@@ -2824,6 +3061,39 @@ a {
   .specialist .specialist__name,
   .specialist .specialist__video-wrapper {
     margin-bottom: 16px;
+  }
+
+  .why {
+    padding: 144px 0 48px;
+  }
+
+  .why__info {
+    max-width: 100%;
+    gap: 32px;
+  }
+
+  .why__info::before {
+    border-radius: 800px;
+    width: 605px;
+    height: 359px;
+    top: 233px;
+    left: -167px;
+    -webkit-filter: blur(223.4px);
+    filter: blur(223.4px);
+    background: #eae7dd;
+  }
+
+  .why__info-items {
+    gap: 24px;
+  }
+
+  .why__info-item {
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .why__info-subtitle {
+    font-size: 18px;
   }
 }
 

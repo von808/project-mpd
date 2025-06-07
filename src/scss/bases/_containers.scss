@@ -2,13 +2,15 @@
 
 .container-vw {
   margin: 0 auto;
-  // padding: 0 var(--container-padding);
   padding: 0 1vw;
 
-  // max-width: var(--container-width);
   max-width: 92vw;
   width: 100%;
   height: 100%;
+  @include sm {
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding);
+  }
 }
 .container {
   margin: 0 auto;

@@ -3,6 +3,9 @@
 .why {
   height: 100vh;
   padding: calc(var(--index) * 8) 0 calc(var(--index) * 3);
+  @include sm {
+    padding: 144px 0 48px;
+  }
   &__inner {
     padding-left: calc(var(--index) * 4.7);
     @include md {
@@ -19,6 +22,10 @@
     gap: calc(var(--index) * 1.6);
 
     position: relative;
+    @include sm {
+      max-width: 100%;
+      gap: 32px;
+    }
     &::before {
       content: '';
       border-radius: calc(var(--index) * 32);
@@ -35,6 +42,15 @@
 
       opacity: 0;
       transition: opacity 0.5s linear;
+      @include sm {
+        border-radius: 800px;
+        width: 605px;
+        height: 359px;
+        top: 233px;
+        left: -167px;
+        filter: blur(223.4px);
+        background: #eae7dd;
+      }
     }
   }
   &._active {
@@ -47,11 +63,18 @@
     display: flex;
     flex-direction: column;
     gap: calc(var(--index) * 1.6);
+    @include sm {
+      gap: 24px;
+    }
   }
   &__info-item {
     display: flex;
     flex-direction: column;
     gap: calc(var(--index) * 0.8);
+    @include sm {
+      gap: 8px;
+      font-size: 16px;
+    }
   }
   &__info-subtitle {
     font-family: var(--font-family);
@@ -59,5 +82,8 @@
     font-size: calc(var(--index) * 0.8);
     line-height: 130%;
     color: var(--black);
+    @include sm {
+      font-size: 18px;
+    }
   }
 }

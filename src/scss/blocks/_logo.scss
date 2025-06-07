@@ -4,6 +4,7 @@
   width: auto;
   // height: 88px;
   height: calc(var(--index) * 3.44);
+  min-height: 56px;
   aspect-ratio: 1/1;
 
   display: flex;

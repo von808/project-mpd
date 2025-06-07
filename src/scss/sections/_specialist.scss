@@ -99,9 +99,9 @@
       gap: fluid(40, 24);
 
       display: none;
-      &[data-js-tab-active] {
-        display: flex;
-      }
+    }
+    [data-js-tab-active] {
+      display: flex !important;
     }
     &-info {
       display: flex;
