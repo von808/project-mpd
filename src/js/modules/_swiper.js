@@ -13,35 +13,8 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
     mousewheel: true,
     vertical: true,
     direction: 'vertical',
-    initialSlide: 2,
+    // initialSlide: 2,
   });
-
-  const islandMobSwiperInfo = new Swiper('.island-mobile__swiper-info', {
-    modules: [Controller],
-    slidesPerView: 1,
-    spaceBetween: 15,
-    loop: true,
-  });
-  const islandMobSwiper = document.querySelector('.island-mobile__swiper-circles');
-  const islandMobSwiperItems = new Swiper(islandMobSwiper, {
-    modules: [Controller],
-    slidesPerView: 4,
-    // spaceBetween: 15,
-    centeredSlides: true,
-    loop: true,
-  });
-  islandMobSwiper.addEventListener('click', (event) => {
-    let slidePrev = event.target.closest('.swiper-slide').classList.contains('swiper-slide-prev');
-    let slideNext = event.target.closest('.swiper-slide').classList.contains('swiper-slide-next');
-    if (slidePrev) {
-      islandMobSwiperItems.slidePrev();
-    }
-    if (slideNext) {
-      islandMobSwiperItems.slideNext();
-    }
-  });
-  islandMobSwiper.controller.control = islandMobSwiperInfo;
-  islandMobSwiperInfo.controller.control = islandMobSwiper;
 
   const header = document.querySelector('.header');
   const night = document.querySelector('.sunrise__night-bg');
@@ -88,6 +61,43 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
   });
 
   animSwiper.on('slideChangeTransitionEnd', function () {});
+
+  const islandMobSwiperInfo = new Swiper('.island-mobile__swiper-info', {
+    modules: [Controller],
+    slidesPerView: 1,
+    spaceBetween: 15,
+    loop: true,
+    allowTouchMove: false,
+  });
+  const islandMobSwiper = document.querySelector('.island-mobile__swiper-circles');
+  const islandMobSwiperItems = new Swiper(islandMobSwiper, {
+    modules: [Controller],
+    slidesPerView: 4,
+    // spaceBetween: 15,
+    centeredSlides: true,
+    loop: true,
+  });
+  const islandMobSwiperSlides = islandMobSwiper.querySelectorAll('.swiper-slide');
+  islandMobSwiperSlides.forEach((islandMobSwiperSlide) => {
+    islandMobSwiperSlide.addEventListener('click', (event) => {
+      let slidePrev = event.target.closest('.swiper-slide').classList.contains('swiper-slide-prev');
+      let slideNext = event.target.closest('.swiper-slide').classList.contains('swiper-slide-next');
+      if (slidePrev) {
+        islandMobSwiperItems.slidePrev();
+        islandMobSwiperInfo.slidePrev();
+      }
+      if (slideNext) {
+        islandMobSwiperItems.slideNext();
+        islandMobSwiperInfo.slideNext();
+      }
+      event.stopPropagation();
+    });
+  });
+  islandMobSwiper.addEventListener('click', (event) => {
+    if (event.target.closest('.island-mobile__swiper-circles')) {
+      island.classList.remove('_therapy-inner');
+    }
+  });
 };
 
 export { indexSwipers };

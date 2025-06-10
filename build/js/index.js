@@ -16,30 +16,33 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener('DOMContentLoaded', () => {
   const island = document.querySelector('.island');
+  const islandDesk = document.querySelector('.island__box');
+  const islandMob = document.querySelector('.island__box-mobile');
+
   const islandSlider = document.querySelector('.island-slider');
-  const islTheraphyLinks = island.querySelectorAll('.island__therapy.island__link, .island__therapy-text');
+
+  const islTheraphyLinkDesk = islandDesk.querySelector('.island__therapy .island__link');
+  const islTheraphyLinkMob = islandMob.querySelector('.island__therapy-text');
   const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
+
+  const islCommunityLinkDesk = islandDesk.querySelector('.island__community .island__link');
+  const islCommunityLinkMob = islandMob.querySelector('.island__community-text');
+
   const islCommunity = island.querySelector('.island-community');
-  const islCommunityLink = island.querySelector('.island__community .island__link');
 
   (0,_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.indexGsap)();
   (0,_modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__.indexSwipers)(_modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.therapyFromAnim, _modules_gsap_js__WEBPACK_IMPORTED_MODULE_1__.communityFromAnim);
 
-  islTheraphyLinks.forEach((islTheraphyLink) => {
-    islTheraphyLink.addEventListener('click', (e) => {
-      e.stopPropagation;
-      e.preventDefault;
-      island.classList.add('_therapy-inner');
-    });
-  });
-
-  islandSlider.addEventListener('click', (e) => {
+  islTheraphyLinkDesk.addEventListener('click', (e) => {
     e.stopPropagation;
-    if (!e.target.closest('.island-slider__items-wrapper') && !e.target.closest('.island-info__content')) {
-      island.classList.remove('_therapy-inner');
-    }
+    e.preventDefault;
+    island.classList.add('_therapy-inner');
   });
-
+  islTheraphyLinkMob.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    island.classList.add('_therapy-inner');
+  });
   islTheraphyInfoLinks.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault;
@@ -54,12 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  islCommunityLink.addEventListener('click', (e) => {
+  islCommunityLinkDesk.addEventListener('click', (e) => {
     e.stopPropagation;
     e.preventDefault;
     island.classList.add('_community-inner');
   });
+  islCommunityLinkMob.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    // island.classList.add('_community-inner');
+  });
 
+  islandSlider.addEventListener('click', (e) => {
+    e.stopPropagation;
+    if (!e.target.closest('.island-slider__items-wrapper') && !e.target.closest('.island-info__content')) {
+      island.classList.remove('_therapy-inner');
+    }
+  });
   islCommunity.addEventListener('click', (e) => {
     e.stopPropagation;
     if (!e.target.closest('.island-community__info')) {
@@ -377,35 +391,8 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
     mousewheel: true,
     vertical: true,
     direction: 'vertical',
-    initialSlide: 2,
+    // initialSlide: 2,
   });
-
-  const islandMobSwiperInfo = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.island-mobile__swiper-info', {
-    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Controller],
-    slidesPerView: 1,
-    spaceBetween: 15,
-    loop: true,
-  });
-  const islandMobSwiper = document.querySelector('.island-mobile__swiper-circles');
-  const islandMobSwiperItems = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](islandMobSwiper, {
-    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Controller],
-    slidesPerView: 4,
-    // spaceBetween: 15,
-    centeredSlides: true,
-    loop: true,
-  });
-  islandMobSwiper.addEventListener('click', (event) => {
-    let slidePrev = event.target.closest('.swiper-slide').classList.contains('swiper-slide-prev');
-    let slideNext = event.target.closest('.swiper-slide').classList.contains('swiper-slide-next');
-    if (slidePrev) {
-      islandMobSwiperItems.slidePrev();
-    }
-    if (slideNext) {
-      islandMobSwiperItems.slideNext();
-    }
-  });
-  islandMobSwiper.controller.control = islandMobSwiperInfo;
-  islandMobSwiperInfo.controller.control = islandMobSwiper;
 
   const header = document.querySelector('.header');
   const night = document.querySelector('.sunrise__night-bg');
@@ -452,6 +439,43 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
   });
 
   animSwiper.on('slideChangeTransitionEnd', function () {});
+
+  const islandMobSwiperInfo = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.island-mobile__swiper-info', {
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Controller],
+    slidesPerView: 1,
+    spaceBetween: 15,
+    loop: true,
+    allowTouchMove: false,
+  });
+  const islandMobSwiper = document.querySelector('.island-mobile__swiper-circles');
+  const islandMobSwiperItems = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](islandMobSwiper, {
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Controller],
+    slidesPerView: 4,
+    // spaceBetween: 15,
+    centeredSlides: true,
+    loop: true,
+  });
+  const islandMobSwiperSlides = islandMobSwiper.querySelectorAll('.swiper-slide');
+  islandMobSwiperSlides.forEach((islandMobSwiperSlide) => {
+    islandMobSwiperSlide.addEventListener('click', (event) => {
+      let slidePrev = event.target.closest('.swiper-slide').classList.contains('swiper-slide-prev');
+      let slideNext = event.target.closest('.swiper-slide').classList.contains('swiper-slide-next');
+      if (slidePrev) {
+        islandMobSwiperItems.slidePrev();
+        islandMobSwiperInfo.slidePrev();
+      }
+      if (slideNext) {
+        islandMobSwiperItems.slideNext();
+        islandMobSwiperInfo.slideNext();
+      }
+      event.stopPropagation();
+    });
+  });
+  islandMobSwiper.addEventListener('click', (event) => {
+    if (event.target.closest('.island-mobile__swiper-circles')) {
+      island.classList.remove('_therapy-inner');
+    }
+  });
 };
 
 

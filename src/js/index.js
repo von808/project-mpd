@@ -5,30 +5,33 @@ import { indexSwipers } from './modules/_swiper.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const island = document.querySelector('.island');
+  const islandDesk = document.querySelector('.island__box');
+  const islandMob = document.querySelector('.island__box-mobile');
+
   const islandSlider = document.querySelector('.island-slider');
-  const islTheraphyLinks = island.querySelectorAll('.island__therapy.island__link, .island__therapy-text');
+
+  const islTheraphyLinkDesk = islandDesk.querySelector('.island__therapy .island__link');
+  const islTheraphyLinkMob = islandMob.querySelector('.island__therapy-text');
   const islTheraphyInfoLinks = island.querySelectorAll('.island-info__item-btn');
+
+  const islCommunityLinkDesk = islandDesk.querySelector('.island__community .island__link');
+  const islCommunityLinkMob = islandMob.querySelector('.island__community-text');
+
   const islCommunity = island.querySelector('.island-community');
-  const islCommunityLink = island.querySelector('.island__community .island__link');
 
   indexGsap();
   indexSwipers(therapyFromAnim, communityFromAnim);
 
-  islTheraphyLinks.forEach((islTheraphyLink) => {
-    islTheraphyLink.addEventListener('click', (e) => {
-      e.stopPropagation;
-      e.preventDefault;
-      island.classList.add('_therapy-inner');
-    });
-  });
-
-  islandSlider.addEventListener('click', (e) => {
+  islTheraphyLinkDesk.addEventListener('click', (e) => {
     e.stopPropagation;
-    if (!e.target.closest('.island-slider__items-wrapper') && !e.target.closest('.island-info__content')) {
-      island.classList.remove('_therapy-inner');
-    }
+    e.preventDefault;
+    island.classList.add('_therapy-inner');
   });
-
+  islTheraphyLinkMob.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    island.classList.add('_therapy-inner');
+  });
   islTheraphyInfoLinks.forEach((el) => {
     el.addEventListener('click', (e) => {
       e.preventDefault;
@@ -43,12 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  islCommunityLink.addEventListener('click', (e) => {
+  islCommunityLinkDesk.addEventListener('click', (e) => {
     e.stopPropagation;
     e.preventDefault;
     island.classList.add('_community-inner');
   });
+  islCommunityLinkMob.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    // island.classList.add('_community-inner');
+  });
 
+  islandSlider.addEventListener('click', (e) => {
+    e.stopPropagation;
+    if (!e.target.closest('.island-slider__items-wrapper') && !e.target.closest('.island-info__content')) {
+      island.classList.remove('_therapy-inner');
+    }
+  });
   islCommunity.addEventListener('click', (e) => {
     e.stopPropagation;
     if (!e.target.closest('.island-community__info')) {
