@@ -5,22 +5,6 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Bold.woff2") format("woff2"), url("../fonts/Comfortaa-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Comfortaa;
-  font-display: swap;
-  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Comfortaa;
-  font-display: swap;
   src: url("../fonts/Comfortaa-Light.woff2") format("woff2"), url("../fonts/Comfortaa-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -29,16 +13,16 @@
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-Regular.woff2") format("woff2"), url("../fonts/Comfortaa-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Comfortaa-Bold.woff2") format("woff2"), url("../fonts/Comfortaa-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Comfortaa-Regular.woff2") format("woff2"), url("../fonts/Comfortaa-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -59,10 +43,10 @@
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Comfortaa;
   font-display: swap;
-  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Comfortaa-Medium.woff2") format("woff2"), url("../fonts/Comfortaa-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -71,6 +55,22 @@
   font-display: swap;
   src: url("../fonts/Roboto-SemiBold.woff2") format("woff2"), url("../fonts/Roboto-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  font-display: swap;
+  src: url("../fonts/Comfortaa-SemiBold.woff2") format("woff2"), url("../fonts/Comfortaa-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -539,7 +539,7 @@ a {
 }
 
 .anim__swiper .swiper-slide {
-  height: 100vh !important;
+  height: 100vh;
 }
 
 [data-js-video-box] {
@@ -2061,6 +2061,72 @@ a {
   grid-row: 1/2;
   width: 100%;
   height: auto;
+  padding-bottom: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.island__box-mobile .island-mobile__swiper-circles .swiper-wrapper {
+  width: 100%;
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+
+.island__box-mobile .island-mobile__swiper-circles .swiper-slide {
+  -webkit-transform: translateX(-10%) scale(0.9);
+  -ms-transform: translateX(-10%) scale(0.9);
+  transform: translateX(-10%) scale(0.9);
+  width: 25% !important;
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.island__box-mobile .island-mobile__swiper-circles .swiper-slide.swiper-slide-prev {
+  -webkit-transform: translateX(-25%) scale(0.9);
+  -ms-transform: translateX(-25%) scale(0.9);
+  transform: translateX(-25%) scale(0.9);
+}
+
+.island__box-mobile .island-mobile__swiper-circles .swiper-slide.swiper-slide-active {
+  -webkit-transform: translateX(0%) scale(1.9);
+  -ms-transform: translateX(0%) scale(1.9);
+  transform: translateX(0%) scale(1.9);
+}
+
+.island__box-mobile .island-mobile__swiper-circles .swiper-slide.swiper-slide-next {
+  -webkit-transform: translateX(25%) scale(0.9);
+  -ms-transform: translateX(25%) scale(0.9);
+  transform: translateX(25%) scale(0.9);
+}
+
+.island__box-mobile .island-mobile__swiper-circles .swiper-slide.swiper-slide-next + .swiper-slide {
+  -webkit-transform: translateX(10%) scale(0.9);
+  -ms-transform: translateX(10%) scale(0.9);
+  transform: translateX(10%) scale(0.9);
+}
+
+.island__box-mobile .island-mobile__swiper-circles .island-slider__item {
+  width: 80%;
+  offset-path: unset;
 }
 
 .island__box-mobile .island-mobile__swiper-info {

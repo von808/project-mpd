@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let islandSliderNext = document.querySelector('.island-slider-next');
-  let islandSliderPrev = document.querySelector('.island-slider-prev');
-  let islandSliderItemsWrapper = document.querySelector('.island-slider__items');
-  let islandSliderItems = document.querySelectorAll('.island-slider__item');
-  let contents = document.querySelectorAll('.island-info__item');
+  let islandBox = document.querySelector('.island__box');
+  let islandSliderNext = islandBox.querySelector('.island-slider-next');
+  let islandSliderPrev = islandBox.querySelector('.island-slider-prev');
+  let islandSliderItemsWrapper = islandBox.querySelector('.island-slider__items');
+  let islandSliderItems = islandBox.querySelectorAll('.island-slider__item');
+  let contents = islandBox.querySelectorAll('.island-info__item');
 
   let rotateBox = 0;
   let rotateItem = 0;

@@ -76,11 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
-  let islandSliderNext = document.querySelector('.island-slider-next');
-  let islandSliderPrev = document.querySelector('.island-slider-prev');
-  let islandSliderItemsWrapper = document.querySelector('.island-slider__items');
-  let islandSliderItems = document.querySelectorAll('.island-slider__item');
-  let contents = document.querySelectorAll('.island-info__item');
+  let islandBox = document.querySelector('.island__box');
+  let islandSliderNext = islandBox.querySelector('.island-slider-next');
+  let islandSliderPrev = islandBox.querySelector('.island-slider-prev');
+  let islandSliderItemsWrapper = islandBox.querySelector('.island-slider__items');
+  let islandSliderItems = islandBox.querySelectorAll('.island-slider__item');
+  let contents = islandBox.querySelectorAll('.island-info__item');
 
   let rotateBox = 0;
   let rotateItem = 0;
@@ -360,6 +361,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
 /* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
+/* harmony import */ var swiper_css_controller__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56);
+
 
 
 
@@ -377,11 +380,32 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
     initialSlide: 2,
   });
 
-  const islandMobSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.island-mobile__swiper-info', {
-    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination],
+  const islandMobSwiperInfo = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.island-mobile__swiper-info', {
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Controller],
     slidesPerView: 1,
     spaceBetween: 15,
+    loop: true,
   });
+  const islandMobSwiper = document.querySelector('.island-mobile__swiper-circles');
+  const islandMobSwiperItems = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](islandMobSwiper, {
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Controller],
+    slidesPerView: 4,
+    // spaceBetween: 15,
+    centeredSlides: true,
+    loop: true,
+  });
+  islandMobSwiper.addEventListener('click', (event) => {
+    let slidePrev = event.target.closest('.swiper-slide').classList.contains('swiper-slide-prev');
+    let slideNext = event.target.closest('.swiper-slide').classList.contains('swiper-slide-next');
+    if (slidePrev) {
+      islandMobSwiperItems.slidePrev();
+    }
+    if (slideNext) {
+      islandMobSwiperItems.slideNext();
+    }
+  });
+  islandMobSwiper.controller.control = islandMobSwiperInfo;
+  islandMobSwiperInfo.controller.control = islandMobSwiper;
 
   const header = document.querySelector('.header');
   const night = document.querySelector('.sunrise__night-bg');

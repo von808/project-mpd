@@ -154,7 +154,7 @@
                       <div class="island-slider">
                         <div class="island-slider__items-wrapper">
                           <div class="island-slider__items">
-                            @@loop('elements/island-slider-item.html', './../files/data/island-slider-items.json')
+                            @@loop('./elements/island-slider-item.html', './data/island-slider-items.json')
                           </div>
                         </div>
                         <div class="island-info--wrapper">
@@ -223,12 +223,12 @@
                       <img class="island__therapy-text" src="./../images/island/text-therapy-m.svg" alt="therapy" />
                       <img class="island__community-text" src="./../images/island/text-community-m.svg" alt="community" />
                       <div class="island__therapy">
-                        <div>asd1</div>
-                        <!-- <div class="island-mobile__swiper-circles">
+                        <!-- <div>asd1</div> -->
+                        <div class="island-mobile__swiper-circles">
                           <div class="swiper-wrapper">
-                            <div class="swiper-slide">asd</div>
+                            @@loop('elements/island-m-slider-item.html', './data/island-slider-items.json')
                           </div>
-                        </div> -->
+                        </div>
                         <div class="island-mobile__swiper-info">
                           <div class="swiper-wrapper">
                             @@loop('./elements/island-m-info-item.html', './data/island-slider-items.json')
