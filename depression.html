@@ -9,7 +9,7 @@
   <meta name="author" content="alex808von">
 
   <link rel="icon" href="./images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/style.css?_v=53a5b3c8d1f0b4b1871dec84315be714">
+  <link rel="stylesheet" href="./css/style.css?_v=85a68c865275053be9ea66d957bf4c6c">
 </head>
 
   <body>
@@ -19,8 +19,8 @@
   <div class="container-vw">
     <div class="header__inner">
       <a href="./" class="logo">
-        <img class="logo--white" src="./images/logos/logo-white.png" alt="logo" />
-        <img class="logo--dark" src="./images/logos/logo-dark.png" alt="logo" />
+        <img class="logo--white" src="./images/logos/logo-white.png" width="88" height="88" alt="logo" />
+        <img class="logo--dark" src="./images/logos/logo-dark.png" width="88" height="88" alt="logo" />
       </a>
 
       <div class="header__items">
@@ -38,7 +38,10 @@
 
       <main class="main">
         <div class="depression">
-          <img class="depression__bg-img" src="./images/depression/bg-ship.png" alt="ship" />
+          <picture>
+            <source type="image/webp" srcset="./images/depression/bg-ship.png" />
+            <img class="depression__bg-img" src="./images/depression/bg-ship.png" width="1600" height="519" alt="ship" />
+          </picture>
         </div>
         <section class="breadcrumbs">
           <h2 class="visually-hidden"></h2>
@@ -502,8 +505,7 @@
             <div class="articles__inner">
               <h2 class="articles__title">Полезные статьи от специалистов</h2>
               <div class="articles__content">
-                <div class="articles__items">
-                  <article class="articles__item">
+                <div class="articles__items"><article class="articles__item">
   <div class="articles__img-box"><img src="./images/articles/1.jpg" alt="Созависимость: когда любовь превращается в ловушку" /></div>
   <div class="articles__info">
     <h3 class="articles__item-title">Созависимость: когда любовь превращается в ловушку</h3>
@@ -551,8 +553,7 @@
     </a>
   </div>
 </article>
-
-                </div>
+</div>
                 <a class="btn btn--border" href="#!">Показать ещё</a>
               </div>
             </div>
@@ -593,8 +594,8 @@
 </footer>
 
     </div>
-    <script src="./js/libs.js?_v=53a5b3c8d1f0b4b1871dec84315be714"></script>
-    <script src="./js/main.js?_v=53a5b3c8d1f0b4b1871dec84315be714"></script>
-    <script src="./js/depression.js?_v=53a5b3c8d1f0b4b1871dec84315be714"></script>
+    <script src="./js/libs.js?_v=85a68c865275053be9ea66d957bf4c6c"></script>
+    <script src="./js/main.js?_v=85a68c865275053be9ea66d957bf4c6c"></script>
+    <script src="./js/depression.js?_v=85a68c865275053be9ea66d957bf4c6c"></script>
   </body>
 </html>
