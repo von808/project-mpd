@@ -1,7 +1,7 @@
 @use './../mixins' as *;
 
 .why {
-  height: 100vh;
+  height: 100dvh;
   padding: calc(var(--index) * 8) 0 calc(var(--index) * 3);
   @include sm {
     padding: 144px 0 48px;

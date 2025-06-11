@@ -58,9 +58,12 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
       island.classList.add('_hoverOff');
       island.classList.remove('_therapy-inner');
     }
+    // document.body.style.pointerEvents = 'none';
   });
 
-  animSwiper.on('slideChangeTransitionEnd', function () {});
+  animSwiper.on('slideChangeTransitionEnd', function () {
+    // document.body.style.pointerEvents = 'all';
+  });
 
   const islandMobSwiperInfo = new Swiper('.island-mobile__swiper-info', {
     modules: [Controller],
@@ -98,6 +101,64 @@ const indexSwipers = (therapyFromAnim, communityFromAnim) => {
       island.classList.remove('_therapy-inner');
     }
   });
+
+  let startX = 0;
+  let startY = 0;
+  // Обработчик события touchstart (или mousedown)
+  function swipeStart(event) {
+    // event.preventDefault(); // Предотвращает стандартное поведение браузера
+    startX = event.touches ? event.touches[0].clientX : event.clientX; // Получаем начальную координату X
+    startY = event.touches ? event.touches[0].clientY : event.clientY; // Получаем начальную координату Y
+  }
+  // Обработчик события touchmove (или mousemove)
+  function swipeAction(event) {
+    // event.preventDefault(); // Предотвращаем стандартное поведение браузера
+    // Здесь можно обрабатывать движение, например, если требуется непрерывное обновление
+    // элементов на экране во время свайпа
+  }
+  // Обработчик события touchend (или mouseup)
+  function swipeEnd(event) {
+    // event.preventDefault(); // Предотвращаем стандартное поведение браузера
+    let endX = event.changedTouches ? event.changedTouches[0].clientX : event.clientX; // Получаем конечную координату X
+    let endY = event.changedTouches ? event.changedTouches[0].clientY : event.clientY; // Получаем конечную координату Y
+
+    // Расчет расстояния и направления свайпа
+    let deltaX = endX - startX;
+    let deltaY = endY - startY;
+
+    // Проверка на свайп (можно настроить пороги расстояния и времени)
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+      // Если по горизонтали свайп сильнее, чем по вертикали и расстояние больше 50 пикселей
+      if (deltaX > 0) {
+        // console.log('Свайп вправо');
+        // Действия при свайпе вправо
+      } else {
+        // console.log('Свайп влево');
+        // Действия при свайпе влево
+      }
+    } else if (Math.abs(deltaY) > 50) {
+      // Если по вертикали свайп сильнее и расстояние больше 50 пикселей
+      if (deltaY > 0) {
+        // console.log('Свайп вниз');
+        // Действия при свайпе вниз
+        animSwiper.slidePrev();
+      } else {
+        // console.log('Свайп вверх');
+        // Действия при свайпе вверх
+        animSwiper.slideNext();
+      }
+    }
+  }
+  // Добавление обработчиков событий
+  const element = document.body; // Замените на нужный элемент
+  element.addEventListener('touchstart', swipeStart, { passive: false });
+  element.addEventListener('touchmove', swipeAction, { passive: false });
+  element.addEventListener('touchend', swipeEnd, { passive: false });
+  // Для имитации свайпа мышью (на десктопе)
+  // document.addEventListener('mousedown', swipeStart, { passive: false });
+  // document.addEventListener('mousemove', swipeAction, { passive: false });
+  // document.addEventListener('mouseup', swipeEnd, { passive: false });
+  // console.log(document);
 };
 
 export { indexSwipers };

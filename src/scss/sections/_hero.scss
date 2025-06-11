@@ -1,7 +1,7 @@
 @use './../mixins' as *;
 
 .hero {
-  height: 100vh;
+  height: 100dvh;
   padding: calc(var(--index) * 7) 0 calc(var(--index) * 3.3); //156px 0 65px
   @include sm {
     padding: 144px 0 48px;
