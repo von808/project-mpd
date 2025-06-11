@@ -37,6 +37,7 @@
       .island__therapy {
         opacity: 1 !important;
         pointer-events: all;
+        transition: opacity 1s 1s ease;
       }
       .island__image {
         transform: translate(-50%, -24%) scale(0.9);
@@ -46,7 +47,7 @@
       .island__community-text {
         opacity: 0;
         pointer-events: none;
-        transition: top 1s ease, opacity 2s ease;
+        transition: opacity 1s ease, top 1s ease;
       }
       .island__therapy-text {
         top: 18%;
@@ -72,6 +73,35 @@
       visibility: hidden;
       pointer-events: none;
       transition: all 1s ease;
+    }
+    .island__box-mobile {
+      @include sm {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .island__image {
+        transform: translate(-61%, -55%) scale(1.1);
+        transition: transform 1s ease;
+      }
+      .island__therapy-text,
+      .island__community-text {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 1s ease, top 1s ease, left 1s ease;
+      }
+      .island__therapy-text {
+        top: -20%;
+        left: 30%;
+      }
+      .island__community-text {
+        top: 20%;
+        left: 60%;
+      }
+      .island__community {
+        opacity: 1 !important;
+        pointer-events: all;
+        transition: opacity 1s 1s ease;
+      }
     }
   }
   &._therapy-page {
@@ -322,8 +352,10 @@
     height: 100%;
   }
   &__info {
-    max-width: 591px;
-    width: 100%;
+    // max-width: 591px;
+    // width: 100%;
+    min-width: 327.5px;
+    width: 44vw;
     height: 100%;
     padding: 218px 0 65px;
 
@@ -338,13 +370,10 @@
   height: 100%;
   padding: 24px 0;
 
-  // display: flex;
-
   position: relative;
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1s ease;
 
   display: none;
   @include sm {
@@ -362,11 +391,23 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    transition: all 1s 1s ease;
+  }
+  .island__therapy,
+  .island__community {
+    &-text {
+      transition: opacity 1s 1s ease, top 1s 1s ease, left 1s 1s ease;
+    }
   }
   .island__therapy {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - (24px * 2));
+
     display: grid;
     grid-template-columns: 1fr;
-    // grid-template-rows: 1fr 451px;
     grid-template-rows: 0.8fr 1.2fr;
     align-content: end;
     gap: 24px;
@@ -374,23 +415,84 @@
     opacity: 0 !important;
     pointer-events: none;
     transition: opacity 1s ease;
-  }
-  .island__therapy-text,
-  .island__community-text {
-    transition: top 2s ease, opacity 2s ease 1s;
-  }
-  .island__therapy-text {
-    width: 305px;
-    height: 107px;
+    &-text {
+      width: 305px;
+      height: 107px;
 
-    top: 38%;
-    transform: translate(-50%, -50%) rotate(0deg);
+      top: 38%;
+      transform: translate(-50%, -50%) rotate(0deg) !important;
+    }
   }
-  .island__community-text {
-    width: 134px;
-    height: 22px;
-    top: 73%;
-    left: 75%;
+  .island__community {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - (24px * 2));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+    &-close {
+      width: 100%;
+      height: 100%;
+    }
+    &-content {
+      padding: 24px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      background: rgba(234, 231, 221, 0.9);
+      // backdrop-filter: blur(50px);
+      box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--warm-light);
+      border-radius: 29px;
+    }
+    &-header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      gap: 8px;
+      span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        color: var(--black);
+      }
+    }
+    &-title {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 110%;
+      color: var(--black);
+    }
+    &-descr {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 134%;
+      color: var(--black);
+    }
+
+    &-text {
+      width: 134px;
+      height: 22px;
+      top: 73%;
+      left: 75%;
+    }
+    .btn {
+      width: 100%;
+    }
   }
   .island-mobile__swiper-circles {
     grid-row: 1/2;
@@ -462,42 +564,42 @@
 
     border: 1px solid var(--warm-light);
     border-radius: 30px;
-    backdrop-filter: blur(50px);
+    // backdrop-filter: blur(50px);
     box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.15);
 
     &._depression {
-      background-color: rgba(144, 218, 255, 0.3);
+      background-color: rgba(144, 218, 255, 0.8);
     }
     &._trevozh {
-      background-color: rgba(129, 129, 129, 0.3);
+      background-color: rgba(129, 129, 129, 0.8);
     }
     &._poterya {
-      background-color: rgba(234, 58, 58, 0.3);
+      background-color: rgba(234, 58, 58, 0.8);
     }
     &._socializacia {
-      background-color: rgba(244, 150, 61, 0.3);
+      background-color: rgba(244, 150, 61, 0.8);
+    }
+    &-text {
+      max-height: 301px;
+
+      gap: 16px;
+    }
+    &-head {
+      padding: 0;
+    }
+    &-title {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 110%;
+    }
+    &-descr {
+      overflow-y: auto;
+
+      font-size: 16px;
+      line-height: 122%;
     }
     .btn {
       width: 100%;
     }
-  }
-  .island-info__item-text {
-    max-height: 301px;
-
-    gap: 16px;
-  }
-  .island-info__item-head {
-    padding: 0;
-  }
-  .island-info__item-title {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 110%;
-  }
-  .island-info__item-descr {
-    overflow-y: auto;
-
-    font-size: 16px;
-    line-height: 122%;
   }
 }

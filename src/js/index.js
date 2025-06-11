@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const islCommunityLinkDesk = islandDesk.querySelector('.island__community .island__link');
   const islCommunityLinkMob = islandMob.querySelector('.island__community-text');
+  const islCommunityMobClose = islandMob.querySelector('.island__community-close');
 
   const islCommunity = island.querySelector('.island-community');
 
@@ -54,7 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
   islCommunityLinkMob.addEventListener('click', (e) => {
     e.stopPropagation;
     e.preventDefault;
-    // island.classList.add('_community-inner');
+    island.classList.add('_community-inner');
+  });
+  islCommunityMobClose.addEventListener('click', (e) => {
+    e.stopPropagation;
+    e.preventDefault;
+    island.classList.remove('_community-inner');
   });
 
   islandSlider.addEventListener('click', (e) => {
